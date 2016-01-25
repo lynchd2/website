@@ -1,0 +1,2 @@
+class WeightliftingVideo < Video
+end

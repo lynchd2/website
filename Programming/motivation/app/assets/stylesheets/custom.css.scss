@@ -1,0 +1,100 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.navbar-text {
+	a:link {
+		color:#777;
+		text-decoration:none;
+		}
+	a {
+		color:#777
+	}
+	
+}
+
+.navbar-default {
+	background-color:white;
+}
+
+.give-me-motivation-logo {
+	height:60px;
+	width:100px;
+	margin-left:385px;
+	
+}
+
+.header-text-right {
+	float:right;
+	
+}
+
+.header-text-left {
+	float:left;
+}
+
+
+.homepage {
+	background-image: image-url("trail.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+
+.videos-background {
+	background-image: image-url("running_background.gif");
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+
+.button-navigation {
+	display:inline-block;
+	position:relative;
+	margin-top:27%;
+	left:32%;
+	margin-left:20px;
+	margin-right:20px;
+
+}
+
+.button-navigation-random-homepage {
+	position:absolute;
+	top:45%;
+	left:41%;
+
+}
+
+.btn-default {
+	background-color:transparent;
+	width:150px;
+	border:2px solid #D0D0D0;
+	color:#FFFFFF;
+}
+
+.btn-primary:hover {
+	background-color:transparent;
+	width:150px;
+	
+}
+
+.btn btn-primary btn-lg {
+	height:50px;
+	float:right;
+}
+
+/*********************
+	Videos page
+*********************/
+
+.videos {
+	color:black;
+}
+
+iframe {
+	margin-left:17%;
+	margin-top:3%;
+}
+
+.video_title {
+	text-align:center;
+}
