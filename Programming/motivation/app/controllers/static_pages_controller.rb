@@ -7,7 +7,6 @@ class StaticPagesController < ApplicationController
 		@background = "videos-background"
 	end
 
-
 	def images
 	end
 

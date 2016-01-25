@@ -14,6 +14,11 @@ Rails.application.routes.draw do
     get "about" => 'static_pages#about'
 
 
+    get "video" => "videos#show"
+
+    get 'image' => "images#show"
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
