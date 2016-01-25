@@ -1,9 +1,10 @@
 class StaticPagesController < ApplicationController
 	def home
-		@homepage = true
+		@background = "homepage"
 	end
 
 	def videos
+		@background = "videos-background"
 	end
 
 
