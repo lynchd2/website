@@ -1,0 +1,2 @@
+class RunningVideo < Video
+end
