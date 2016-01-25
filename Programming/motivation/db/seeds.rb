@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-videos = [["RunningVideo", "5CQbTBwLU3U"], ["RunningVideo", "gF0rrpMH-Jo"], ["RunningVideo", "yLGfPNhtS2U"]]
+videos = [["RunningVideo", "5CQbTBwLU3U"], ["RunningVideo", "gF0rrpMH-Jo"], ["RunningVideo", "yLGfPNhtS2U"], ["WeightliftingVideo", "dImoa__F4Bc"], ["WeightliftingVideo", "ZpwEHIL_UZ4", "ZpwEHIL_UZ4"]]
 videos.each do |video|
 	Video.create(type: video[0], url: video[1])
 end
