@@ -1,4 +1,5 @@
 class Video < ActiveRecord::Base
+	
 	def self.find_random_video(param_type)
 		ids = []
 		videos = Video.where("type = ?", param_type)

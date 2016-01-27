@@ -1,0 +1,2 @@
+class RunningImage < Image
+end

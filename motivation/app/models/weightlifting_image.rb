@@ -1,0 +1,2 @@
+class WeightliftingImage < Image
+end
