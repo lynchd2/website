@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -17,6 +18,10 @@ Rails.application.routes.draw do
     get "video" => "videos#show"
 
     get 'image' => "images#show"
+
+    resources :users
+
+    resources :sessions, only: [:new, :create, :destroy]
 
 
   # Example of regular route:
