@@ -1,6 +1,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/*********************
+	 General
+*********************/
+
+.alert.alert-info {
+	margin-top:-22px;
+	text-align:center;
+}
+
+
 .navbar-text {
 	a:link {
 		color:#777;
@@ -18,8 +28,8 @@
 
 .give-me-motivation-logo {
 	height:60px;
-	width:100px;
-	margin-left:395px;
+	width:125px;
+	margin-left:385px;
 	
 }
 
