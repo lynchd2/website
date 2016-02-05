@@ -2,7 +2,7 @@
 @import "bootstrap";
 
 /*********************
-	 General
+	 Header
 *********************/
 
 .alert.alert-info {
@@ -13,12 +13,15 @@
 .navbar-text {
 	padding:20px;
 	margin:0 auto;
+	font-family: Lobster;
+	font-weight:bold;
+	font-size:20px;
 	a:link {
 		color:#777;
 		text-decoration:none;
 		}
 	a {
-		color:#777
+		color:#505050
 	}
 	a:hover {
 		color:white;
@@ -33,13 +36,13 @@
 .give-me-motivation-logo {
 	height:60px;
 	width:125px;
-	margin-left:383px;
+	margin-left:320px;
 }
 
 .header-text-right {
 	float:right;
 	div:hover {
-		background-color:#000066;
+		background-color:#009933;
 		transition:all 1000ms ease;
 		color:white;
 		padding:20px;
@@ -58,16 +61,12 @@
 	}
 }
 
+/*********************
+	 Homepage
+*********************/
 
 .homepage {
 	background-image: image-url("trail.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-
-}
-
-.videos-background {
-	background-image: image-url("running_background.gif");
 	background-repeat: no-repeat;
 	background-size: cover;
 
@@ -80,8 +79,9 @@
 	left:35%;
 	margin-left:20px;
 	margin-right:20px;
-		:hover{ 
+	:hover{ 
 		transition:all 500ms ease;
+		color:green;
 		}
 }
 
@@ -91,31 +91,39 @@
 	left:44%;
 	:hover{ 
 		transition:all 500ms ease;
+		color:green;
 	}
 
 }
 
-.btn-default {
+.btn-lg {
 	background-color:transparent;
 	width:150px;
 	border:2px solid #D0D0D0;
 	color:#FFFFFF;
+	padding-top:35px;
+	padding-bottom:35px;
+	font-size:20px;
+	:hover{ 
+		transition:all 500ms ease;
+		color:green;
+	}
 }
-
-.btn-primary:hover {
-	background-color:transparent;
-	width:150px;
-	
-}
-
-.btn btn-primary btn-lg {
-	height:50px;
-	float:right;
-}
-
 /*********************
 	Videos page
 *********************/
+
+.videos-background {
+	background-image: image-url("running_background.gif");
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+
+.btn.btn-default.btn-lg.videos:hover {
+	color:green;
+	transition: 500ms ease;
+}
 
 .videos {
 	color:black;
@@ -146,7 +154,7 @@ iframe {
 }
 
 /***********************
-	 Log-in/Sign-in page
+  Log-in/Sign-in page
 ***********************/
 .form-horizontal {
     text-align: center;
@@ -156,6 +164,10 @@ iframe {
 }
 
 h1.sign-up {
+    text-align: center;
+    margin-top:3%;
+    word-spacing:50px;
+    margin-right:5%;
 }
 
 .center-signin {
@@ -184,4 +196,19 @@ h1.sign-up {
 
 .form-control {
 	margin-top:25px;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
 }

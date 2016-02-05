@@ -7,11 +7,10 @@ class SessionsController < ApplicationController
   	if @user && @user.authenticate(params[:session][:password])
   		flash[:notice] = "Log in successful!"
   		log_in(@user)
-  		redirect_to '/'
+  		redirect_to @user
   	else
   		flash.now[:notice] = "Unable to login in."
   		render 'new'
-
   	end
   end
 

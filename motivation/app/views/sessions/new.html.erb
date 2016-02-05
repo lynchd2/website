@@ -1,14 +1,22 @@
-<h1> Log in</h1>
-
-<%= form_for(:session, url: sessions_path) do |f| %>
-<%= f.label :email %>
-<%= f.email_field :email %>
-
-<%= f.label :password %>
-<%= f.password_field :password %>
-
-<%= f.submit "Log in" %>
-
-<% end %>
-
-<%= params %>
+	<h1 class= "sign-up">Log-In!</h1>
+	   <%= form_for(:session, url: sessions_path, html: {class: "form-horizontal"} ) do |f| %>
+	   	  <div class= "center-signin">
+	      <div class="form-group">
+		     <%= f.label :email, class: "col-sm-2 control-label" %>
+		  	 <div class="col-sm-10">
+		  		<%= f.email_field :email, class: "form-control" %>
+		  	</div>
+		  </div>
+		  <div class="form-group">
+		  <%= f.label :password, class: "col-sm-2 control-label"  %>
+		    <div class="col-sm-10">
+				<%= f.password_field :password, class: "form-control" %>
+			</div>
+		  </div>
+		</div>
+	  	<div class="form-group">
+	       <div class="col-sm-offset-2 col-sm-8">
+		      <%= f.submit "Submit", class: "btn btn-default sign-in" %>
+		   </div>
+	    </div>
+	<% end %>

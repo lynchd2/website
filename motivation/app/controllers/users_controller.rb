@@ -5,14 +5,17 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.create(user_params)
-  	if @user.save
+  	if @user.save!
   		session[:user_id] = @user.id
   		flash[:notice] = "User successfully created"
-  		redirect_to new_user_path
+  		redirect_to @user
   	else
   		flash.now[:notice] = "Failed to create user"
-  		render 'new'
+      render 'new'
   	end
+  end
+
+  def show
   end
 
   private
