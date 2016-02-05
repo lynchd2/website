@@ -9,8 +9,7 @@ Rails.application.routes.draw do
 
     get "images" => 'static_pages#images'
 
-
-    get "videos" => 'static_pages#videos'
+    get "video_categories" => 'videos#categories'
 
     get "about" => 'static_pages#about'
 

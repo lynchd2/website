@@ -123,3 +123,27 @@ iframe {
     width: auto;
     height: auto;
 }
+
+/***********************
+	 Log-in/Sign-in page
+***********************/
+.form-horizontal {
+    text-align: center;
+}
+
+.center-signin {
+	display:inline-block;
+}
+
+.btn.btn-default.sign-in {
+	color:grey;
+	&:hover {
+		background-color:#000066;
+		border-color:#000066;
+		color:white;
+	}
+}
+
+.col-sm-2.control-label {
+	right:5%;	
+}
