@@ -1,14 +1,14 @@
 <header class="navbar navbar-default">
 	<%= link_to image_tag("give_me_motivation_logo.png", class:"give-me-motivation-logo"), root_path %>
 	<div class="header-text-left">
-		<p class="navbar-text">Top Videos</p>
-		<p class="navbar-text">Top Images</p>
+		<div class="navbar-text"><%= link_to "Top Videos", "#" %></div>
+		<div class="navbar-text"><%= link_to "Top Images", "#" %></div>
 	</div>
 	<div class="header-text-right">
-		<p class="navbar-text"><%= link_to "Sign up", new_user_path  %> </p>
-		<p class="navbar-text"><%= link_to "Log in", new_session_path %></p>
-		<p class="navbar-text">Submit a video/image</p>
-		<p class="navbar-text"><%= link_to "About", about_path%></p>
+		<div class="navbar-text"><%= link_to "Sign up", new_user_path  %> </div>
+		<div class="navbar-text"><%= link_to "Log in", new_session_path %></div>
+		<div class="navbar-text"><%= link_to "Submit a video/image", "#" %></div>
+		<div class="navbar-text"><%= link_to "About", about_path%></div>
 	</div>
 </header>
 <% flash.each do |name, msg| %>

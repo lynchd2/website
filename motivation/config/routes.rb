@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+
     root 'static_pages#home'
 
     get "images" => 'static_pages#images'
@@ -13,7 +14,6 @@ Rails.application.routes.draw do
 
     get "about" => 'static_pages#about'
 
-
     get "video" => "videos#show"
 
     get 'image' => "images#show"
@@ -21,6 +21,8 @@ Rails.application.routes.draw do
     resources :users
 
     resources :sessions, only: [:new, :create, :destroy]
+
+
 
 
   # Example of regular route:

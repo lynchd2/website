@@ -1,11 +1,12 @@
 class Video < ActiveRecord::Base
 	
 	def self.find_random_video(param_type)
-		ids = []
+		all_videos = []
 		videos = Video.where("type = ?", param_type)
 		videos.each do |video|
-			ids << video.id
+			all_videos << video
 		end
-		return Video.find_by(id:ids.shuffle[0])
+		video = all_videos.shuffle[0]
+		return video
 	end
 end

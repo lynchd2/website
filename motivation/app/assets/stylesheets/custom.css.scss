@@ -10,14 +10,18 @@
 	text-align:center;
 }
 
-
 .navbar-text {
+	padding:20px;
+	margin:0 auto;
 	a:link {
 		color:#777;
 		text-decoration:none;
 		}
 	a {
 		color:#777
+	}
+	a:hover {
+		color:white;
 	}
 	
 }
@@ -29,17 +33,29 @@
 .give-me-motivation-logo {
 	height:60px;
 	width:125px;
-	margin-left:385px;
-	
+	margin-left:383px;
 }
 
 .header-text-right {
 	float:right;
-	
+	div:hover {
+		background-color:#000066;
+		transition:all 1000ms ease;
+		color:white;
+		padding:20px;
+		margin:0 auto;
+	}
 }
 
 .header-text-left {
 	float:left;
+	div:hover {
+		background-color:#000066;
+		transition:all 1000ms ease;
+		color:white;
+		padding:20px;
+		margin:0 auto;
+	}
 }
 
 
@@ -64,13 +80,18 @@
 	left:35%;
 	margin-left:20px;
 	margin-right:20px;
-
+		:hover{ 
+		transition:all 500ms ease;
+		}
 }
 
 .button-navigation-random-homepage {
 	position:absolute;
 	top:40%;
 	left:44%;
+	:hover{ 
+		transition:all 500ms ease;
+	}
 
 }
 
@@ -129,6 +150,12 @@ iframe {
 ***********************/
 .form-horizontal {
     text-align: center;
+    margin-top:3%;
+    word-spacing:50px;
+    margin-right:5%;
+}
+
+h1.sign-up {
 }
 
 .center-signin {
@@ -141,9 +168,20 @@ iframe {
 		background-color:#000066;
 		border-color:#000066;
 		color:white;
+		-webkit-transition: all 500ms ease;
+		-moz-transition: all 500ms ease;
+		-ms-transition: all 500ms ease;
+		-o-transition: all 500ms ease;
+		transition: all 500ms ease;	
 	}
+
 }
 
 .col-sm-2.control-label {
-	right:5%;	
+	right:5%;
+	margin-top:25px;	
+}
+
+.form-control {
+	margin-top:25px;
 }
