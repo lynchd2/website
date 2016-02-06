@@ -157,10 +157,8 @@ iframe {
   Log-in/Sign-in page
 ***********************/
 .form-horizontal {
-    text-align: center;
-    margin-top:3%;
-    word-spacing:50px;
-    margin-right:5%;
+	margin-top:50px;
+
 }
 
 h1.sign-up {
@@ -211,4 +209,15 @@ h1.sign-up {
   .form-control {
     color: $state-danger-text;
   }
+  }
+
+
+.container-sign-in {
+	background-color:#0066CC;
+	text-align:center;
+	margin:auto;
+	width:500px;
+	height:350px;
+	border-radius:20%;
+
 }
