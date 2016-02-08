@@ -140,7 +140,7 @@ iframe {
 
 
 /***********************
-	Image page
+	Image categories
 ***********************/
 
 .image-motivation {
@@ -151,6 +151,15 @@ iframe {
     max-height:500px;
     width: auto;
     height: auto;
+}
+
+/***********************
+	Image page
+***********************/
+
+.image-display {
+	margin:0 auto;
+	display:block;
 }
 
 /***********************
@@ -213,11 +222,31 @@ h1.sign-up {
 
 
 .container-sign-in {
-	background-color:#0066CC;
+	background-color:#0099CC;
 	text-align:center;
 	margin:auto;
+	margin-top:70px;
+	width:500px;
+	height:450px;
+	border-radius:20%;
+	color:white;
+	.sign-up {
+		font-family:"Josefin Slab";
+		font-size:50px;
+	}
+}
+
+.container-log-in {
+	background-color:#0099CC;
+	text-align:center;
+	margin:auto;
+	margin-top:70px;
 	width:500px;
 	height:350px;
 	border-radius:20%;
-
+	color:white;
+	.sign-up {
+		font-family:"Josefin Slab";
+		font-size:50px;
+	}
 }

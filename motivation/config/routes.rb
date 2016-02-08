@@ -8,15 +8,15 @@ Rails.application.routes.draw do
 
     root 'static_pages#home'
 
-    get "images" => 'static_pages#images'
-
-    get "video_categories" => 'videos#categories'
-
     get "about" => 'static_pages#about'
 
     get "video" => "videos#show"
 
+    get "video_categories" => 'videos#categories'
+
     get 'image' => "images#show"
+
+    get 'image_categories' => "images#categories"
 
     resources :users
 
