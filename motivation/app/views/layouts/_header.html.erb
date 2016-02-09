@@ -3,11 +3,21 @@
 	<div class="header-text-left">
 		<div class="navbar-text"><%= link_to "Top Videos", "#" %></div>
 		<div class="navbar-text"><%= link_to "Top Images", "#" %></div>
+		<div class="navbar-text"><%= link_to "Submit a video/image", "#" %></div>
 	</div>
 	<div class="header-text-right">
-		<div class="navbar-text"><%= link_to "Sign up", new_user_path  %> </div>
-		<div class="navbar-text"><%= link_to "Log in", new_session_path %></div>
-		<div class="navbar-text"><%= link_to "Submit a video/image", "#" %></div>
+		<div class="navbar-text">
+			<% if current_user %>
+				<%= link_to current_user.email.length > 25 ? "Welcome," + current_user.email[0..25] + "..." : "Welcome, " + current_user.email, user_path(current_user) %>
+			<% else %>
+				<%= link_to "Sign up", new_user_path  %>
+			<% end %> </div>
+		<div class="navbar-text">
+			<% if current_user %>
+				<%= link_to "Log out", logout_path, method: :delete %>
+			<% else %>
+				<%= link_to "Log in", login_path%>
+			<% end %> </div>
 		<div class="navbar-text"><%= link_to "About", about_path%></div>
 	</div>
 </header>

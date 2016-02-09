@@ -18,9 +18,13 @@ Rails.application.routes.draw do
 
     get 'image_categories' => "images#categories"
 
-    resources :users
+    delete 'logout' => "sessions#destroy"
 
-    resources :sessions, only: [:new, :create, :destroy]
+    get 'login' => 'sessions#new'
+
+    post 'login' => "sessions#create"
+
+    resources :users
 
 
 

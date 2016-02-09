@@ -5,6 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.find_or_create_by(email: "lynchd2@tcnj.edu", password_digest: "foobar", admin: true)
+
 
 images = [["WeightliftingImage", "https://s-media-cache-ak0.pinimg.com/564x/6a/f8/0f/6af80f163598dad3f79a980976cbb40b.jpg"],
 		  ["RunningImage", "https://s-media-cache-ak0.pinimg.com/236x/b9/cc/41/b9cc41fd78a441304af65cbbf8bdc633.jpg"],

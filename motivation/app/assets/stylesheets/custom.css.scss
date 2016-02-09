@@ -11,7 +11,7 @@
 }
 
 .navbar-text {
-	padding:20px;
+	padding:16px;
 	margin:0 auto;
 	font-family: Lobster;
 	font-weight:bold;
@@ -36,7 +36,7 @@
 .give-me-motivation-logo {
 	height:60px;
 	width:125px;
-	margin-left:320px;
+	margin-left:95px;
 }
 
 .header-text-right {
@@ -45,7 +45,7 @@
 		background-color:#009933;
 		transition:all 1000ms ease;
 		color:white;
-		padding:20px;
+		padding:16px;
 		margin:0 auto;
 	}
 }
@@ -56,7 +56,7 @@
 		background-color:#000066;
 		transition:all 1000ms ease;
 		color:white;
-		padding:20px;
+		padding:16px;
 		margin:0 auto;
 	}
 }
@@ -72,28 +72,20 @@
 
 }
 
-.button-navigation {
-	display:inline-block;
-	position:relative;
-	margin-top:26%;
-	left:35%;
-	margin-left:20px;
-	margin-right:20px;
-	:hover{ 
-		transition:all 500ms ease;
-		color:green;
-		}
-}
-
-.button-navigation-random-homepage {
+.button-navigation-homepage {
 	position:absolute;
-	top:40%;
-	left:44%;
+	text-align:center;
+	top:37%;
+	left:25%;
 	:hover{ 
 		transition:all 500ms ease;
 		color:green;
 	}
+}
 
+.homepage-buttons {
+	display:inline-block;
+	margin-left:40px;	
 }
 
 .btn-lg {
@@ -160,6 +152,8 @@ iframe {
 .image-display {
 	margin:0 auto;
 	display:block;
+    max-width:600px;
+    max-height:600px;
 }
 
 /***********************

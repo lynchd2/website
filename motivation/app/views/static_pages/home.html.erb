@@ -1,13 +1,6 @@
-<div class="videos-images-button">
-	<div class="button-navigation">
-		<%= button_to "Videos", video_categories_path, method: :get, class: "btn btn-default btn-lg" %>
-	</div>
-	<div class="button-navigation">
-		<%= button_to "Images", image_categories_path, method: :get, class: "btn btn-default btn-lg" %>
-	</div>
-</div>
-	<div class="button-navigation-random-homepage">
-		<%= button_to "Random", image_categories_path, method: :get, class: "btn btn-default btn-lg" %>
-	</div>
+<div class="button-navigation-homepage">
+		<div class="homepage-buttons"><%= button_to "Videos", video_categories_path, method: :get, class: "btn btn-default btn-lg" %></div>
+		<div class="homepage-buttons"><%= button_to "Random", image_categories_path, method: :get, class: "btn btn-default btn-lg" %></div>
+		<div class="homepage-buttons"><%= button_to "Images", image_categories_path, method: :get, class: "btn btn-default btn-lg" %></div>
 </div>
 
