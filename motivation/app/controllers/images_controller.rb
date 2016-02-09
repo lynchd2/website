@@ -5,4 +5,8 @@ class ImagesController < ApplicationController
 
 	def categories
 	end
+
+	def random
+		@random_image = params[:random_object]
+	end
 end

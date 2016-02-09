@@ -7,4 +7,8 @@ class VideosController < ApplicationController
 	def categories
 		@background = "videos-background"
 	end
+
+	def random
+		@random_video = params[:random_object]
+	end
 end

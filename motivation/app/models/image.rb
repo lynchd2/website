@@ -6,7 +6,8 @@ class Image < ActiveRecord::Base
 		return image[0]
 	end
 
-	#def self.find_random_image_with_type
-		#all_image_ids = Image.
-		#image = Image.where()
+	def self.find_random_image
+		random_image = Image.order("RANDOM()")[0].url
+		return random_image
+	end
 end

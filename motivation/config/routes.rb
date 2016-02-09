@@ -24,6 +24,10 @@ Rails.application.routes.draw do
 
     post 'login' => "sessions#create"
 
+    get 'random_video' => "videos#random"
+
+    get 'random_image' => "images#random"
+
     resources :users
 
 
