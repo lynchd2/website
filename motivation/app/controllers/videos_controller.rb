@@ -9,6 +9,6 @@ class VideosController < ApplicationController
 	end
 
 	def random
-		@random_video = params[:random_object]
+		@random_video = Video.find_random_video
 	end
 end

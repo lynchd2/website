@@ -7,6 +7,6 @@ class ImagesController < ApplicationController
 	end
 
 	def random
-		@random_image = params[:random_object]
+		@random_image =  Image.find_random_image
 	end
 end

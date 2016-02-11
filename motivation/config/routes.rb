@@ -28,7 +28,10 @@ Rails.application.routes.draw do
 
     get 'random_image' => "images#random"
 
-    resources :users
+    resources :users do
+      resources :favorite_videos
+      resources :favorite_images
+    end
 
 
 
