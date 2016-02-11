@@ -1,0 +1,2 @@
+class FavoriteImagesController < ApplicationController
+end

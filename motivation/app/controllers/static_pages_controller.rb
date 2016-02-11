@@ -12,9 +12,6 @@ class StaticPagesController < ApplicationController
 
 	end
 
-	def images
-	end
-
 	def about
 	end
 end
