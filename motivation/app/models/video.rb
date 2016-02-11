@@ -1,4 +1,6 @@
 class Video < ActiveRecord::Base
+	has_many :favorite_videos
+	has_many :users, through: :favorite_videos
 	
 	def self.find_random_video_with_type(param_type)
 		video = Video.where("type = ?", param_type).order("RANDOM()").first(1)

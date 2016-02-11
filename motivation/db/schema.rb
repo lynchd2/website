@@ -11,17 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160211045036) do
+ActiveRecord::Schema.define(version: 20160211053403) do
 
   create_table "favorite_images", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "image_id"
   end
+
+  add_index "favorite_images", ["image_id"], name: "index_favorite_images_on_image_id"
+  add_index "favorite_images", ["user_id"], name: "index_favorite_images_on_user_id"
 
   create_table "favorite_videos", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "video_id"
   end
+
+  add_index "favorite_videos", ["user_id"], name: "index_favorite_videos_on_user_id"
+  add_index "favorite_videos", ["video_id"], name: "index_favorite_videos_on_video_id"
 
   create_table "images", force: :cascade do |t|
     t.string   "url"
