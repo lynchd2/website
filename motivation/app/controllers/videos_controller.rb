@@ -3,7 +3,7 @@ class VideosController < ApplicationController
 		@video = Video.find_random_video_with_type(params[:type])
 		@videos = VideoInfo.new("https://www.youtube.com/watch?v=#{@video.url}")
 		@user = User.find_by(id: current_user.id) if current_user
-		@favorite = @user.favorite_videos.create()
+		@favorite = @user.favorite_videos.build()
 	end
 
 	def categories

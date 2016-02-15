@@ -1,0 +1,7 @@
+<h2> Videos </h2>
+<% i = 1 %>
+<% @favorite_videos.each do |favorite| %>
+	<%= i %>. <%= link_to "Video #{i}", user_favorite_video_path(favorite.user_id, favorite.video_id) %>
+	</br>
+	<% i += 1 %>
+<% end %>

@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def create
-  	@user = User.create(user_params)
+  	@user = User.new(user_params)
   	if @user.save
   		session[:user_id] = @user.id
   		flash[:notice] = "User successfully created"
@@ -16,6 +16,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = current_user
+    @favorites = FavoriteVideo.where(user_id: current_user.id)
   end
 
   private
