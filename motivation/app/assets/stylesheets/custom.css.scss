@@ -101,6 +101,45 @@
 		color:green;
 	}
 }
+
+.home-button {
+	right:65%;
+	font-size:20px;
+	border:none;
+	background: none;
+	cursor: pointer;
+	padding: 25px 80px;
+	display: inline-block;
+	margin: 10px 10px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.home-button {
+	border:solid;
+	color: #fff;
+}
+
+.home-button:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.home-button:hover,
+.home-button:active {
+	color: green;
+	background: #fff;
+	border-color:white;
+}
 /*********************
 	Videos page
 *********************/
@@ -243,4 +282,43 @@ h1.sign-up {
 		font-family:"Josefin Slab";
 		font-size:50px;
 	}
+}
+
+.home-button {
+	right:65%;
+	font-size:20px;
+	border:none;
+	background: none;
+	cursor: pointer;
+	padding: 25px 80px;
+	display: inline-block;
+	margin: 10px 10px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.home-button {
+	border:solid;
+	color: #fff;
+}
+
+.home-button:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.home-button:hover,
+.home-button:active {
+	color: green;
+	background: #fff;
+	border-color:white;
 }

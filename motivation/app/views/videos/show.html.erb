@@ -1,2 +1,4 @@
 <h2 class= "video_title"><%= @videos%></h2>
 <iframe width="800" height="500" src="https://www.youtube.com/embed/<%= @video.url%>" frameborder="0" allowfullscreen></iframe>
+
+<%= button_to "Submit", video_path, method: :get, class: "favorite-video-button" %>
