@@ -4,7 +4,13 @@ class FavoriteVideosController < ApplicationController
 	end
 
 	def create 
-		@user = current_user.id
+		if current_user 
+			@user = User.find_by(id: current_user.id)
+		else
+			@user = nil
+			redirect_to root_url
+			flash[:notice] = "You must sign in to add favorites"
+		end
 		@favorite = FavoriteVideo.new(favorite_videos_params)
 		if !(FavoriteVideo.find_by(video_id: @favorite.video_id, user_id: @favorite.user_id)) && @favorite.save
 			redirect_to root_url
