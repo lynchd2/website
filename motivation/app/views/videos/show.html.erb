@@ -8,12 +8,20 @@
 				<%= f.hidden_field :video_id, value: @video.id %>
 				<%= f.hidden_field :url, value: @video.url %>
 				<%= f.hidden_field :user_id, value: @user.id %>
-				<%= f.submit "Favorite", class: "general-button favorite" %>
+				<%= f.submit "Make Favorite", class: "general-button favorite" %>
 			<% end %>
 			<%= @video.id %>
 		<% else %>
-			<%= button_to "Favorite", new_user_path, method: :get, class: "general-button favorite" %>
+			<%= button_to "Make Favorite", new_user_path, method: :get, class: "general-button favorite" %>
 		<% end %>
 	</div>
 </aside>
+<div="container-buttons">
+	<div class= "video-show-navigation-buttons">
+		<%= button_to "Back to video categories", video_categories_path, method: :get, class: "general-button before-navigation" %>
+	</div>
+	<div class= "video-show-navigation-buttons">
+		<%= button_to "Give me more motivation" , video_path, method: :get, class: "general-button before-navigation", params: {type: @type} %>
+	</div>
+</div>
 

@@ -4,6 +4,7 @@ class VideosController < ApplicationController
 		@videos = VideoInfo.new("https://www.youtube.com/watch?v=#{@video.url}")
 		@user = current_user.id if current_user
 		@favorite = @user.favorite_videos.build() if current_user
+		@type = params[:type]
 	end
 
 	def categories
