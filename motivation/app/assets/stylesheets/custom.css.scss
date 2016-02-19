@@ -5,16 +5,14 @@
 /*****************************
  Aside information next to motivator
  ****************************/
- .motivate-information-container {
+ .video-motivate-information-container {
  	background-color:grey;
  	float:right;
  	height:490px;
  	width:400px;
  	margin:10px;
  	margin-right:20px;
-
  }
-
 
 /*****************************
  Buttons for Videos and Images
@@ -50,11 +48,14 @@
 
  .videos-images-button {
 	color: black;
+	&.blue-text {
+		color:#0e83cd;
+	}
 }
 
 .videos-images-button:hover,
 .videos-images-button:active {
-	color: #0e83cd;
+	color: black;
 	background: #fff;
 }
 
@@ -104,6 +105,12 @@
 	overflow: hidden;
 	background:#006633;
 	text-transform: uppercase;
+	&.left {
+		float:left;
+	}
+	&.right {
+		float:right;
+	}
 }
 
 .before-navigation:active {
@@ -141,7 +148,7 @@
 	opacity: 1;
 }
 
-.container-buttons {
+.container-video-show-buttons {
 	text-align:center;
 	width:800px;
 }
@@ -152,7 +159,25 @@
 	overflow:none;
 }
 
+.container-image-show-buttons {
+	width:900px;
+	float:left;
+	clear:both;
+	display : block;
+    margin : auto;
+    text-align:center;
+    margin-left:60px;
+}
 
+.image-show-navigation-buttons-left {
+	float:left;
+	clear:both;
+}
+
+.image-show-navigation-buttons-right {
+	float:right;
+	clear:both;
+}
 
 /*********************
 	 Header
@@ -304,6 +329,12 @@
 
 }
 
+.images-background {
+	background-image: image-url("image_background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 .btn.btn-default.btn-lg.videos:hover {
 	color:green;
 	transition: 500ms ease;
@@ -336,25 +367,34 @@ iframe {
 	Image categories
 ***********************/
 
-.image-motivation {
-	margin-left:auto;
-	margin-right:auto;
-	display: block;
-    max-width:500px;
-    max-height:500px;
-    width: auto;
-    height: auto;
-}
+
 
 /***********************
 	Image page
 ***********************/
 
 .image-display {
-	margin:0 auto;
-	display:block;
     max-width:600px;
     max-height:600px;
+    margin-left:50px;
+}
+
+.container-image {
+    display : block;
+    margin : auto;
+    text-align:center;
+
+}
+
+ .image-motivate-information-container {
+ 	background-color:grey;
+ 	height:300px;
+ 	width:300px;
+ 	float:right;
+ 	margin-right:100px;
+ }
+
+.container-image-and-information {
 }
 
 /***********************

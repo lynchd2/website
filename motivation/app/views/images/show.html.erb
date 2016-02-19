@@ -1,1 +1,21 @@
-<%= image_tag(@image.url, class: "image-display") %>
+	<div class="container-image">
+		<%= image_tag(@image.url, class: "image-display") %>
+	
+	<aside class="image-motivate-information-container">
+			<% if @user %>
+				<%= form_for([@user, @favorite]) do |f| %>
+					<%= f.hidden_field :image_id, value: @image.id %>
+					<%= f.hidden_field :url, value: @image.url %>
+					<%= f.hidden_field :image_id, value: @image.id %>
+					<%= f.submit "Make Favorite", class: "general-button favorite" %>
+				<% end %>
+				<%= @video.id %>
+			<% else %>
+				<%= button_to "Make Favorite", new_user_path, method: :get, class: "general-button favorite", params: {favorite_sign_in: true} %>
+			<% end %>
+	</aside>
+	</div>
+<div class= "container-image-show-buttons">
+		<%= button_to "Back to video categories", image_categories_path, method: :get, class: "general-button before-navigation left" %>
+		<%= button_to "Give me more motivation" , image_path, method: :get, class: "general-button before-navigation right", params: {type: @type} %>
+</div>

@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def new
   	@user = User.new
+    if params[:favorite_sign_in] == "true"
+      flash.now[:notice] = "Please sign in or log in to use that feature"
+    end
+    @params = params
   end
 
   def create
@@ -17,7 +21,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @favorites = FavoriteVideo.where(user_id: current_user.id)
+    @favorites = FavoriteVideo.where(user_id: @user.id)
   end
 
   private
