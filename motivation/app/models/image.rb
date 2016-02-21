@@ -9,7 +9,7 @@ class Image < ActiveRecord::Base
 	end
 
 	def self.find_random_image
-		random_image = Image.order("RANDOM()")[0].url
-		return random_image
+		random_image = Image.order("RANDOM()")
+		return random_image[0]
 	end
 end

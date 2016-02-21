@@ -1,2 +1,26 @@
 <h2 class= "video_title"><%= @random_video%></h2>
-<iframe width="800" height="500" src="https://www.youtube.com/embed/<%= @random_video%>" frameborder="0" allowfullscreen></iframe>
+<div class="iframe"><iframe width="800" height="500" src="https://www.youtube.com/embed/<%= @random_video%>" frameborder="0" allowfullscreen></iframe></div>
+
+<aside>
+	<div class="video-motivate-information-container">
+		<% if @user %>
+			<%= form_for([@user, @favorite]) do |f| %>
+				<%= f.hidden_field :video_id, value: @video.id %>
+				<%= f.hidden_field :url, value: @video.url %>
+				<%= f.hidden_field :user_id, value: @user.id %>
+				<%= f.submit "Make Favorite", class: "general-button favorite" %>
+			<% end %>
+			<%= @video.id %>
+		<% else %>
+			<%= button_to "Make Favorite", new_user_path, method: :get, class: "general-button favorite", params: {favorite_sign_in: true} %>
+		<% end %>
+	</div>
+</aside>
+<div="container-video-show-buttons">
+	<div class= "video-show-navigation-buttons">
+		<%= button_to "Back to the video categories", video_categories_path, method: :get, class: "general-button before-navigation" %>
+	</div>
+	<div class= "video-show-navigation-buttons">
+		<%= button_to "Give me more random motivation" , @path, method: :get, class: "general-button before-navigation", params: {type: @random_video_or_image} %>
+	</div>
+</div>

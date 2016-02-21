@@ -8,7 +8,7 @@ class Video < ActiveRecord::Base
 	end
 
 	def self.find_random_video
-		random_video = Video.order("RANDOM()")[0].url
-		return random_video
+		random_video = Video.order("RANDOM()")
+		return random_video[0]
 	end
 end

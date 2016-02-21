@@ -13,5 +13,12 @@ class VideosController < ApplicationController
 
 	def random
 		@random_video = Video.find_random_video
+		@random = rand(0..1)
+		@path = ""
+		if @random == 0
+			@path = random_video_path
+		else
+			@path = random_image_path
+		end
 	end
 end
