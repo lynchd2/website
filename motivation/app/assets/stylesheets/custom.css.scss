@@ -25,7 +25,7 @@
 	color: inherit;
 	background: none;
 	cursor: pointer;
-	padding: 22px 70px;
+	padding: 22px 50px;
 	display: inline-block;
 	margin: 15px 30px;
 	letter-spacing: 1px;
@@ -148,25 +148,22 @@
 	opacity: 1;
 }
 
-.container-video-show-buttons {
-	text-align:center;
-	width:800px;
-}
+
 
 .video-show-navigation-buttons {
 	display:inline-block;
-	width:390px;
+	width:420px;
 	overflow:none;
 }
 
 .container-image-show-buttons {
-	width:1000px;
+	width:895px;
 	float:left;
 	clear:both;
 	display : block;
     margin : auto;
     text-align:center;
-    margin-left:60px;
+    margin-left:10px;
 }
 
 .image-show-navigation-buttons-left {

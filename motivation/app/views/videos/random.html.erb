@@ -16,11 +16,9 @@
 		<% end %>
 	</div>
 </aside>
-<div="container-video-show-buttons">
 	<div class= "video-show-navigation-buttons">
 		<%= button_to "Back to the video categories", video_categories_path, method: :get, class: "general-button before-navigation" %>
 	</div>
 	<div class= "video-show-navigation-buttons">
 		<%= button_to "Give me more random motivation" , @path, method: :get, class: "general-button before-navigation", params: {type: @random_video_or_image} %>
 	</div>
-</div>
