@@ -5,6 +5,7 @@ class VideosController < ApplicationController
 		@user = current_user if current_user
 		@favorite = @user.favorite_videos.build() if current_user
 		@type = params[:type]
+		@unmotivational_video = @user.unmotivational_videos.build()
 	end
 
 	def categories
