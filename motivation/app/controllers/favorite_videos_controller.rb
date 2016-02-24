@@ -1,6 +1,6 @@
 class FavoriteVideosController < ApplicationController
 	def new
-		@favorite = Favorite.new
+		@favorite = FavoriteVideo.new
 	end
 
 	def create 

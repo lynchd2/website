@@ -1,8 +1,8 @@
 class ImagesController < ApplicationController
 	def show
 		@image = Image.find_random_image_with_type(params[:type])
-		@user = current_user.id if current_user
-		@favorite = @user.favorite_videos.build() if current_user
+		@user = current_user if current_user
+		@favorite = @user.favorite_images.build() if current_user
 		@type = params[:type]
 	end
 
@@ -11,6 +11,7 @@ class ImagesController < ApplicationController
 	end
 
 	def random
+		@user = current_user if current_user
 		@random_image =  Image.find_random_image
 		@random = rand(0..1)
 		@path = ""
@@ -19,5 +20,6 @@ class ImagesController < ApplicationController
 		else
 			@path = random_image_path
 		end
+		@favorite = @user.favorite_images.build() if current_user
 	end
 end

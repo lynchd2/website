@@ -5,12 +5,12 @@
 	<div class="video-motivate-information-container">
 		<% if @user %>
 			<%= form_for([@user, @favorite]) do |f| %>
-				<%= f.hidden_field :video_id, value: @video.id %>
-				<%= f.hidden_field :url, value: @video.url %>
+				<%= f.hidden_field :video_id, value: @random_video.id %>
+				<%= f.hidden_field :url, value: @random_video.url %>
 				<%= f.hidden_field :user_id, value: @user.id %>
 				<%= f.submit "Make Favorite", class: "general-button favorite" %>
 			<% end %>
-			<%= @video.id %>
+			<%= @random_video.id %>
 		<% else %>
 			<%= button_to "Make Favorite", new_user_path, method: :get, class: "general-button favorite", params: {favorite_sign_in: true} %>
 		<% end %>
