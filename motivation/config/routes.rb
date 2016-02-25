@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'unmotivational_videos/create'
-
-  get 'unmotivational_videos/destroy'
-
-  get 'unmotivational_videos/index'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -38,6 +32,7 @@ Rails.application.routes.draw do
       resources :favorite_videos
       resources :favorite_images
       resources :unmotivational_videos
+      resources :unmotivational_images
     end
 
 

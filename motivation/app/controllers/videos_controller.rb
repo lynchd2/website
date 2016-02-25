@@ -2,13 +2,16 @@ class VideosController < ApplicationController
 	def show
 		if current_user
 			@unmotivational_videos = UnmotivationalVideo.find_unmotivational_video_ids(current_user.id)
-			@video = Video.find_random_video_with_type(params[:type], @unmotivational_videos)
+			@video = Video.find_random_video_with_type_and_unmotivational(params[:type], @unmotivational_videos)
 			@user = current_user
 			@favorite = @user.favorite_videos.build()
+			@unmotivational_video = @user.unmotivational_videos.build()
+		
+		else
+			@video = Video.find_random_video_with_type(params[:type])
 		end
 		@videos = VideoInfo.new("https://www.youtube.com/watch?v=#{@video.url}")
 		@type = params[:type]
-		@unmotivational_video = @user.unmotivational_videos.build()
 	end
 
 	def categories

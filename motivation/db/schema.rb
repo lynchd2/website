@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160224034206) do
+ActiveRecord::Schema.define(version: 20160225191447) do
 
   create_table "favorite_images", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -43,11 +43,20 @@ ActiveRecord::Schema.define(version: 20160224034206) do
     t.integer  "rating",     default: 10
   end
 
+  create_table "unmotivational_images", force: :cascade do |t|
+    t.integer  "video_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "url"
+  end
+
   create_table "unmotivational_videos", force: :cascade do |t|
     t.integer  "video_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "url"
   end
 
   create_table "users", force: :cascade do |t|
