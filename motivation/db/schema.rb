@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225191447) do
+ActiveRecord::Schema.define(version: 20160226040120) do
 
   create_table "favorite_images", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -44,11 +44,11 @@ ActiveRecord::Schema.define(version: 20160225191447) do
   end
 
   create_table "unmotivational_images", force: :cascade do |t|
-    t.integer  "video_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "url"
+    t.integer  "image_id"
   end
 
   create_table "unmotivational_videos", force: :cascade do |t|

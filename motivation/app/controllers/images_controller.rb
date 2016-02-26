@@ -1,8 +1,15 @@
 class ImagesController < ApplicationController
 	def show
-		@image = Image.find_random_image_with_type(params[:type])
-		@user = current_user if current_user
-		@favorite = @user.favorite_images.build() if current_user
+		if current_user
+			@unmotivational_images = UnmotivationalImage.find_unmotivational_image_ids(current_user.id)
+			@image = Image.find_random_image_with_type_and_unmotivational(params[:type], @unmotivational_images)
+			@user = current_user
+			@favorite = @user.favorite_videos.build()
+			@unmotivational_image = @user.unmotivational_images.build()
+		
+		else
+			@image = Image.find_random_image_with_type(params[:type])
+		end
 		@type = params[:type]
 	end
 
