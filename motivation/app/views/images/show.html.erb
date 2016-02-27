@@ -17,6 +17,7 @@
 				<% end %>
 			<% else %>
 				<%= button_to "Make Favorite", new_user_path, method: :get, class: "general-button favorite", params: {favorite_sign_in: true} %>
+				<%= button_to "Unmotivational", new_user_path, method: :get, class: "general-button", params: {unmotivational_sign_in: true} %>
 			<% end %>
 	</aside>
 	</div>
