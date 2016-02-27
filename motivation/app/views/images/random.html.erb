@@ -9,7 +9,12 @@
 					<%= f.hidden_field :user_id, value: @user.id %>
 					<%= f.submit "Make Favorite", class: "general-button favorite" %>
 				<% end %>
-				<%= @random_image.id %>
+				<%= form_for([@user, @unmotivational_image]) do |f| %>
+					<%= f.hidden_field :image_id, value: @randon_image.id %>
+					<%= f.hidden_field :user_id, value: @user.id %>
+					<%= f.hidden_field :url, value: @randon_image.url %>
+				<%= f.submit "Unmotivational", class: "general-button" %>
+				<% end %>
 			<% else %>
 				<%= button_to "Make Favorite", new_user_path, method: :get, class: "general-button favorite", params: {favorite_sign_in: true} %>
 			<% end %>

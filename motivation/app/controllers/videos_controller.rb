@@ -19,7 +19,11 @@ class VideosController < ApplicationController
 	end
 
 	def random
-		@user = current_user if current_user
+		if current_user
+			@user = current_user 
+			@unmotivational_video = @user.unmotivational_videos.build()
+			@favorite = @user.favorite_videos.build()
+		end
 		@random_video = Video.find_random_video
 		@random = rand(0..1)
 		@path = ""
@@ -28,6 +32,6 @@ class VideosController < ApplicationController
 		else
 			@path = random_image_path
 		end
-		@favorite = @user.favorite_videos.build() if current_user
+		
 	end
 end
