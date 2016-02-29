@@ -6,7 +6,7 @@
  Aside information next to motivator
  ****************************/
  .video-motivate-information-container {
- 	background-color:grey;
+ 	background-color:white;
  	float:right;
  	height:490px;
  	width:400px;
@@ -35,6 +35,17 @@
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
+}
+
+.unmotivational {
+	margin-top:100px;
+	border: 3px solid #add8e6;
+	border-radius:20px;
+	&:hover {
+		color:black;
+		background-color:#add8e6
+	}
+	
 }
 
 .general-button:after {

@@ -14,22 +14,20 @@
 				<%= f.hidden_field :video_id, value: @video.id %>
 				<%= f.hidden_field :user_id, value: @user.id %>
 				<%= f.hidden_field :url, value: @video.url %>
-				<%= f.submit "Unmotivational", class: "general-button" %>
+				<%= f.submit "Unmotivational", class: "general-button unmotivational" %>
 			<% end %>
 		<% else %>
 			<%= button_to "Make Favorite", new_user_path, method: :get, class: "general-button favorite", params: {favorite_sign_in: true} %>
-			<%= button_to "Unmotivational", new_user_path, method: :get, class: "general-button", params: {unmotivational_sign_in: true} %>
+			<%= button_to "Unmotivational", new_user_path, method: :get, class: "general-button unmotivational", params: {unmotivational_sign_in: true} %>
 		<% end %>
 	</div>
 </aside>
-<div="container-video-show-buttons">
 	<div class= "video-show-navigation-buttons">
 		<%= button_to "Back to the video categories", video_categories_path, method: :get, class: "general-button before-navigation" %>
 	</div>
 	<div class= "video-show-navigation-buttons">
 		<%= button_to "Give me more motivation" , video_path, method: :get, class: "general-button before-navigation", params: {type: @type} %>
 	</div>
-</div>
 
 
 <%= @umotivational_videos %>

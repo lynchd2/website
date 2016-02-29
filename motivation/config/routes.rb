@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
     get 'random_image' => "images#random"
 
+    get "submit" => 'static_pages#submit'
+
     resources :users do
       resources :favorite_videos
       resources :favorite_images
