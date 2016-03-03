@@ -12,8 +12,4 @@ class StaticPagesController < ApplicationController
 
 	def about
 	end
-
-	def submit
-		@types = Video.column_names()
-	end
 end

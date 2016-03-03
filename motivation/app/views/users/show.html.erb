@@ -3,3 +3,5 @@
 <%= link_to "Your favorite images", user_favorite_images_path(:favorite_images) %>
 <%= link_to "Your unmotivational videos", user_unmotivational_videos_path(:unmotivational_videos) %>
 <%= link_to "Your unmotivational images", user_unmotivational_images_path(:unmotivational_images) %>
+<%= current_user.admin %>
+<%= link_to "Submitted videos/images", user_submitted_motivations_path(:user_submitted_motivations) %>

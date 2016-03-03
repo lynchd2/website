@@ -28,8 +28,6 @@ Rails.application.routes.draw do
 
     get 'random_image' => "images#random"
 
-    get "submit" => 'static_pages#submit'
-
     resources :users do
       resources :favorite_videos
       resources :favorite_images
@@ -37,7 +35,9 @@ Rails.application.routes.draw do
       resources :unmotivational_images
     end
 
+    resources :user_submitted_motivations
 
+    get "submit" => 'user_submitted_motivations#new'
 
 
   # Example of regular route:
