@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160303000743) do
+ActiveRecord::Schema.define(version: 20160303231307) do
 
   create_table "favorite_images", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -65,7 +65,10 @@ ActiveRecord::Schema.define(version: 20160303000743) do
     t.string   "format"
     t.string   "url"
     t.string   "type_submitted"
+    t.integer  "user_id"
   end
+
+  add_index "user_submitted_motivations", ["user_id"], name: "index_user_submitted_motivations_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
