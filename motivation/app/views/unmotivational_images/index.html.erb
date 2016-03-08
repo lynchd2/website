@@ -1,0 +1,6 @@
+<% num = 1 %>
+<% @all_unmotivational_images.each do |image| %>
+	<%= num %>. <%= link_to image.image_id, user_unmotivational_image_path(image.user_id, image.image_id)%>
+	<% num +=1 %>
+	</br>
+<% end %>

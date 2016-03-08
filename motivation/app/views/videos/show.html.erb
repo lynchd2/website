@@ -17,16 +17,24 @@
 				<%= f.submit "Unmotivational", class: "general-button unmotivational" %>
 			<% end %>
 		<% else %>
-			<%= button_to "Make Favorite", new_user_path, method: :get, class: "general-button favorite", params: {favorite_sign_in: true} %>
-			<%= button_to "Unmotivational", new_user_path, method: :get, class: "general-button unmotivational", params: {unmotivational_sign_in: true} %>
+			 <%= button_to new_user_path, method: :get, class: "general-button favorite", params: {favorite_sign_in: true} do %>
+			 		<span class= "glyphicon glyphicon-heart"> Make Favorite</span> 
+			 	<% end %>
+			<%= button_to  new_user_path, method: :get, class: "general-button unmotivational", params: {unmotivational_sign_in: true} do %>
+					<span class="glyphicon glyphicon-thumbs-down"> Unmotivational</span>
+				<% end %>
 		<% end %>
 	</div>
 </aside>
 	<div class= "video-show-navigation-buttons">
-		<%= button_to "Back to the video categories", video_categories_path, method: :get, class: "general-button before-navigation" %>
+		<%= button_to video_categories_path, method: :get, class: "general-button before-navigation" do %>
+				<span class="glyphicon glyphicon-arrow-left"></span> Back to Videos 
+			<% end %>
 	</div>
 	<div class= "video-show-navigation-buttons">
-		<%= button_to "Give me more motivation" , video_path, method: :get, class: "general-button before-navigation", params: {type: @type} %>
+		<%= button_to video_path, method: :get, class: "general-button before-navigation video-width-increase", params: {type: @type} do %>
+				Give Me More Motivation <span class="glyphicon glyphicon-arrow-right"></span> 
+			<% end %>
 	</div>
 
 

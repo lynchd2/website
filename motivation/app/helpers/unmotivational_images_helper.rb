@@ -1,0 +1,2 @@
+module UnmotivationalImagesHelper
+end

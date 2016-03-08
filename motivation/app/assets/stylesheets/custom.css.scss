@@ -28,9 +28,16 @@
 	padding: 22px 50px;
 	display: inline-block;
 	margin: 15px 30px;
-	letter-spacing: 1px;
+	letter-spacing: 1.5px;
 	font-weight: 700;
 	outline: none;
+		&.video-width-increase {
+			width:370px;
+		}
+		&.random-width-increase {
+			width:435px;
+			margin-left:-30px;
+		}
 
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
@@ -48,14 +55,7 @@
 	
 }
 
-.general-button:after {
-	content: '';
-	position: absolute;
-	z-index: -1;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-}
+
 
  .videos-images-button {
 	color: black;
@@ -163,12 +163,13 @@
 
 .video-show-navigation-buttons {
 	display:inline-block;
-	width:420px;
+	width:400px;
 	overflow:none;
+
 }
 
 .container-image-show-buttons {
-	width:895px;
+	width:950px;
 	float:left;
 	clear:both;
 	display : block;
@@ -405,11 +406,13 @@ iframe {
 }
 
  .image-motivate-information-container {
- 	background-color:grey;
- 	height:300px;
- 	width:300px;
+ 	background-color:white;
  	float:right;
- 	margin-right:100px;
+ 	height:250px;
+ 	width:400px;
+ 	margin:10px;
+ 	margin-right:20px;
+
  }
 
 .container-image-and-information {
@@ -426,7 +429,6 @@ iframe {
 h1.sign-up {
     text-align: center;
     margin-top:-3%;
-    word-spacing:50px;
     margin-right:5%;
     margin-bottom:10%;
 }
@@ -525,4 +527,23 @@ h1.sign-up {
 	color: green;
 	background: #fff;
 	border-color:white;
+}
+
+/***********************
+ Buttons with Glyphicon
+***********************/
+
+span.glyphicon.glyphicon-thumbs-down {
+	font-size:15px;
+	font-weight:10px;
+}
+
+glyphicon.glyphicon-arrow-left {
+	margin-top:100px;
+	position:absolute;
+
+}
+
+span.glyphicon.glyphicon-heart {
+	word-spacing:-10px;
 }

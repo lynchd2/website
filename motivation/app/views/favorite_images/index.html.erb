@@ -1,0 +1,9 @@
+<h2> Images </h2>
+<% i = 1 %>
+<% @favorite_images.each do |favorite| %>
+	<%= i %>. <%= link_to "Image #{i}", user_favorite_image_path(favorite.user_id, favorite.image_id) %>
+	</br>
+	<% i += 1 %>
+<% end %>
+
+<%= @empty %>

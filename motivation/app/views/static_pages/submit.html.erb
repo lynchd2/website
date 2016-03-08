@@ -1,0 +1,22 @@
+<div class="submit-container">
+
+	<%= form_for :UserSubmittedMotivation do |f| %>
+	<%= f.label "Type of motivator:" %>
+	<%= f.select(:format, options_for_select([:Image, :Video])) %>
+	</br>
+	<%= f.label "Enter the URL:" %>
+	<%= f.text_field(:url) %>
+	</br>
+	<%= f.label "Type of motivator" %>
+	<% @collection =  [] %>
+	<% @types.each do |type| %>
+		<% @collection << type.split(/(?=[A-Z])/).join(" ") %>
+	<% end  %>
+	<%= f.select(:type, options_for_select(@collection)) %>
+	<%= @types %>
+	</br>
+	<%= f.submit "Submit" %>
+
+	<% end %>
+
+</div>
