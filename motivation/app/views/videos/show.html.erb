@@ -1,4 +1,4 @@
-<h2 class= "video_title"><%= @videos%></h2>
+<h2 class= "video_title"><%= @video_info.title%></h2>
 <div class="iframe"><iframe width="800" height="500" src="https://www.youtube.com/embed/<%= @video.url%>" frameborder="0" allowfullscreen></iframe></div>
 
 <aside>
@@ -8,7 +8,8 @@
 				<%= f.hidden_field :video_id, value: @video.id %>
 				<%= f.hidden_field :url, value: @video.url %>
 				<%= f.hidden_field :user_id, value: @user.id %>
-				<%= f.submit "Make Favorite", class: "general-button favorite" %>
+				<%= f.submit "Favorite", class: "general-button favorite" %>
+			 		 
 			<% end %>
 			<%= form_for([@user, @unmotivational_video]) do |f| %>
 				<%= f.hidden_field :video_id, value: @video.id %>

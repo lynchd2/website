@@ -18,7 +18,11 @@ class ImagesController < ApplicationController
 	end
 
 	def random
-		@user = current_user if current_user
+		if current_user
+			@user = current_user 
+			@favorite = @user.favorite_images.build()
+			@unmotivational_image = @user.unmotivational_images.build()
+		end
 		@random_image =  Image.find_random_image
 		@random = rand(0..1)
 		@path = ""
@@ -27,6 +31,5 @@ class ImagesController < ApplicationController
 		else
 			@path = random_image_path
 		end
-		@favorite = @user.favorite_images.build() if current_user
 	end
 end

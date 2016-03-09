@@ -10,7 +10,7 @@ class VideosController < ApplicationController
 		else
 			@video = Video.find_random_video_with_type(params[:type])
 		end
-		@videos = VideoInfo.new("https://www.youtube.com/watch?v=#{@video.url}")
+		@video_info = VideoInfo.new("https://www.youtube.com/watch?v=#{@video.url}")
 		@type = params[:type]
 	end
 
@@ -25,6 +25,7 @@ class VideosController < ApplicationController
 			@favorite = @user.favorite_videos.build()
 		end
 		@random_video = Video.find_random_video
+		@video_info = VideoInfo.new("https://www.youtube.com/watch?v=#{@random_video.url}")
 		@random = rand(0..1)
 		@path = ""
 		if @random == 0

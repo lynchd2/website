@@ -1,6 +1,8 @@
 class Image < ActiveRecord::Base
+
 	has_many :favorite_images
 	has_many :users, through: :favorite_images
+	has_many :unmotivational_images
 
 	def self.find_random_image_with_type_and_unmotivational(param_type, unmotivational_images)
 		image = Image.where("type = ?", param_type)
