@@ -395,14 +395,15 @@ iframe {
 .image-display {
     max-width:600px;
     max-height:600px;
-    margin-left:50px;
+    &.random-image {
+    	margin-left:-60px;
+    }
 }
 
 .container-image {
     display : block;
     margin : auto;
     text-align:center;
-
 }
 
  .image-motivate-information-container {

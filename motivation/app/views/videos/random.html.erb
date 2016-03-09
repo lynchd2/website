@@ -8,14 +8,18 @@
 				<%= f.hidden_field :video_id, value: @random_video.id %>
 				<%= f.hidden_field :url, value: @random_video.url %>
 				<%= f.hidden_field :user_id, value: @user.id %>
-				<%= f.submit "Make Favorite", class: "general-button favorite" %>
-			<% end %>
+				<%= f.button "Make Favorite", class: "general-button favorite" do %>
+			 		<span class= "glyphicon glyphicon-heart"></span> Make Favorite
+			 		<% end %>
+				<% end %>
 			<%= form_for([@user, @unmotivational_video]) do |f| %>
 				<%= f.hidden_field :image_id, value: @random_video.id %>
 				<%= f.hidden_field :user_id, value: @user.id %>
 				<%= f.hidden_field :url, value: @random_video.url %>
-			<%= f.submit "Unmotivational", class: "general-button" %>
-			<% end %>
+			<%= f.button "Unmotivational", class: "general-button" do %>
+					<span class="glyphicon glyphicon-thumbs-down"> Unmotivational</span>
+					<% end %>
+				<% end %>
 		<% else %>
 			<%= button_to new_user_path, method: :get, class: "general-button favorite", params: {favorite_sign_in: true} do %>
 			 		<span class= "glyphicon glyphicon-heart"></span> Make Favorite

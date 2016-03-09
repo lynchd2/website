@@ -1,5 +1,5 @@
 <div class="container-image">
-	<%= image_tag(@random_image.url, class: "image-display") %>
+	<%= image_tag(@random_image.url, class: "image-display random-image") %>
 	
 	<aside class="image-motivate-information-container">
 			<% if @user %>
@@ -7,13 +7,17 @@
 					<%= f.hidden_field :image_id, value: @random_image.id %>
 					<%= f.hidden_field :url, value: @random_image.url %>
 					<%= f.hidden_field :user_id, value: @user.id %>
-					<%= f.submit "Make Favorite", class: "general-button favorite" %>
+					<%= f.button "Make Favorite", class: "general-button favorite" do %>
+			 		<span class= "glyphicon glyphicon-heart"></span> Make Favorite
+			 	<% end %>
 				<% end %>
 				<%= form_for([@user, @unmotivational_image]) do |f| %>
 					<%= f.hidden_field :image_id, value: @random_image.id %>
 					<%= f.hidden_field :user_id, value: @user.id %>
 					<%= f.hidden_field :url, value: @random_image.url %>
-				<%= f.submit "Unmotivational", class: "general-button" %>
+				<%= f.button "Unmotivational", class: "general-button unmotivational" do %>
+					<span class="glyphicon glyphicon-thumbs-down"> Unmotivational</span>
+					<% end %>
 				<% end %>
 			<% else %>
 				<%= button_to new_user_path, method: :get, class: "general-button favorite", params: {favorite_sign_in: true} do %>
