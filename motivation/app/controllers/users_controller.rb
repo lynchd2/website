@@ -21,7 +21,9 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @favorites = FavoriteVideo.where(user_id: @user.id)
+    @favorite_video = FavoriteVideo.display_random_favorite_video(@user)
+    @favorite_image = FavoriteImage.display_random_favorite_image(@user)
+    @size = FastImage.size(@favorite_image)
   end
 
   private

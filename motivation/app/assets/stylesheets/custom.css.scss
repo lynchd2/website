@@ -536,9 +536,34 @@ h1.sign-up {
 
 h3.text-info.thumbnail-title {
 	color:red;
+	text-align:center;
+	text-decoration:none;
+	&.left {
+		float:left;
+		margin-left:200px;
+
+	}
+	&.right {
+		float:right;
+		margin-right:200px;
+	}
 }
 
+.user-video-resize {
 
+}
+.user-image-resize {
+	max-width:360px;
+	max-height:360px;
+}
+.center {
+		display:block;
+		margin:0 auto;
+	}
+
+.thumbnail {
+	color:red;
+}
 /***********************
  Buttons with Glyphicon
 ***********************/

@@ -4,7 +4,7 @@ class ImagesController < ApplicationController
 			@unmotivational_images = UnmotivationalImage.find_unmotivational_image_ids(current_user.id)
 			@image = Image.find_random_image_with_type_and_unmotivational(params[:type], @unmotivational_images)
 			@user = current_user
-			@favorite = @user.favorite_videos.build()
+			@favorite = @user.favorite_images.build()
 			@unmotivational_image = @user.unmotivational_images.build()
 		
 		else
