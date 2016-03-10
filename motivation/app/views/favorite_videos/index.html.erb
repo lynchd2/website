@@ -1,7 +1,13 @@
-<h2> Videos </h2>
-<% i = 1 %>
-<% @favorite_videos.each do |favorite| %>
-	<%= i %>. <%= link_to "Video #{i}", user_favorite_video_path(favorite.user_id, favorite.video_id) %>
-	</br>
-	<% i += 1 %>
-<% end %>
+<h2 class="text-center"> Videos </h2>	
+<div class="row">
+	<% @favorite_videos.each do |favorite| %>
+  		<div class="col-xs-6 col-md-3">
+    		<%= link_to image_tag(favorite[1]), user_favorite_video_path(favorite[0].user_id, favorite[0].video_id), class: "thumbnail" %>
+    		<div class="caption">
+    			<%= button_to "Favorite", class: "general-button btn-danger center " do %>
+			 		<span class= "glyphicon glyphicon-trash "></span> 
+			 	<% end %>
+  		</div>
+	<% end %>
+</div>
+

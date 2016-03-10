@@ -1,20 +1,21 @@
 <h1>Hello, <%= current_user.email %></h1>
+<%= current_user.admin %>
+<%= link_to "Submitted videos/images", user_submitted_motivations_path(:user_submitted_motivations) %>
 <h3 class="text-info thumbnail-title left">Your Favorite Videos</h3>
 <h3 class="text-info thumbnail-title right">Your Favorite Images</h3>
 
 <div class="row container-fluid">
   <div class="col-xs-6 col-md-6">
     <%= link_to image_tag(@favorite_video), user_favorite_videos_path(:favorite_videos),  class: "thumbnail user-video-resize center" %>
+</br>
+    <%= link_to "Your unmotivational videos", user_unmotivational_videos_path(:unmotivational_videos), class: "text-center" %>
       
   </div>
   <div class="col-xs-6 col-md-6  ">
   	<%= link_to image_tag(@favorite_image, class: "user-image-resize center"), user_favorite_images_path(:favorite_images), class: "thumbnail" %>
+  	<%= link_to "Your unmotivational images", user_unmotivational_images_path(:unmotivational_images), class: "text-center" %>
   </div>
 </div>
 
-<%= link_to "Your unmotivational videos", user_unmotivational_videos_path(:unmotivational_videos) %>
-<%= link_to "Your unmotivational images", user_unmotivational_images_path(:unmotivational_images) %>
-<%= current_user.admin %>
-<%= link_to "Submitted videos/images", user_submitted_motivations_path(:user_submitted_motivations) %>
-</br>
-<%= @favorites %>
+
+

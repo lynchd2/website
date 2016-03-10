@@ -22,7 +22,9 @@ class FavoriteVideosController < ApplicationController
 	end
 
 	def index
-		@favorite_videos = current_user.favorite_videos.where(user_id: current_user.id)
+		@user = current_user
+		@videos = current_user.favorite_videos.where(user_id: current_user.id)
+		@favorite_videos = FavoriteVideo.display_all_favorite_videos(@user)
 	end
 
 	def show
