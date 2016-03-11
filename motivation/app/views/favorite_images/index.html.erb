@@ -1,9 +1,14 @@
-<h2> Images </h2>
-<% i = 1 %>
-<% @favorite_images.each do |favorite| %>
-	<%= i %>. <%= link_to "Image #{i}", user_favorite_image_path(favorite.user_id, favorite.image_id) %>
-	</br>
-	<% i += 1 %>
-<% end %>
+<h2 class="text-center"> Images </h2>	
+<div class="row">
+	<% @favorite_images.each do |favorite| %>
+  		<div class="col-xs-6 col-md-3">
+  			<div class="images-index-resize">
+    		<%= link_to image_tag(favorite.url), user_favorite_image_path(favorite.user_id, favorite.image_id), class: "thumbnail" %>
+    		</div>
+    		<div class="caption danger-favorites">
+          <%= link_to raw("<span class= 'glyphicon glyphicon-trash'></span>"), {action: "destroy", controller: "favorite_images", id: favorite.id, user_id: favorite.user_id}, method: :delete, data:{confirm: "Are you sure you want to delete that image off of your favorites list?"}, class: "general-button alter btn-danger" %>
+    		</div>
+  		</div>
+	<% end %>
+</div>
 
-<%= @empty %>

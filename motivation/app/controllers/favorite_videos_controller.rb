@@ -33,6 +33,12 @@ class FavoriteVideosController < ApplicationController
 		@favorite = @user.favorite_videos.build()
 	end
 
+	def destroy
+		FavoriteVideo.find_by(id: params[:id]).destroy
+		flash[:notice] = "Favorite Video deleted!"
+		redirect_to user_favorite_videos_path
+	end
+
 	private
 
 	def favorite_videos_params

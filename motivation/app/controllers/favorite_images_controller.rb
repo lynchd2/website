@@ -23,13 +23,18 @@ class FavoriteImagesController < ApplicationController
 
 	def index
 		@favorite_images = current_user.favorite_images.where(user_id: current_user.id)
-		@empty = current_user
 	end
 
 	def show
 		@user = current_user
 		@favorite_image = FavoriteImage.find_by(user_id: params[:user_id], image_id: params[:id])
 		@favorite = @user.favorite_images.build()
+	end
+
+	def destroy
+		FavoriteImage.find_by(id: params[:id]).destroy
+		flash[:notice] = "Favorite Image deleted!" 
+		redirect_to user_favorite_images_path
 	end
 
 	private

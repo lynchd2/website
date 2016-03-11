@@ -5,7 +5,7 @@ class UnmotivationalVideosController < ApplicationController
   end
 
   def index
-  	@all_unmotivational_videos = UnmotivationalVideo.where(user_id: current_user.id)
+  	@unmotivational_videos = UnmotivationalVideo.where(user_id: current_user.id).paginate(page: 5, per_page:2)
   end
 
   def create

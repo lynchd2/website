@@ -1,6 +1,10 @@
+<%= will_paginate %>
+
 <% num = 1 %>
-<% @all_unmotivational_videos.each do |video| %>
+<%= @unmotivational_videos.each do |video| %>
 	<%= num %>. <%= link_to video.video_id, user_unmotivational_video_path(video.user_id, video.id)%>
 	<% num +=1 %>
 	</br>
 <% end %>
+
+<%= will_paginate %>

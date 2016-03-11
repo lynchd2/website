@@ -9,7 +9,7 @@ class FavoriteVideo < ActiveRecord::Base
 
 	def self.display_all_favorite_videos(user)
 		videos = FavoriteVideo.where(user_id: user.id)
-		x = videos.map do |video|
+		videos.map do |video|
 			[video, VideoInfo.new("https://www.youtube.com/watch?v=#{video.url}").thumbnail_large]
 		end
 	end

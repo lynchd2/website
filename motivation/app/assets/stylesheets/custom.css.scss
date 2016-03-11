@@ -39,6 +39,11 @@
 			margin-left:-30px;
 		}
 
+		&.alter {
+			margin-left:88px;
+			margin-top:-15px;
+		}
+
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
@@ -200,7 +205,7 @@
 .navbar-text {
 	padding:16px;
 	margin:0 auto;
-	font-family: "Arial Black", Times New Roman;
+	font-family: 'PT Serif', serif;
 	font-weight:bold;
 	font-size:20px;
 	a:link {
@@ -560,17 +565,37 @@ h3.text-info.thumbnail-title {
 		display:block;
 		margin:0 auto;
 	}
+.button-center {
+	width:120px;
+	height:20px;
+}
 
 
 /***********************
- 		User Video Page
+    User Video Page
 ***********************/
 
 .text-center {
 	text-align:center;
 	display:block;
 	margin:0 auto;
+	font-family: 'PT Serif', serif;
 }
+
+.danger-favorites {
+	margin-top:-15px;
+	margin-bottom:35px;
+}
+
+.caption {
+	margin-bottom:20px;
+}
+
+/***********************
+    User Image Page
+***********************/
+
+
 
 /***********************
  Buttons with Glyphicon
