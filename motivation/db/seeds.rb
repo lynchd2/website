@@ -11,7 +11,9 @@ User.find_or_create_by(email: "lynchd2@tcnj.edu", password_digest: "foobar", adm
 images = [["WeightliftingImage", "https://s-media-cache-ak0.pinimg.com/564x/6a/f8/0f/6af80f163598dad3f79a980976cbb40b.jpg"],
 		  ["RunningImage", "https://s-media-cache-ak0.pinimg.com/236x/b9/cc/41/b9cc41fd78a441304af65cbbf8bdc633.jpg"],
 			["RunningImage", "https://runninginheelssa.files.wordpress.com/2013/01/556606_466614426692153_645486246_n.jpg"],
-			["WeightliftingImage", "http://40.media.tumblr.com/f45e15ec6d56744ee45c48fb461a502a/tumblr_npqiwjx1fp1u9l8ppo1_500.jpg"]]
+			["WeightliftingImage", "http://40.media.tumblr.com/f45e15ec6d56744ee45c48fb461a502a/tumblr_npqiwjx1fp1u9l8ppo1_500.jpg"],
+			["RunningImage", "http://cdn-media-1.lifehack.org/wp-content/files/2014/07/Long_Distance_Running.jpg"],
+			["RunningImage", "http://1.bp.blogspot.com/-_ZB40aIPY-A/UxdMtXi_nSI/AAAAAAAAARg/5nSYCq8J320/s1600/if+you+wait.jpg"]]
 
 videos = [["RunningVideo", "5CQbTBwLU3U"], ["RunningVideo", "gF0rrpMH-Jo"], 
 		 ["RunningVideo", "yLGfPNhtS2U"], ["WeightliftingVideo", "dImoa__F4Bc"], 

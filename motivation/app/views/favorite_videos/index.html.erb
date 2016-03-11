@@ -2,10 +2,13 @@
 <div class="row">
 	<% @favorite_videos.each do |favorite| %>
   		<div class="col-xs-6 col-md-3">
-    		<%= link_to image_tag(favorite[1]), user_favorite_video_path(favorite[0].user_id, favorite[0].video_id), class: "thumbnail" %>
+  			<div class="thumbnail">
+  			<span class="video-title"><%= video_title(favorite[0]) %></span>
+    		<%= link_to image_tag(favorite[1]), user_favorite_video_path(favorite[0].user_id, favorite[0].video_id) %>
     		<div class="caption">
-			<%= link_to raw("<span class= 'glyphicon glyphicon-trash'></span>"), {action: "destroy", controller: "favorite_videos", id: favorite[0].id, user_id: favorite[0].user_id}, method: :delete, data:{confirm: "Are you sure you want to delete that video off of your favorites list?"}, class: "general-button alter btn-danger" %>
+			<%= link_to raw("<span class= 'glyphicon glyphicon-trash'></span>"), {action: "destroy", controller: "favorite_videos", id: favorite[0].id, user_id: favorite[0].user_id}, method: :delete, data:{confirm: "Are you sure you want to delete that video off of your favorites list?"}, class: "general-button alter-video btn-danger" %>
     		</div>
+    	</div>
   		</div>
 	<% end %>
 </div>
