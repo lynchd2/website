@@ -12,6 +12,8 @@ class VideosController < ApplicationController
 		end
 		@video_info = VideoInfo.new("https://www.youtube.com/watch?v=#{@video.url}")
 		@type = params[:type]
+		@video_count = @video.users.count
+		@unmotivational_count = UnmotivationalVideo.where(video_id: @video.id).count
 	end
 
 	def categories
@@ -28,11 +30,12 @@ class VideosController < ApplicationController
 		@video_info = VideoInfo.new("https://www.youtube.com/watch?v=#{@random_video.url}")
 		@random = rand(0..1)
 		@path = ""
+		@video_count = @random_video.users.count
+		@unmotivational_count = UnmotivationalVideo.where(video_id: @random_video.id).count
 		if @random == 0
 			@path = random_video_path
 		else
 			@path = random_image_path
 		end
-		
 	end
 end

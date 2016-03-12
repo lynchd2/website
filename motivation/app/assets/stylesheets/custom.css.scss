@@ -58,12 +58,13 @@
 
 
  .videos-button {
-	color: black;
 	&.blue-text {
-		color:#0e83cd;
+		color:#6666ff;
 	}
 }
-
+.videos-images-button {
+	color:#6666ff;
+}
 .videos-images-button:hover,
 .videos-images-button:active {
 	color: black;
@@ -229,7 +230,7 @@
 .header-text-right {
 	float:right;
 	div:hover {
-		background-color:#009933;
+		background-color:#009900;
 		transition:all 1000ms ease;
 		color:white;
 		padding:16px;
@@ -240,7 +241,7 @@
 .header-text-left {
 	float:left;
 	div:hover {
-		background-color:#000066;
+		background-color:#0052cc;
 		transition:all 1000ms ease;
 		color:white;
 		padding:16px;
@@ -373,6 +374,10 @@ iframe {
 	text-align:center;
 }
 
+.total-favorites-text-videos {
+	margin-left:60px;
+}
+
 /*********************
  Favorite Videos page
 *********************/
@@ -416,14 +421,28 @@ iframe {
 
  }
 
-.container-image-and-information {
+.total-favorites {
+	color:red;
 }
 
+.total-favorites-text {
+	margin-right:165px;
+	font-family:'PT serif', serif;
+}
+
+.make-unmotivational-button {
+	margin-top:-50px;
+}
+
+.total-unmotivational-text {
+	margin-right:180px;
+	font-family: 'PT serif', serif;
+}
 /***********************
   Log-in/Sign-in page
 ***********************/
 .form-horizontal {
-	margin-top:50px;
+	margin-top:20px;
 
 }
 
@@ -572,9 +591,8 @@ h3.text-info.thumbnail-title {
 ***********************/
 
 .text-center {
-	text-align:center;
 	display:block;
-	margin:0 auto;
+	text-align:center;
 	font-family: 'PT Serif', serif;
 }
 

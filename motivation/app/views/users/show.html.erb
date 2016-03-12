@@ -1,7 +1,8 @@
 <h1 class="text-center">Welcome, <%= current_user.email %></h1>
 <% if current_user.admin %>
-	<%= link_to "Submitted videos/images", user_submitted_motivations_path(:user_submitted_motivations), class:"text-center" %>
-<% end %><h3 class="text-info thumbnail-title left">Your Favorite Videos</h3>
+	<%= link_to "Submitted videos/images", user_submitted_motivations_path(:user_submitted_motivations), class: "text-center" %>
+<% end %>
+<h3 class="text-info thumbnail-title left">Your Favorite Videos</h3>
 <h3 class="text-info thumbnail-title right">Your Favorite Images</h3>
 
 <div class="row container-fluid">

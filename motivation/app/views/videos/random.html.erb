@@ -12,6 +12,8 @@
 			 		<span class= "glyphicon glyphicon-heart"></span> Make Favorite
 			 		<% end %>
 				<% end %>
+				<h4 class="total-favorites-text-videos"><span class= "glyphicon glyphicon-heart total-favorites"></span>: <%= @video_count %></h4>
+				<div class="make-unmotivational-button">
 			<%= form_for([@user, @unmotivational_video]) do |f| %>
 				<%= f.hidden_field :image_id, value: @random_video.id %>
 				<%= f.hidden_field :user_id, value: @user.id %>
@@ -20,6 +22,8 @@
 					<span class="glyphicon glyphicon-thumbs-down"> Unmotivational</span>
 					<% end %>
 				<% end %>
+			</div>
+		<h4 class="total-favorites-text-videos"><span class="glyphicon glyphicon-thumbs-down"></span>: <%= @unmotivational_count %> </h4>
 		<% else %>
 			<%= button_to new_user_path, method: :get, class: "general-button favorite", params: {favorite_sign_in: true} do %>
 			 		<span class= "glyphicon glyphicon-heart"></span> Make Favorite
