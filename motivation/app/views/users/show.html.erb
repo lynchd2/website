@@ -8,13 +8,17 @@
 <div class="row container-fluid">
   <div class="col-xs-6 col-md-6">
     <%= link_to image_tag(@favorite_video), user_favorite_videos_path(:favorite_videos),  class: "thumbnail user-video-resize center" if @favorite_video %>
-    <h1 class= "thumbnail user-video-resize center text-primary text-center">You have no favorite videos yet!</h1>
+    <% if !@favorite_video %>
+    	<h1 class= "thumbnail user-video-resize center text-primary text-center">You have no favorite videos yet!</h1> 
+    <% end %>
 </br>
     <%= link_to "Your unmotivational videos", user_unmotivational_videos_path(:unmotivational_videos), class: "text-center" %>
    </div>
   <div class="col-xs-6 col-md-6  ">
   	<%= link_to image_tag(@favorite_image, class: "user-image-resize center"), user_favorite_images_path(:favorite_images), class: "thumbnail" if @favorite_image %>
-  	<h1 class= "thumbnail user-video-resize center text-primary text-center">You have no favorite images yet!</h1>
+  	<% if !@favorite_image %>
+  		<h1 class= "thumbnail user-video-resize center text-primary text-center">You have no favorite images yet!</h1>
+  	<% end %>
   	</br>
   	<%= link_to "Your unmotivational images", user_unmotivational_images_path(:unmotivational_images), class: "text-center" %>
   </div>
