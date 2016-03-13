@@ -4,7 +4,11 @@ class FavoriteVideo < ActiveRecord::Base
 
 	def self.display_random_favorite_video(user)
 		video = FavoriteVideo.where(user_id: user.id).order("RANDOM()").first(1)[0]
-		video_thumbnail = VideoInfo.new("https://www.youtube.com/watch?v=#{video.url}").thumbnail_large
+			if video
+				video_thumbnail = VideoInfo.new("https://www.youtube.com/watch?v=#{video.url}").thumbnail_large
+			else
+				nil
+			end
 	end
 
 	def self.display_all_favorite_videos(user)

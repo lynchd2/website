@@ -4,6 +4,7 @@ class FavoriteImage < ActiveRecord::Base
 
 
 	def self.display_random_favorite_image(user)
-		image = FavoriteImage.where(user_id: user.id).order("RANDOM()").first(1)[0].url
+		image = FavoriteImage.where(user_id: user.id).order("RANDOM()").first(1)[0]
+		image ? image.url : nil
 	end
 end
