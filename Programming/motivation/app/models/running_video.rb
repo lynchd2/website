@@ -1,2 +1,0 @@
-class RunningVideo < Video
-end
