@@ -1,3 +1,4 @@
+<% if @image %>
 	<div class="container-image">
 		<%= image_tag(@image.url, class: "image-display") %>
 	
@@ -34,14 +35,17 @@
 					<% end %>
 					<h4 class="total-unmotivational-text"><span class="glyphicon glyphicon-thumbs-down"></span>: <%= @unmotivational_count %> </h4>
 				</div>
-		<% end %>
-	</aside>
+			<% end %>
+		</aside>
 	</div>
 <div class= "container-image-show-buttons">
-		<%= button_to image_categories_path, method: :get, class: "general-button before-navigation left" do %>
+	<%= button_to image_categories_path, method: :get, class: "general-button before-navigation left" do %>
 				<span class="glyphicon glyphicon-arrow-left"></span> Back to Images 
-			<% end %>
-		<%= button_to image_path, method: :get, class: "general-button before-navigation right", params: {type: @type}  do %>
+		<% end %>
+	<%= button_to image_path, method: :get, class: "general-button before-navigation right", params: {type: @type}  do %>
 				Give Me More Motivation <span class="glyphicon glyphicon-arrow-right"></span> 
-			<% end %>
-</div>
+		<% end %>
+	</div>
+<% else %>
+	<%= render partial: "shared/image_error" %>
+<% end %>

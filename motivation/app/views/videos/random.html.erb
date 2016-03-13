@@ -1,16 +1,17 @@
-<h2 class= "video_title text-center"><%= @video_info.title%></h2>
-<div class="iframe"><iframe width="800" height="500" src="https://www.youtube.com/embed/<%= @random_video.url%>" frameborder="0" allowfullscreen></iframe></div>
+<% if @random_video %>
+	<h2 class= "video_title text-center"><%= @video_info.title%></h2>
+	<div class="iframe"><iframe width="800" height="500" src="https://www.youtube.com/embed/<%= @random_video.url%>" frameborder="0" allowfullscreen></iframe></div>
 
-<aside>
-<div class="video-motivate-information-container">
-	<% if @user %>
-		<%= form_for([@user, @favorite]) do |f| %>
-			<%= f.hidden_field :video_id, value: @random_video.id %>
-			<%= f.hidden_field :url, value: @random_video.url %>
-			<%= f.hidden_field :user_id, value: @user.id %>
-			<%= f.button "Make Favorite", class: "general-button favorite" do %>
-		 		<span class= "glyphicon glyphicon-heart"></span> Make Favorite
-		 		<% end %>
+	<aside>
+	<div class="video-motivate-information-container">
+		<% if @user %>
+			<%= form_for([@user, @favorite]) do |f| %>
+				<%= f.hidden_field :video_id, value: @random_video.id %>
+				<%= f.hidden_field :url, value: @random_video.url %>
+				<%= f.hidden_field :user_id, value: @user.id %>
+				<%= f.button "Make Favorite", class: "general-button favorite" do %>
+			 		<span class= "glyphicon glyphicon-heart"></span> Make Favorite
+			 	<% end %>
 			<% end %>
 			<h4 class="total-favorites-text-videos"><span class= "glyphicon glyphicon-heart total-favorites"></span>: <%= @video_count %></h4>
 			<div class="make-unmotivational-button">
@@ -48,3 +49,6 @@
 				Give Me More Random Motivation <span class="glyphicon glyphicon-arrow-right"></span> 
 			<% end %>
 	</div>
+<% else %>
+	<%= render partial: "shared/video_error" %>
+<% end %>

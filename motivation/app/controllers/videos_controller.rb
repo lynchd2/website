@@ -10,10 +10,13 @@ class VideosController < ApplicationController
 		else
 			@video = Video.find_random_video_with_type(params[:type])
 		end
-		@video_info = VideoInfo.new("https://www.youtube.com/watch?v=#{@video.url}")
+		if @video
+			@video_info = VideoInfo.new("https://www.youtube.com/watch?v=#{@video.url}") 
+			@video_count = @video.users.count
+			@unmotivational_count = UnmotivationalVideo.where(video_id: @video.id).count
+		end
 		@type = params[:type]
-		@video_count = @video.users.count
-		@unmotivational_count = UnmotivationalVideo.where(video_id: @video.id).count
+		@error_type = params[:type].split("V")[0].downcase
 	end
 
 	def categories
@@ -28,14 +31,15 @@ class VideosController < ApplicationController
 		end
 		@random_video = Video.find_random_video
 		@video_info = VideoInfo.new("https://www.youtube.com/watch?v=#{@random_video.url}")
-		@random = rand(0..1)
-		@path = ""
 		@video_count = @random_video.users.count
 		@unmotivational_count = UnmotivationalVideo.where(video_id: @random_video.id).count
+		@random = rand(0..1)
+		@path = ""
 		if @random == 0
 			@path = random_video_path
 		else
 			@path = random_image_path
 		end
+		@error_type = "every category"
 	end
 end

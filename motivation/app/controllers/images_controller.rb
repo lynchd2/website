@@ -6,17 +6,15 @@ class ImagesController < ApplicationController
 			@user = current_user
 			@favorite = @user.favorite_images.build()
 			@unmotivational_image = @user.unmotivational_images.build()
-			@image_count = @image.users.count
-			@unmotivational_count = UnmotivationalImage.where(image_id: @image.id).count
-		
 		else
 			@image = Image.find_random_image_with_type(params[:type])
+		end
+		if @image
 			@image_count = @image.users.count
 			@unmotivational_count = UnmotivationalImage.where(image_id: @image.id).count
 		end
 		@type = params[:type]
-		@image_count = @image.users.count
-		@unmotivational_count = UnmotivationalImage.where(image_id: @image.id).count
+		@error_type = params[:type].split("V")[0].downcase
 	end
 
 	def categories
@@ -39,5 +37,6 @@ class ImagesController < ApplicationController
 		else
 			@path = random_image_path
 		end
+		@error_type = "every category"
 	end
 end
