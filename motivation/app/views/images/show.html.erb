@@ -22,14 +22,20 @@
 					<% end %>
 				<% end %>
 			</div>
+		<div class="make-unmotivational-button">
 			<h4 class="total-unmotivational-text"><span class="glyphicon glyphicon-thumbs-down"></span>: <%= @unmotivational_count %> </h4>
+		</div>
 			<% else %>
 				<%= button_to new_user_path, method: :get, class: "general-button favorite", params: {favorite_sign_in: true} do %>
 			 		<span class= "glyphicon glyphicon-heart"></span> Make Favorite
 			 	<% end %>
-				<%= button_to new_user_path, method: :get, class: "general-button unmotivational", params: {unmotivational_sign_in: true} do %>
-					<span class="glyphicon glyphicon-thumbs-down"> Unmotivational</span>
-				<% end %>
+				<h4 class="total-favorites-text"><span class= "glyphicon glyphicon-heart total-favorites"></span>: <%= @image_count %></h4>
+				<div class="make-unmotivational-button">
+					<%= button_to new_user_path, method: :get, class: "general-button unmotivational", params: {unmotivational_sign_in: true} do %>
+						<span class="glyphicon glyphicon-thumbs-down"> Unmotivational</span>
+					<% end %>
+					<h4 class="total-unmotivational-text"><span class="glyphicon glyphicon-thumbs-down"></span>: <%= @unmotivational_count %> </h4>
+				</div>
 		<% end %>
 	</aside>
 	</div>

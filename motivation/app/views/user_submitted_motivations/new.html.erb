@@ -1,28 +1,31 @@
+<h2 class="submit-form-text">Found a video or image that motivated you? Submit it to us and we will add so that it can motivate others!</h2>
+
+
 <%= form_for @usm, html: {class: "form-horizontal center"} do |f| %>
 <div class="submit-container">
 <div class="container-fluid">
 	<div class="form-group row">
-			<%= f.label "Type of motivator:", class: "col-md-6" %>
+			<%= f.label "Type:", class: "col-md-6 submit-form-spacing" %>
 		<div class="col-md-6">
-			<%= f.select(:format, options_for_select([:Image, :Video]), {}, {class: "form-control"}) %>
+			<%= f.select(:format, options_for_select([:Image, :Video]), {}, {class: "form-control submit-form-spacing"}) %>
 		</div>
 	</div>
 	<div class="form-group row">
-			<%= f.label "Enter the URL:", class: "col-md-6" %>
+			<%= f.label "Enter the URL:", class: "col-md-6 submit-form-spacing" %>
 		<div class="col-md-6">
-			<%= f.text_field(:url, class: "form-control") %>
+			<%= f.text_field(:url, class: "form-control submit-form-spacing") %>
 		</div>
 	</div>
 	<div class="form-group row">
 		<div class="col-md-6">
-			<%= f.label "Category" %>
+			<%= f.label "Category", class: "submit-form-spacing" %>
 		</div>
 	<% @collection =  [] %>
 	<% @types.each do |type| %>
 		<% @collection << type.split(/(?=[A-Z])/)[0]%>
 	<% end  %>
 		<div class="col-md-6">
-	<%= f.select(:type_submitted, options_for_select(@collection.uniq), {}, {class: "form-control"}) %>
+	<%= f.select(:type_submitted, options_for_select(@collection.uniq), {}, {class: "form-control submit-form-spacing"}) %>
 		</div>
 	</div>
 	<%= f.submit "Submit", class: "btn btn-default sign-in" %>

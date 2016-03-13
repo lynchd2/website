@@ -17,7 +17,14 @@ images = [["WeightliftingImage", "https://s-media-cache-ak0.pinimg.com/564x/6a/f
 
 videos = [["RunningVideo", "5CQbTBwLU3U"], ["RunningVideo", "gF0rrpMH-Jo"], 
 		 ["RunningVideo", "yLGfPNhtS2U"], ["WeightliftingVideo", "dImoa__F4Bc"], 
-		 ["WeightliftingVideo", "ZpwEHIL_UZ4"]]
+		 ["WeightliftingVideo", "ZpwEHIL_UZ4"], ["RunningVideo", "FZk40J_drws"], ["RunningVideo", "BZMHM3GVeoU"],
+		["RunningVideo", "UsGR0mnAA74"],["RunningVideo", "RpvzpvD0vT4"], ["RunningVideo", "xf4eJgwrUyA"], ["RunningVideo", "8bz8ip2ptJQ"],
+		["RunningVideo", "khv3WXvs6hk"], ["RunningVideo","f6Vyrr4f-z8"], ["RunningVideo", "eQ7alNd1oRo"], ["RunningVideo", "EQplMkG6RNQ" ],
+		["RunningVideo", "JrzqJ8ZIPqs"], ["RunningVideo", "jRl0PjiPnyM"], ["RunningVideo","Ntb90t75vmk"], ["RunningVideo", "Bmp4qaNWgt0"],
+		["RunningVideo", "yOfkwA26hrY"], ["RunningVideo","Yx3rO2XL2fc" ], ["RunningVideo","zn6k3gXCszE" ],["RunningVideo","Hyy735BRang" ],
+		["RunningVideo","t8NHpcb-yW4" ], ["RunningVideo","vkjQxRXPLr8" ], ["RunningVideo","aufnocX5k4k" ],["RunningVideo","OF8ZdwpnTLQ" ],
+		["RunningVideo","6OnkOR1Bqx8" ], ["RunningVideo","O28Xf_BxLCI" ], ["RunningVideo","UT2BPCmJDkk" ],["RunningVideo","NElXjdsKVyY" ],
+		["RunningVideo","1uMFijSHSKg" ], ["RunningVideo","SXjZrfupKN4" ], ["RunningVideo","oauocB3p9lM" ],["RunningVideo","TttKk_9BwOA" ]]
 videos.each do |video|
 	Video.find_or_create_by(type: video[0], url: video[1])
 end

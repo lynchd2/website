@@ -329,15 +329,6 @@
 	border-color:white;
 }
 
-
-.submit-container {
-	text-align:center;
-	margin:auto;
-	margin-top:70px;
-	width:500px;
-	height:450px;
-	
-}
 /*********************
 	Videos page
 *********************/
@@ -431,11 +422,11 @@ iframe {
 }
 
 .make-unmotivational-button {
-	margin-top:-50px;
+	margin-top:-90px;
 }
 
 .total-unmotivational-text {
-	margin-right:180px;
+	margin-right:170px;
 	font-family: 'PT serif', serif;
 }
 /***********************
@@ -654,4 +645,28 @@ glyphicon.glyphicon-arrow-left {
 
 span.glyphicon.glyphicon-heart {
 	word-spacing:-10px;
+}
+
+
+/***********************
+ 	  Submit form
+***********************/
+
+.submit-form-spacing {
+	margin-bottom:50px;
+	font-family: 'PT Serif', serif;
+}
+
+.submit-container {
+	text-align:center;
+	margin:0 auto;
+	width:500px;
+	height:450px;
+	margin-top:50px;
+}
+
+.submit-form-text {
+	font-family: 'Indie Flower', cursive;
+	margin-top:30px;
+	text-align:center;
 }
