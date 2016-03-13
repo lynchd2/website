@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160303231307) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "favorite_images", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -21,8 +24,8 @@ ActiveRecord::Schema.define(version: 20160303231307) do
     t.string   "url"
   end
 
-  add_index "favorite_images", ["image_id"], name: "index_favorite_images_on_image_id"
-  add_index "favorite_images", ["user_id"], name: "index_favorite_images_on_user_id"
+  add_index "favorite_images", ["image_id"], name: "index_favorite_images_on_image_id", using: :btree
+  add_index "favorite_images", ["user_id"], name: "index_favorite_images_on_user_id", using: :btree
 
   create_table "favorite_videos", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -32,8 +35,8 @@ ActiveRecord::Schema.define(version: 20160303231307) do
     t.string   "url"
   end
 
-  add_index "favorite_videos", ["user_id"], name: "index_favorite_videos_on_user_id"
-  add_index "favorite_videos", ["video_id"], name: "index_favorite_videos_on_video_id"
+  add_index "favorite_videos", ["user_id"], name: "index_favorite_videos_on_user_id", using: :btree
+  add_index "favorite_videos", ["video_id"], name: "index_favorite_videos_on_video_id", using: :btree
 
   create_table "images", force: :cascade do |t|
     t.string   "url"
@@ -68,7 +71,7 @@ ActiveRecord::Schema.define(version: 20160303231307) do
     t.integer  "user_id"
   end
 
-  add_index "user_submitted_motivations", ["user_id"], name: "index_user_submitted_motivations_on_user_id"
+  add_index "user_submitted_motivations", ["user_id"], name: "index_user_submitted_motivations_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
@@ -86,4 +89,8 @@ ActiveRecord::Schema.define(version: 20160303231307) do
     t.integer  "rating",     default: 10
   end
 
+  add_foreign_key "favorite_images", "images"
+  add_foreign_key "favorite_images", "users"
+  add_foreign_key "favorite_videos", "users"
+  add_foreign_key "favorite_videos", "videos"
 end

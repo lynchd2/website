@@ -6,7 +6,6 @@ class VideosController < ApplicationController
 			@video = Video.find_random_video_with_type_and_unmotivational(params[:type], @unmotivational_videos)
 			@favorite = @user.favorite_videos.build()
 			@unmotivational_video = @user.unmotivational_videos.build()
-		
 		else
 			@video = Video.find_random_video_with_type(params[:type])
 		end
@@ -24,15 +23,17 @@ class VideosController < ApplicationController
 	end
 
 	def random
+		@random_video = Video.find_random_video
 		if current_user
 			@user = current_user 
 			@unmotivational_video = @user.unmotivational_videos.build()
 			@favorite = @user.favorite_videos.build()
 		end
-		@random_video = Video.find_random_video
-		@video_info = VideoInfo.new("https://www.youtube.com/watch?v=#{@random_video.url}")
-		@video_count = @random_video.users.count
-		@unmotivational_count = UnmotivationalVideo.where(video_id: @random_video.id).count
+		if @random_video
+			@video_info = VideoInfo.new("https://www.youtube.com/watch?v=#{@random_video.url}")
+			@video_count = @random_video.users.count
+			@unmotivational_count = UnmotivationalVideo.where(video_id: @random_video.id).count
+		end
 		@random = rand(0..1)
 		@path = ""
 		if @random == 0

@@ -1,47 +1,51 @@
-<div class="container-image">
-	<%= image_tag(@random_image.url, class: "image-display random-image") %>
-	
-	<aside class="image-motivate-information-container">
-			<% if @user %>
-				<%= form_for([@user, @favorite]) do |f| %>
-					<%= f.hidden_field :image_id, value: @random_image.id %>
-					<%= f.hidden_field :url, value: @random_image.url %>
-					<%= f.hidden_field :user_id, value: @user.id %>
-					<%= f.button "Make Favorite", class: "general-button favorite" do %>
-			 		<span class= "glyphicon glyphicon-heart"></span> Make Favorite
-			 		<% end %>
-				<% end %>
-				<h4 class="total-favorites-text"><span class= "glyphicon glyphicon-heart total-favorites"></span>: <%= @image_count %></h4>
-				<div class="make-unmotivational-button">	
-					<%= form_for([@user, @unmotivational_image]) do |f| %>
+<% if @random_image %>
+	<div class="container-image">
+		<%= image_tag(@random_image.url, class: "image-display random-image") %>
+		
+		<aside class="image-motivate-information-container">
+				<% if @user %>
+					<%= form_for([@user, @favorite]) do |f| %>
 						<%= f.hidden_field :image_id, value: @random_image.id %>
-						<%= f.hidden_field :user_id, value: @user.id %>
 						<%= f.hidden_field :url, value: @random_image.url %>
-					<%= f.button "Unmotivational", class: "general-button unmotivational" do %>
-							<span class="glyphicon glyphicon-thumbs-down"> Unmotivational</span>
-						<% end %>
+						<%= f.hidden_field :user_id, value: @user.id %>
+						<%= f.button "Make Favorite", class: "general-button favorite" do %>
+				 		<span class= "glyphicon glyphicon-heart"></span> Make Favorite
+				 		<% end %>
 					<% end %>
-				</div>
-			<h4 class="total-unmotivational-text"><span class="glyphicon glyphicon-thumbs-down"></span>: <%= @unmotivational_count %> </h4>
-			<% else %>
-				<%= button_to new_user_path, method: :get, class: "general-button favorite", params: {favorite_sign_in: true} do %>
-			 		<span class= "glyphicon glyphicon-heart"></span> Make Favorite
-			 	<% end %>
-			<h4 class="total-favorites-text"><span class= "glyphicon glyphicon-heart total-favorites"></span>: <%= @image_count %></h4>
-			<div class="make-unmotivational-button">
-			<%= button_to new_user_path, method: :get, class: "general-button unmotivational", params: {unmotivational_sign_in: true} do %>
-					<span class="glyphicon glyphicon-thumbs-down"> Unmotivational</span>
+					<h4 class="total-favorites-text"><span class= "glyphicon glyphicon-heart total-favorites"></span>: <%= @image_count %></h4>
+					<div class="make-unmotivational-button">	
+						<%= form_for([@user, @unmotivational_image]) do |f| %>
+							<%= f.hidden_field :image_id, value: @random_image.id %>
+							<%= f.hidden_field :user_id, value: @user.id %>
+							<%= f.hidden_field :url, value: @random_image.url %>
+						<%= f.button "Unmotivational", class: "general-button unmotivational" do %>
+								<span class="glyphicon glyphicon-thumbs-down"> Unmotivational</span>
+							<% end %>
+						<% end %>
+					</div>
+				<h4 class="total-unmotivational-text"><span class="glyphicon glyphicon-thumbs-down"></span>: <%= @unmotivational_count %> </h4>
+				<% else %>
+					<%= button_to new_user_path, method: :get, class: "general-button favorite", params: {favorite_sign_in: true} do %>
+				 		<span class= "glyphicon glyphicon-heart"></span> Make Favorite
+				 	<% end %>
+				<h4 class="total-favorites-text"><span class= "glyphicon glyphicon-heart total-favorites"></span>: <%= @image_count %></h4>
+				<div class="make-unmotivational-button">
+				<%= button_to new_user_path, method: :get, class: "general-button unmotivational", params: {unmotivational_sign_in: true} do %>
+						<span class="glyphicon glyphicon-thumbs-down"> Unmotivational</span>
+					<% end %>
+				<h4 class="total-unmotivational-text"><span class="glyphicon glyphicon-thumbs-down"></span>: <%= @unmotivational_count %> </h4>
 				<% end %>
-			<h4 class="total-unmotivational-text"><span class="glyphicon glyphicon-thumbs-down"></span>: <%= @unmotivational_count %> </h4>
-			<% end %>
+			</div>
+			</aside>
 		</div>
-		</aside>
+	<div class= "container-image-show-buttons">
+		<%= button_to image_categories_path, method: :get, class: "general-button before-navigation left" do %>
+				<span class="glyphicon glyphicon-arrow-left"></span> Back to Images 
+			<% end %>
+		<%= button_to @path, method: :get, class: "general-button before-navigation right", params: {type: @random_video_or_image} do %>
+					Give Me More Random Motivation <span class="glyphicon glyphicon-arrow-right"></span> 
+			<% end %>
 	</div>
-<div class= "container-image-show-buttons">
-	<%= button_to image_categories_path, method: :get, class: "general-button before-navigation left" do %>
-			<span class="glyphicon glyphicon-arrow-left"></span> Back to Images 
-		<% end %>
-	<%= button_to @path, method: :get, class: "general-button before-navigation right", params: {type: @random_video_or_image} do %>
-				Give Me More Random Motivation <span class="glyphicon glyphicon-arrow-right"></span> 
-		<% end %>
-</div>
+<% else %>
+	<%= render partial: "shared/image_error" %>
+<% end %>
