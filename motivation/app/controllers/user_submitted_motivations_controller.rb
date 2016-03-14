@@ -1,5 +1,5 @@
 class UserSubmittedMotivationsController < ApplicationController
-  before_action :check_admin, only: [:destory] 
+  before_action :check_admin, only: [:index, :destory] 
 
 	def new
 		@types = []
