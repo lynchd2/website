@@ -1,8 +1,7 @@
 class Video < ActiveRecord::Base
-
-	has_many :favorite_videos
+	has_many :favorite_videos, dependent: :destroy
 	has_many :users, through: :favorite_videos
-	has_many :unmotivational_videos
+	has_many :unmotivational_videos, dependent: :destroy
 	
 	def self.find_random_video_with_type_and_unmotivational(param_type, unmotivational_videos)
 		video = Video.where("type = ?", param_type)

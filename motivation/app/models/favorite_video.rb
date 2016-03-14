@@ -1,7 +1,7 @@
 class FavoriteVideo < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :video
-
+	
 	def self.display_random_favorite_video(user)
 		video = FavoriteVideo.where(user_id: user.id).order("RANDOM()").first(1)[0]
 			if video

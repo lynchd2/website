@@ -1,10 +1,10 @@
 class User < ActiveRecord::Base
-	has_many :favorite_videos
+	has_many :favorite_videos, dependent: :destroy
 	has_many :videos, through: :favorite_videos
-	has_many :favorite_images
+	has_many :favorite_images, dependent: :destroy
 	has_many :images, through: :favorite_images
-	has_many :unmotivational_videos
-	has_many :unmotivational_images
+	has_many :unmotivational_videos, dependent: :destroy
+	has_many :unmotivational_images, dependent: :destroy
 	has_many :user_submitted_motivations
 
 
