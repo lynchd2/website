@@ -5,14 +5,14 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: postgresql
   pool: 5
   timeout: 5000
   encoding: unicode
 
 development:
   <<: *default
-  database: motivation
+  database: test_motivation
+  adapter: sqlite3
   
 
 # Warning: The database defined as "test" will be erased and
@@ -25,3 +25,4 @@ test:
 production:
   <<: *default
   database: motivation
+  adapter: postgresql
