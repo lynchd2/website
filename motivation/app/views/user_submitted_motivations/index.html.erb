@@ -1,6 +1,35 @@
-<%= will_paginate %>
-<%= @usms.each do |usm| %>
-	<%= usm %>
+<% i = 1 %>
+<% @user_submitted_motivations.each do |usm| %>
+	<%=i%> user:<%= usm.user.email %>
+</br>
+	URL: <%= link_to "Link", "http://#{usm.url}", target: "_blank" %>
+	<% i += 1 %>
+</br>
+<%= usm.type_submitted %>
+</br>
+<%= usm.format %>
+<%if usm.format == "Video" %>
+</br>
+	<h3>REMINDER: ONLY SUBMIT THE CODE NOT THE ENTIRE URL</h3>
+<% end %>
+</br>
+	<% if usm.format == "Image" %>
+		<%= form_for(Image.new) do |f| %>
+			<%= f.text_field :url, value: usm.url %>
+			<%= f.text_field :type, value: usm.type_submitted + "Image" %>
+			<%= f.submit "Add to database" %>
+		<% end %>
+	<% end %>
+	<% if usm.format == "Video" %>
+		<%= form_for(Video.new) do |f| %>
+			<%= f.text_field :url, value: usm.url %>
+			<%= f.text_field :type, value: usm.type_submitted + "Video" %>
+			<%= f.submit "Add to database" %>
+		<% end %>
+	<% end %>
+	<%= button_to "Delete", usm, method: :delete %>
+	</br>
+	</br>
 <% end %>
 
-<%= will_paginate%>
+

@@ -1,4 +1,6 @@
 class ImagesController < ApplicationController
+	before_action :check_admin, only: [:create, :destroy]
+	
 	def show
 		if current_user
 			@unmotivational_images = UnmotivationalImage.find_unmotivational_image_ids(current_user.id)
@@ -41,4 +43,33 @@ class ImagesController < ApplicationController
 		end
 		@error_type = "every category"
 	end
+
+	def create 
+	  	@image = Image.new(images_params)
+	  	if !Image.exists?(url: @image.url) && @image.save
+	  		flash[:notice] = "Image successfully added"
+	  		redirect_to user_submitted_motivations_url
+	  	else
+	  		flash[:notice] = "Failed to add image"
+	      	redirect_to user_submitted_motivations_url
+	  	end
+	end
+
+
+	def destroy
+	end
+
+	private
+
+	def images_params
+		params.require(:image).permit(:url, :type)
+	end
+
+    def check_admin
+        unless current_user.admin == true
+          flash[:notice] = "Nice try. You do not have permission to access that"
+          redirect_to '/'
+        end
+    end
+
 end

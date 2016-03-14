@@ -1,4 +1,5 @@
 class UserSubmittedMotivationsController < ApplicationController
+  before_action :check_admin, only: [:destory] 
 
 	def new
 		@types = []
@@ -10,7 +11,7 @@ class UserSubmittedMotivationsController < ApplicationController
 
 
   	def index
-  		@usms = UserSubmittedMotivation.paginate(:page => 5, :per_page => 2)
+  		@user_submitted_motivations = UserSubmittedMotivation.all.order('created_at DESC')
   	end
 
   	def create
@@ -26,6 +27,10 @@ class UserSubmittedMotivationsController < ApplicationController
   	end
 
   	def destroy
+      @usm = UserSubmittedMotivation.find(params[:id])
+      @usm.destroy
+      flash[:notice] = "You have succesfully deleted the object"
+      redirect_to user_submitted_motivations_path
   	end
 
 
@@ -34,6 +39,13 @@ class UserSubmittedMotivationsController < ApplicationController
   	def usm_params
   		params.require(:user_submitted_motivation).permit(:type_submitted, :url, :format)
   	end
+
+    def check_admin
+        unless current_user.admin == true
+          flash[:notice] = "Nice try. You do not have permission to access there"
+          redirect_to '/'
+        end
+    end
 end
 
 

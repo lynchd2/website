@@ -1,4 +1,6 @@
 class VideosController < ApplicationController
+	before_action :check_admin, only: [:create, :destroy]
+
 	def show
 		if current_user
 			@user = current_user
@@ -43,4 +45,32 @@ class VideosController < ApplicationController
 		end
 		@error_type = "every category"
 	end
+
+	def create 
+	  	@video = Video.new(videos_params)
+	  	if !Video.exists?(url: @video.url) && @video.save
+	  		flash[:notice] = "Video successfully added"
+	  		redirect_to user_submitted_motivations_url
+	  	else
+	  		flash[:notice] = "Failed to add video"
+	      	redirect_to user_submitted_motivations_url
+	  	end
+	end
+
+
+	def destroy
+
+	end
+
+
+	def videos_params
+		params.require(:video).permit(:url, :type)
+	end
+
+    def check_admin
+        unless current_user.admin == true
+          flash[:notice] = "Nice try. You do not have permission to access that"
+          redirect_to '/'
+        end
+    end
 end

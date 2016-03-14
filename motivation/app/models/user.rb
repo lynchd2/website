@@ -12,6 +12,6 @@ class User < ActiveRecord::Base
 	accepts_nested_attributes_for :favorite_images
 
 
-	validates :email, presence: true
+	validates :email, presence: true, uniqueness: {case_sensitive: false}
 	has_secure_password
 end

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   def new
   	@user = User.new
     if params[:favorite_sign_in] == "true" || params[:unmotivational_sign_in]  == "true"

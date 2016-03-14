@@ -28,6 +28,10 @@ Rails.application.routes.draw do
 
     get 'random_image' => "images#random"
 
+    resources :videos, only: [:create, :destroy]
+
+    resources :images, only: [:create, :destroy]
+
     resources :users do
       resources :favorite_videos
       resources :favorite_images
