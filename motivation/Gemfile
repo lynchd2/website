@@ -37,6 +37,8 @@ gem "will_paginate"
 gem "fastimage"
 
 gem 'pg'
+
+gem "rails_12factor", group: :production
 # Use Unicorn as the app server
 # gem 'unicorn'
 
