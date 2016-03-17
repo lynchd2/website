@@ -1,2 +1,3 @@
 <%= button_to "Running", image_path, method: :get, class: "general-button videos-images-button blue-text", params: {type: "RunningImage"} %>
 <%= button_to "Weightlifting", image_path, method: :get, class: "general-button videos-images-button blue-text", params: {type:"WeightliftingImage"} %>
+<%= button_to "Random Image", random_image_path, method: :get, class: "general-button videos-images-button blue text", params: {image: true} %>

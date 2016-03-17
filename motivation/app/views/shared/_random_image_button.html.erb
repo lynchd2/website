@@ -1,0 +1,8 @@
+<div class= "container-image-show-buttons">
+	<%= button_to image_categories_path, method: :get, class: "general-button before-navigation left" do %>
+			<span class="glyphicon glyphicon-arrow-left"></span> Back to Images 
+		<% end %>
+	<%= button_to @path, method: :get, class: "general-button before-navigation right", params: {image: true} do %>
+				Give Me More Image Motivation <span class="glyphicon glyphicon-arrow-right"></span> 
+		<% end %>
+</div>

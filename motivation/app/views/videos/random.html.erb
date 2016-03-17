@@ -39,16 +39,8 @@
 		<% end %>
 	</div>
 </aside>
-	<div class= "video-show-navigation-buttons">
-		<%= button_to video_categories_path, method: :get, class: "general-button before-navigation"  do %>
-				<span class="glyphicon glyphicon-arrow-left"></span> Back to Videos 
-			<% end %>
-	</div>
-	<div class= "video-show-navigation-buttons">
-		<%= button_to  @path, method: :get, class: "general-button before-navigation random-width-increase", params: {type: @random_video_or_image} do %>
-				Give Me More Random Motivation <span class="glyphicon glyphicon-arrow-right"></span> 
-			<% end %>
-	</div>
+	<%= render partial: "shared/random_video_button" if params[:video] %>
+	<%= render partial: "shared/random_button" if params[:random] %>
 <% else %>
 	<%= render partial: "shared/video_error" %>
 <% end %>

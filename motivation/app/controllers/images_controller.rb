@@ -34,13 +34,7 @@ class ImagesController < ApplicationController
 			@image_count = @random_image.users.count
 			@unmotivational_count = UnmotivationalImage.where(image_id: @random_image.id).count
 		end
-		@random = rand(0..1)
-		@path = ""
-		if @random == 0
-			@path = random_video_path
-		else
-			@path = random_image_path
-		end
+		random_image_or_video()
 		@error_type = "every category"
 	end
 

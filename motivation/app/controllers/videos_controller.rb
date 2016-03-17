@@ -36,13 +36,8 @@ class VideosController < ApplicationController
 			@video_count = @random_video.users.count
 			@unmotivational_count = UnmotivationalVideo.where(video_id: @random_video.id).count
 		end
-		@random = rand(0..1)
-		@path = ""
-		if @random == 0
-			@path = random_video_path
-		else
-			@path = random_image_path
-		end
+		random_image_or_video()
+		@video_param = params[:video] if params[:video]
 		@error_type = "every category"
 	end
 
@@ -59,7 +54,6 @@ class VideosController < ApplicationController
 
 
 	def destroy
-
 	end
 
 

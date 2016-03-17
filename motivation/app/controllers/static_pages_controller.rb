@@ -2,12 +2,7 @@ class StaticPagesController < ApplicationController
 	def home
 		@background = "homepage"
 		@random = rand(0..1)
-		@path = ""
-		if @random == 0
-			@path = random_video_path
-		else
-			@path = random_image_path
-		end
+		random_image_or_video
 	end
 
 	def about
