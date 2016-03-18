@@ -1,5 +1,4 @@
 class Image < ActiveRecord::Base
-
 	has_many :favorite_images, dependent: :destroy
 	has_many :users, through: :favorite_images
 	has_many :unmotivational_images, dependent: :destroy

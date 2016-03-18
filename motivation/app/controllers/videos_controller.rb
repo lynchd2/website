@@ -1,6 +1,11 @@
 class VideosController < ApplicationController
 	before_action :check_admin, only: [:create, :destroy]
 
+
+	def index
+		
+	end
+
 	def show
 		if current_user
 			@user = current_user

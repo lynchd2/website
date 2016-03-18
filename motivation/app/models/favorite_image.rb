@@ -1,6 +1,6 @@
 class FavoriteImage < ActiveRecord::Base
 	belongs_to :user
-	belongs_to :image
+	belongs_to :image, counter_cache: true
 
 
 	def self.display_random_favorite_image(user)
