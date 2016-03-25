@@ -19,4 +19,5 @@ class FavoriteVideo < ActiveRecord::Base
 	end
 
 
+
 end

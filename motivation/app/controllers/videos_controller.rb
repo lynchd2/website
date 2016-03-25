@@ -3,7 +3,9 @@ class VideosController < ApplicationController
 
 
 	def index
-		
+		@best_videos = Video.get_top_videos
+		@user = current_user if current_user
+		@favorite = @user.favorite_videos.build() if current_user
 	end
 
 	def show

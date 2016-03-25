@@ -1,6 +1,12 @@
 class ImagesController < ApplicationController
 	before_action :check_admin, only: [:create, :destroy]
 	
+	def index
+		@best_images = Image.order(favorite_images_count: :desc).limit(20).paginate(page: params[:page], per_page: 5)
+		@user = current_user if current_user
+		@favorite = @user.favorite_images.build() if current_user
+	end
+
 	def show
 		if current_user
 			@unmotivational_images = UnmotivationalImage.find_unmotivational_image_ids(current_user.id)

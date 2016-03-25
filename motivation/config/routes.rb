@@ -14,7 +14,11 @@ Rails.application.routes.draw do
 
     get "video_categories" => 'videos#categories'
 
+    get "top_videos" => "videos#index"
+
     get 'image' => "images#show"
+
+    get "top_images" => "images#index"
 
     get 'image_categories' => "images#categories"
 

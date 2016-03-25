@@ -1,0 +1,34 @@
+<div class="container-fluid">
+	<% @best_videos.each do |video| %>
+	<div class="row thumbnail">
+		<div class="col-xs-6 col-md-4 display-inline">
+			<h4 class="text-center">Total Favorites:<%= video[0].users.count%></h4>
+		</div>
+		<div class="col-xs-6 col-md-4 display-inline">
+  			<span class="video-title"><%= video_title(video[0]) %></span>
+    		<%= image_tag(video[1]) %>
+		</div>
+			<% if @user %>
+			<%= form_for([@user, @favorite]) do |f| %>
+				<%= f.hidden_field :video_id, value: video[0].id %>
+				<%= f.hidden_field :url, value: video[0].url %>
+				<%= f.hidden_field :user_id, value: @user.id %>
+				<%= f.button "Make Favorite", class: "general-button favorite" do %>
+				<div class="col-xs-6 col-md-4 display-inline">
+		 			<span class= "glyphicon glyphicon-heart"></span>
+		 		</div>
+		 		<% end %>
+			<% end %>
+		<% else %>
+			<%= button_to new_user_path, method: :get, class: "general-button favorite", params: {favorite_sign_in: true} do %>
+				<div class="col-xs-6 col-md-4 display-inline">
+				 		<span class= "glyphicon glyphicon-heart"></span>
+				 	</div>
+				<% end %>
+		<% end %>
+		</div>
+	</div>
+	<% end %>
+</div>
+
+
