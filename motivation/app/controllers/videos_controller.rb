@@ -3,7 +3,7 @@ class VideosController < ApplicationController
 
 
 	def index
-		@best_videos = Video.get_top_videos
+		@best_videos = Video.order('favorite_videos_count desc').paginate(page: params[:page], per_page: 6, total_entries: 12)
 		@user = current_user if current_user
 		@favorite = @user.favorite_videos.build() if current_user
 	end

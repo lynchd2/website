@@ -18,11 +18,4 @@ class Video < ActiveRecord::Base
 		random_video = Video.order("RANDOM()")
 		return random_video[0]
 	end
-
-	def self.get_top_videos
-		videos = Video.order(favorite_videos_count: :desc)
-		videos.map do |video|
-			[video, VideoInfo.new("https://www.youtube.com/watch?v=#{video.url}").thumbnail_medium]
-		end
-	end
 end

@@ -624,10 +624,11 @@ h3.text-info.thumbnail-title {
 	max-width:350px;
 }
 
-.grey {
-	
-
+.alter-thumbnail {
+	height:375px;
+	width:300px;
 }
+
 /***********************
  Buttons with Glyphicon
 ***********************/
@@ -671,10 +672,27 @@ span.glyphicon.glyphicon-heart {
 	text-align:center;
 }
 
+/***********************
+ Top Images/Top Videos
+
+***********************/
 .top-images {
 	display:inline;;
 }	
 
 .display-inline {
 	display:inline-block;
+}
+
+.top-images-text {
+	margin-top:6%;
+}
+
+.vertical-center {
+    position: relative;
+    text-align: center;
+}
+
+.alter-favorite {
+	margin-top:15px;
 }

@@ -1,29 +1,22 @@
 <div class="container-fluid">
 	<% @best_videos.each do |video| %>
-	<div class="row thumbnail">
-		<div class="col-xs-6 col-md-4 display-inline">
-			<h4 class="text-center">Total Favorites:<%= video[0].users.count%></h4>
-		</div>
-		<div class="col-xs-6 col-md-4 display-inline">
-  			<span class="video-title"><%= video_title(video[0]) %></span>
-    		<%= image_tag(video[1]) %>
-		</div>
+		<div class="col-xs-6 col-md-4">
+			<div class="thumbnail alter-thumbnail">
+			<h4 class="text-center">Total Favorites: <%= video.users.count%></h4>
+  			<span class="video-title"><%= video_title(video) %></span>
+    		<%= image_tag(VideoInfo.new("https://www.youtube.com/watch?v=#{video.url}").thumbnail_medium) %>
 			<% if @user %>
 			<%= form_for([@user, @favorite]) do |f| %>
-				<%= f.hidden_field :video_id, value: video[0].id %>
-				<%= f.hidden_field :url, value: video[0].url %>
+				<%= f.hidden_field :video_id, value: video.id %>
+				<%= f.hidden_field :url, value: video.url %>
 				<%= f.hidden_field :user_id, value: @user.id %>
-				<%= f.button "Make Favorite", class: "general-button favorite" do %>
-				<div class="col-xs-6 col-md-4 display-inline">
+				<%= f.button "Make Favorite", class: "general-button favorite center alter-favorite" do %>
 		 			<span class= "glyphicon glyphicon-heart"></span>
-		 		</div>
 		 		<% end %>
 			<% end %>
 		<% else %>
-			<%= button_to new_user_path, method: :get, class: "general-button favorite", params: {favorite_sign_in: true} do %>
-				<div class="col-xs-6 col-md-4 display-inline">
+			<%= button_to new_user_path, method: :get, class: "general-button favorite center alter-favorite", params: {favorite_sign_in: true} do %>
 				 		<span class= "glyphicon glyphicon-heart"></span>
-				 	</div>
 				<% end %>
 		<% end %>
 		</div>
@@ -31,4 +24,5 @@
 	<% end %>
 </div>
 
+<%= will_paginate(@best_videos, renderer: BootstrapPagination::Rails) %>
 
