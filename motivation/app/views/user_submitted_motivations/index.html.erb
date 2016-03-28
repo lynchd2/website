@@ -1,6 +1,9 @@
 <% i = 1 %>
 <% @user_submitted_motivations.each do |usm| %>
-	<%=i%> user:<%= usm.user.email %>
+	<%=i%>. User:<%= usm.user.email if usm.user %>
+	<% if !usm.user %>
+		Guest submitted
+	<% end %>
 </br>
 	URL: <%= link_to "Link", "http://#{usm.url}", target: "_blank" %>
 	<% i += 1 %>
