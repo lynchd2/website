@@ -1,0 +1,2 @@
+class SportsVideo < Video
+end

@@ -1,0 +1,2 @@
+class GeneralImage < Image
+end

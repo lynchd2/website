@@ -1,0 +1,2 @@
+class GeneralVideo < Video
+end

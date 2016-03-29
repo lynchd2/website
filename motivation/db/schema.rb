@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318155332) do
+ActiveRecord::Schema.define(version: 20160329165831) do
 
   create_table "favorite_images", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -35,6 +35,16 @@ ActiveRecord::Schema.define(version: 20160318155332) do
   add_index "favorite_videos", ["user_id"], name: "index_favorite_videos_on_user_id"
   add_index "favorite_videos", ["video_id"], name: "index_favorite_videos_on_video_id"
 
+  create_table "general_images", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "general_videos", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "images", force: :cascade do |t|
     t.string   "url"
     t.datetime "created_at",                         null: false
@@ -42,6 +52,16 @@ ActiveRecord::Schema.define(version: 20160318155332) do
     t.string   "type"
     t.integer  "rating",                default: 10
     t.integer  "favorite_images_count", default: 0
+  end
+
+  create_table "sports_images", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sports_videos", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "unmotivational_images", force: :cascade do |t|
