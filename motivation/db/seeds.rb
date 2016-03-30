@@ -13,7 +13,7 @@ images = [["WeightliftingImage", "https://s-media-cache-ak0.pinimg.com/564x/6a/f
 			["WeightliftingImage", "http://40.media.tumblr.com/f45e15ec6d56744ee45c48fb461a502a/tumblr_npqiwjx1fp1u9l8ppo1_500.jpg"],
 			["RunningImage", "http://cdn-media-1.lifehack.org/wp-content/files/2014/07/Long_Distance_Running.jpg"],
 			["RunningImage", "http://1.bp.blogspot.com/-_ZB40aIPY-A/UxdMtXi_nSI/AAAAAAAAARg/5nSYCq8J320/s1600/if+you+wait.jpg"],
-			["SportsImage", "http://vimg.club/img/sites/33/2016/03/6E2gvRO.jpg"], ["GeneralImage", "https://i.imgur.com/hIE9mxs.jpg"],
+			["SportsImage", "https://s-media-cache-ak0.pinimg.com/736x/4c/2c/0d/4c2c0d18f9a651c8260c1e5733e73a2e.jpg"], ["GeneralImage", "https://i.imgur.com/hIE9mxs.jpg"],
 			["GeneralImage", "http://i.imgur.com/NxCxQFA.jpg"], ["GeneralImage", "http://i.imgur.com/cP2w1F9.jpg"],
 			["GeneralImage", "http://i.imgur.com/66na3L2.jpg"], ["SportsImage", "http://i.imgur.com/VjeOagh.jpg"],
 			["GeneralImage", "http://i.imgur.com/NBEclhh.png"], ["GeneralImage", "https://i.imgur.com/yGK3P1Z.jpg"],
@@ -47,7 +47,7 @@ videos = [["RunningVideo", "5CQbTBwLU3U"], ["RunningVideo", "gF0rrpMH-Jo"],
 		["SportsVideo", "ezaAMcCy3u4"], ["WeightliftingVideo", "7kf6r0D3SEA"], ["GeneralVideo", "MNL_DAI19_I"], ["SportsVideo", "_T1KyRtOWOc"],
 		["SportsVideo","_2TpAlCpWN8"], ["RunningVideo","wwHfcqkm5TE"], ["GeneralVideo","RYlCVwxoL_g"], ["SportsVideo","cw0swisPh-M"],
 		["RunningVideo", "05sUhlxFBk0"], ["SportsVideo", "4zdIpXJlM8A"], ["SportsVideo", "G5o4KxEhVmE"], ["SportsVideo", "o2P5E7cFt9s"],
-		["SportsVideo", "6kUNQlbdKwY"], ["", ""], ["", ""], ["", ""]]
+		["SportsVideo", "6kUNQlbdKwY"]]
 videos.each do |video|
 	Video.find_or_create_by(type: video[0], url: video[1])
 end
