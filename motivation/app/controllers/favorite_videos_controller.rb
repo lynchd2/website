@@ -13,10 +13,10 @@ class FavoriteVideosController < ApplicationController
 		end
 		@favorite = FavoriteVideo.new(favorite_videos_params)
 		if !(FavoriteVideo.find_by(video_id: @favorite.video_id, user_id: @favorite.user_id)) && @favorite.save
-			redirect_to root_url
+			redirect_to video_categories_path
 			flash[:notice] = "Video saved to your favorites"
 		else
-			redirect_to root_url
+			redirect_to video_categories_path
 			flash[:notice] = "That video is already in your favorites"
 		end
 	end

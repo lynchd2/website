@@ -13,10 +13,10 @@ class FavoriteImagesController < ApplicationController
 		end
 		@favorite = FavoriteImage.new(favorite_images_params)
 		if !(FavoriteImage.find_by(image_id: @favorite.image_id, user_id: @favorite.user_id)) && @favorite.save
-			redirect_to root_url
+			redirect_to image_categories_path
 			flash[:notice] = "Image saved to your favorites"
 		else
-			redirect_to root_url
+			redirect_to image_categories_path
 			flash[:notice] = "That image is already in your favorites"
 		end
 	end

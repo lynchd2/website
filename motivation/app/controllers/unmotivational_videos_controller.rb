@@ -5,6 +5,7 @@ class UnmotivationalVideosController < ApplicationController
   end
 
   def index
+    @user = current_user
   	@unmotivational_videos = UnmotivationalVideo.where(user_id: current_user.id).paginate(page: params[:page], per_page:20)
   end
 
@@ -14,10 +15,10 @@ class UnmotivationalVideosController < ApplicationController
 		  @unmotivational_video = UnmotivationalVideo.new(unmotivational_videos_params)
 		  if !UnmotivationalVideo.exists?(video_id: @unmotivational_video.video_id,
 			 							                  user_id: @unmotivational_video.user_id) && @unmotivational_video.save
-			     redirect_to root_url
+			     redirect_to video_categories_path
 			     flash[:notice] = "You will no longer see that video"
 		      else
-			       redirect_to root_url
+			       redirect_to video_categories_path
 			       flash[:notice] = "You have already marked that video as unmotivational"
 		      end
 	   else

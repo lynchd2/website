@@ -5,7 +5,8 @@ class UnmotivationalImagesController < ApplicationController
   end
 
   def index
- 	  @all_unmotivational_images = UnmotivationalImage.where(user_id: current_user.id).paginate(page: params[:page], per_page: 20)
+    @user = current_user
+ 	  @unmotivational_images = UnmotivationalImage.where(user_id: @user).paginate(page: params[:page], per_page: 20)
   end
 
   def create
@@ -14,14 +15,14 @@ class UnmotivationalImagesController < ApplicationController
 		  @unmotivational_image = UnmotivationalImage.new(unmotivational_images_params)
 		  if !UnmotivationalImage.exists?(image_id: @unmotivational_image.image_id,
 			 							                  user_id: @unmotivational_image.user_id) && @unmotivational_image.save
-			   redirect_to root_url
+			   redirect_to image_categories_path
 			   flash[:notice] = "You will no longer see that image"
 		  else
-			   redirect_to root_url
+			   redirect_to image_categories_path
 			   flash[:notice] = "You have already marked that image as unmotivational"
 		  end
 	  else
-		  redirect_to root_url
+		  redirect_to "sessions/new"
 		  flash[:notice] = "You must sign in to do that"
     end
   end
