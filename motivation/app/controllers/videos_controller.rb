@@ -31,10 +31,11 @@ class VideosController < ApplicationController
 	end
 
 	def random
-		if current_user		
-			@unmotivational_videos = UnmotivationalVideo.find_unmotivational_video_ids(current_user.id)
-			@random_video = Video.find_random_video_with_unmotivational(@unmotivational_videos)
-			@user = current_user 
+		@random_video = Video.find_random_video
+		if current_user
+			@user = current_user 		
+			@unmotivational_videos = UnmotivationalVideo.find_unmotivational_video_ids(@user.id)
+			@random_video = Video.find_random_video_with_unmotivational(@unmotivational_videos)		
 			@favorite = @user.favorite_videos.build()
 			@unmotivational_video = @user.unmotivational_videos.build()
 		end
