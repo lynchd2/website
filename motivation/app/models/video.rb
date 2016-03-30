@@ -18,4 +18,10 @@ class Video < ActiveRecord::Base
 		random_video = Video.order("RANDOM()")
 		return random_video[0]
 	end
+
+	def self.find_random_video_with_unmotivational(unmotivational_videos)
+		random_video = Video.where.not(id: unmotivational_videos)
+							.order("RANDOM()")
+		return random_video[0]		
+	end
 end

@@ -5,7 +5,7 @@ class UnmotivationalVideosController < ApplicationController
   end
 
   def index
-  	@unmotivational_videos = UnmotivationalVideo.where(user_id: current_user.id).paginate(page: 5, per_page:2)
+  	@unmotivational_videos = UnmotivationalVideo.where(user_id: current_user.id).paginate(page: params[:page], per_page:20)
   end
 
   def create
@@ -28,6 +28,9 @@ class UnmotivationalVideosController < ApplicationController
   end
 
   def destroy
+    UnmotivationalVideo.find_by(id: params[:id]).destroy
+    flash[:notice] = "Unmotivational video deleted!"
+    redirect_to user_unmotivational_videos_path
   end
 
   private

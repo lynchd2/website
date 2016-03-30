@@ -35,8 +35,10 @@ class VideosController < ApplicationController
 		@random_video = Video.find_random_video
 		if current_user
 			@user = current_user 
+			@unmotivational_videos = UnmotivationalVideo.find_unmotivational_video_ids(current_user.id)
 			@unmotivational_video = @user.unmotivational_videos.build()
 			@favorite = @user.favorite_videos.build()
+			@random_video = Video.find_random_video_with_unmotivational(@unmotivational_videos)
 		end
 		if @random_video
 			@video_info = VideoInfo.new("https://www.youtube.com/watch?v=#{@random_video.url}")
@@ -44,7 +46,6 @@ class VideosController < ApplicationController
 			@unmotivational_count = UnmotivationalVideo.where(video_id: @random_video.id).count
 		end
 		random_image_or_video()
-		@video_param = params[:video] if params[:video]
 		@error_type = "every category"
 	end
 

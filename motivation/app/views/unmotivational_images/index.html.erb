@@ -1,6 +1,13 @@
+<h2> All Images are ordered form oldest to newest</h2>
 <% num = 1 %>
 <% @all_unmotivational_images.each do |image| %>
-	<%= num %>. <%= link_to image.image_id, user_unmotivational_image_path(image.user_id, image.image_id)%>
-	<% num +=1 %>
-	</br>
+  	<div class="col-xs-3 col-md-3">
+  		<div class="thumbnail">
+			<%= num %>. <%= link_to "Show Image", user_unmotivational_image_path(image.user_id, image.image_id)%>
+			<%= link_to raw("<span class= 'glyphicon glyphicon-trash'></span>"), {action: "destroy", controller: "unmotivational_images", id: image.id, user_id: image.user_id}, method: :delete, data:{confirm: "Are you sure you want to delete that image off of your favorites list?"}, class: "general-button btn-danger" %>
+				<% num += 1 %>
+			</div>
+		</div>
 <% end %>
+
+<%= will_paginate @all_unmotivational_images %>

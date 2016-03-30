@@ -32,6 +32,8 @@ class ImagesController < ApplicationController
 	def random
 		@random_image =  Image.find_random_image
 		if current_user
+			@unmotivational_images = UnmotivationalImage.find_unmotivational_image_ids(current_user.id)
+			@random_image = Image.find_random_image_with_unmotivational(@unmotivational_images)
 			@user = current_user 
 			@favorite = @user.favorite_images.build()
 			@unmotivational_image = @user.unmotivational_images.build()

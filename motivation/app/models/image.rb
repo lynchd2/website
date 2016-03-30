@@ -18,4 +18,10 @@ class Image < ActiveRecord::Base
 		random_image = Image.order("RANDOM()")
 		return random_image[0]
 	end
+
+	def self.find_random_image_with_unmotivational(unmotivational_images)
+		random_image = Image.where.not(id: unmotivational_images)
+							.order("RANDOM()")
+		return random_image[0]
+	end
 end
