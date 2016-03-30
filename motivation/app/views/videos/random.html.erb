@@ -16,7 +16,7 @@
 			<h4 class="total-favorites-text-videos"><span class= "glyphicon glyphicon-heart total-favorites"></span>: <%= @video_count %></h4>
 			<div class="make-unmotivational-button">
 				<%= form_for([@user, @unmotivational_video]) do |f| %>
-					<%= f.hidden_field :image_id, value: @random_video.id %>
+					<%= f.hidden_field :video_id, value: @random_video.id %>
 					<%= f.hidden_field :user_id, value: @user.id %>
 					<%= f.hidden_field :url, value: @random_video.url %>
 				<%= f.button "Unmotivational", class: "general-button unmotivational" do %>

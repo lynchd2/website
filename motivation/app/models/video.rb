@@ -11,7 +11,7 @@ class Video < ActiveRecord::Base
 	end
 
 	def self.find_random_video_with_type(param_type)
-		Video.where("type = ?", param_type).order("RANDOM()").first(1)[0]
+		video = Video.where("type = ?", param_type).order("RANDOM()").first(1)[0]
 	end
 
 	def self.find_random_video
