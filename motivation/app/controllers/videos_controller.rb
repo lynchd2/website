@@ -1,7 +1,6 @@
 class VideosController < ApplicationController
 	before_action :check_admin, only: [:create, :destroy]
 
-
 	def index
 		@best_videos = Video.order('favorite_videos_count desc').paginate(page: params[:page], per_page: 6, total_entries: 12)
 		@user = current_user if current_user
@@ -32,13 +31,12 @@ class VideosController < ApplicationController
 	end
 
 	def random
-		@random_video = Video.find_random_video
-		if current_user
-			@user = current_user 
+		if current_user		
 			@unmotivational_videos = UnmotivationalVideo.find_unmotivational_video_ids(current_user.id)
-			@unmotivational_video = @user.unmotivational_videos.build()
-			@favorite = @user.favorite_videos.build()
 			@random_video = Video.find_random_video_with_unmotivational(@unmotivational_videos)
+			@user = current_user 
+			@favorite = @user.favorite_videos.build()
+			@unmotivational_video = @user.unmotivational_videos.build()
 		end
 		if @random_video
 			@video_info = VideoInfo.new("https://www.youtube.com/watch?v=#{@random_video.url}")
