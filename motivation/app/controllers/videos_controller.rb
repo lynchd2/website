@@ -25,7 +25,7 @@ class VideosController < ApplicationController
 
 		@video_info = VideoInfo.new("https://www.youtube.com/watch?v=#{@video.url}") 
 		@type = params[:type]
-		@error_type = params[:type].split("V")[0].downcase
+		@error_type = params[:type].split("V")[0].downcase if params[:type]
 		@video_count = @video.favorite_videos_count
 		@unmotivational_count = UnmotivationalVideo.where(video_id: @video.id).count
 	end
