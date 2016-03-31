@@ -16,7 +16,7 @@ class UnmotivationalImagesController < ApplicationController
 		  if !UnmotivationalImage.exists?(image_id: @unmotivational_image.image_id,
 			 							                  user_id: @unmotivational_image.user_id) && @unmotivational_image.save
 			   redirect_to image_categories_path
-			   flash[:notice] = "You will no longer see that image"
+			   flash[:notice] = "You will no longer see that image when searching for images"
 		  else
 			   redirect_to image_categories_path
 			   flash[:notice] = "You have already marked that image as unmotivational"

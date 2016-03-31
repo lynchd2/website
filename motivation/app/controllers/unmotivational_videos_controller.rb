@@ -16,7 +16,7 @@ class UnmotivationalVideosController < ApplicationController
 		  if !UnmotivationalVideo.exists?(video_id: @unmotivational_video.video_id,
 			 							                  user_id: @unmotivational_video.user_id) && @unmotivational_video.save
 			     redirect_to video_categories_path
-			     flash[:notice] = "You will no longer see that video"
+			     flash[:notice] = "You will no longer see that video when searching for videos"
 		      else
 			       redirect_to video_categories_path
 			       flash[:notice] = "You have already marked that video as unmotivational"

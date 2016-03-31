@@ -1,9 +1,11 @@
 <% if @random_video %>
-	<h2 class= "video_title text-center"><%= @video_info.title%></h2>
+	<h3 class="text-center"><%= @video_info.title%></h3>
 	<div class="iframe"><iframe width="800" height="500" src="https://www.youtube.com/embed/<%= @random_video.url%>" frameborder="0" allowfullscreen></iframe></div>
 
 	<aside>
 	<div class="video-motivate-information-container">
+	</br>
+		<h3 class="text-center">Video Information</h3>
 		<% if @user %>
 			<%= form_for([@user, @favorite]) do |f| %>
 				<%= f.hidden_field :video_id, value: @random_video.id %>

@@ -1,9 +1,10 @@
 <% if @video %>
-	<h2 class= "video_title text-center"><%= @video_info.title%></h2>
+	<h3 class="text-center"><%= @video_info.title%></h3>
 	<div class="iframe"><iframe width="800" height="500" src="https://www.youtube.com/embed/<%= @video.url%>" frameborder="0" allowfullscreen></iframe></div>
 
 	<aside>
 		<div class="video-motivate-information-container">
+			<h3 class="text-center">Video Information</h3>
 			<% if @user %>
 				<%= form_for([@user, @favorite]) do |f| %>
 					<%= f.hidden_field :video_id, value: @video.id %>
@@ -37,9 +38,10 @@
 					<h4 class="total-favorites-text-videos"><span class="glyphicon glyphicon-thumbs-down"></span>: <%= @unmotivational_count %> </h4>
 				<% end %>
 			</div>
-		</div>
-	</aside>
-		<div class= "video-show-navigation-buttons">
+		</aside>
+	</div>
+<div class="clear">
+	<div class= "video-show-navigation-buttons">
 		<% if !@best_video %>
 			<%= button_to video_categories_path, method: :get, class: "general-button before-navigation" do %>
 					<span class="glyphicon glyphicon-arrow-left"></span> Back to Videos 
@@ -50,11 +52,14 @@
 				Give Me More Motivation <span class="glyphicon glyphicon-arrow-right"></span> 
 			<% end %>
 	</div>
+	<div class= "video-show-navigation-buttons">
 	<% elsif @best_video %>
 		<%= button_to top_videos_path, method: :get, class: "general-button before-navigation left" do %>
 				<span class="glyphicon glyphicon-arrow-left"></span> Back to Top Videos 
 			<% end %>
 	<% end %>
+</div>
+</div>
 <% else %>
 	<%= render partial: "shared/video_error" %>
 <% end %>

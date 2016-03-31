@@ -162,10 +162,9 @@
 
 
 .video-show-navigation-buttons {
-	display:inline-block;
 	width:400px;
 	overflow:none;
-
+	display: inline-block;
 }
 
 .container-image-show-buttons {
@@ -360,10 +359,6 @@ iframe {
 	float:left;
 }
 
-.video_title {
-	text-align:center;
-}
-
 .total-favorites-text-videos {
 	margin-left:60px;
 }
@@ -425,6 +420,23 @@ iframe {
 .total-unmotivational-text {
 	margin-right:170px;
 	font-family: 'PT serif', serif;
+}
+
+
+/*********************
+	Favorite Image
+**********************/
+
+.favorite-image-information-adjustment {
+	margin-right:200px;
+}
+
+.favorite-image {
+	margin-left:200px;
+}
+
+.favorite-image-text-adjustment {
+	margin-left:20px;
 }
 /***********************
   Log-in/Sign-in page
@@ -680,4 +692,8 @@ span.glyphicon.glyphicon-heart {
 
 .alter-favorite {
 	margin-top:15px;
+}
+
+.clear {
+	clear:both;
 }
