@@ -1,7 +1,9 @@
 class UnmotivationalImagesController < ApplicationController
   
   def show
-  	@image = Image.find_by(id: params[:id])
+  	@image = UnmotivationalImage.find_by(image_id: params[:id])
+    @image_count = @image.image.favorite_images_count
+    @unmotivational_count = UnmotivationalImage.where(image_id: @image.id).count
   end
 
   def index

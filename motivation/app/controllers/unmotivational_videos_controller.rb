@@ -1,7 +1,10 @@
 class UnmotivationalVideosController < ApplicationController
 
   def show
-  	@video = Video.find_by(id: params[:id])
+  	@video = UnmotivationalVideo.find_by(video_id: params[:id])
+    @video_title = VideoInfo.new("https://www.youtube.com/watch?v=#{@video.url}") 
+    @video_count = @video.video.favorite_videos_count
+    @unmotivational_count = UnmotivationalVideo.where(video_id: @video.id).count
   end
 
   def index

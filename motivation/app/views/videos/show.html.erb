@@ -1,5 +1,5 @@
 <% if @video %>
-	<h3 class="text-center"><%= @video_info.title%></h3>
+	<h3 class="big-video-title"><%= @video_info.title%></h3>
 	<div class="iframe"><iframe width="800" height="500" src="https://www.youtube.com/embed/<%= @video.url%>" frameborder="0" allowfullscreen></iframe></div>
 
 	<aside>
@@ -58,7 +58,7 @@
 				<span class="glyphicon glyphicon-arrow-left"></span> Back to Top Videos 
 			<% end %>
 	<% end %>
-</div>
+	</div>
 </div>
 <% else %>
 	<%= render partial: "shared/video_error" %>

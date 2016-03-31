@@ -24,7 +24,7 @@ images = [["WeightliftingImage", "https://s-media-cache-ak0.pinimg.com/564x/6a/f
 			["GeneralImage", "http://i.imgur.com/NGI5sCx.jpg"], ["GeneralImage", "http://i.imgur.com/PMuUcJn.jpg"],
 			["GeneralImage", "http://imgur.com/nBnkz06"], ["GeneralImage", "http://i.imgur.com/tF7ei6P.jpg"],
 			["GeneralImage", "https://s-media-cache-ak0.pinimg.com/736x/65/f3/4c/65f34c9b5695d6b47858b7a9797a3f3b.jpg"], ["GeneralImage", "http://i.imgur.com/eRCYyWI.jpg"],
-			["GeneralImage", "http://i.imgur.com/gwdxFyW.jpg"]]
+			["GeneralImage", "http://i.imgur.com/gwdxFyW.jpg"], ["GeneralImage", "http://i.imgur.com/RpPw4ZR.jpg"]]
 
 videos = [["RunningVideo", "5CQbTBwLU3U"], ["RunningVideo", "gF0rrpMH-Jo"], 
 		 ["RunningVideo", "yLGfPNhtS2U"], ["WeightliftingVideo", "dImoa__F4Bc"], 

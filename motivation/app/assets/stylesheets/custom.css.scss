@@ -6,12 +6,19 @@
  Aside information next to motivator
  ****************************/
  .video-motivate-information-container {
- 	background-color:white;
  	float:right;
  	margin-right:20px;
-  	margin-top:-30px;
+  	margin-top:-60px;
  	background-color:#F0F0F0;
+ 	&.favorite-information-alter {
+ 		margin-top: -65px;
+ 		margin-right: 200px;
+ 		width:230px;
+ 	}
  }
+ 	.favorites-alter {
+ 		margin-left:-20px;
+ 	}
 
 /*****************************
  Buttons for Videos and Images
@@ -165,6 +172,9 @@
 	width:400px;
 	overflow:none;
 	display: inline-block;
+	&.unmotivational-alter {
+		width:500px;
+	}
 }
 
 .container-image-show-buttons {
@@ -363,6 +373,10 @@ iframe {
 	margin-left:60px;
 }
 
+.big-video-title {
+	margin-left:30px;
+	font-family:'PT Serif', serif;
+}
 /*********************
  Favorite Videos page
 *********************/
@@ -370,6 +384,14 @@ iframe {
 .iframe.center {
    margin: 0 auto;
    width: 800px;
+}
+
+.favorite-video-text-adjustment {
+	margin-left:20px;
+}
+
+.delete-image-alter {
+	margin-left:50px;
 }
 
 /***********************
@@ -397,7 +419,6 @@ iframe {
 }
 
  .image-motivate-information-container {
- 	background-color:white;
  	float:right;
  	margin-right:20px;
  	margin-top:-30px;
@@ -438,6 +459,7 @@ iframe {
 .favorite-image-text-adjustment {
 	margin-left:20px;
 }
+
 /***********************
   Log-in/Sign-in page
 ***********************/
