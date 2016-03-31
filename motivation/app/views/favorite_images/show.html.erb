@@ -1,2 +1,13 @@
-<h2 class= "image_title"><%= @favorite_image%></h2>
-<%= image_tag(@favorite_image.url, class: "image-display") %>
+<aside class="image-motivate-information-container">
+	<h3 class="text-center">Image Information</h3>
+	<h4 class="total-favorites-text"><span class= "glyphicon glyphicon-heart total-favorites"></span>: <%= @image_count %></h4>
+	</br>
+	<h4 class="total-unmotivational-text"><span class="glyphicon glyphicon-thumbs-down"></span>: <%= @unmotivational_count %> </h4>
+</aside>
+<div class="container-image">
+	<%= image_tag(@favorite_image.url, class: "image-display") %>
+	<%= button_to user_favorite_images_path, method: :get, class: "general-button before-navigation left" do %>
+			<span class="glyphicon glyphicon-arrow-left"></span> Back to Favorite Images 
+		<% end %>
+	<%= link_to raw("<span class= 'glyphicon glyphicon-trash'></span>"), {action: "destroy", controller: "favorite_images", id: @favorite_image.id, user_id: @favorite_image.user_id}, method: :delete, data:{confirm: "Are you sure you want to delete that image off of your favorites list?"}, class: "general-button btn-danger" %>
+</div>

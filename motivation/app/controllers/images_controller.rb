@@ -18,7 +18,7 @@ class ImagesController < ApplicationController
 			@image = Image.find_random_image_with_type(params[:type])
 		end
 		if @image
-			@image_count = @image.users.count
+			@image_count = @image.favorite_images_count
 			@unmotivational_count = UnmotivationalImage.where(image_id: @image.id).count
 		end
 		@type = params[:type]
@@ -39,7 +39,7 @@ class ImagesController < ApplicationController
 			@unmotivational_image = @user.unmotivational_images.build()
 		end
 		if @random_image
-			@image_count = @random_image.users.count
+			@image_count = @random_image.favorite_images_count
 			@unmotivational_count = UnmotivationalImage.where(image_id: @random_image.id).count
 		end
 		random_image_or_video()

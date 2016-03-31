@@ -28,7 +28,8 @@ class FavoriteImagesController < ApplicationController
 	def show
 		@user = current_user
 		@favorite_image = FavoriteImage.find_by(user_id: params[:user_id], image_id: params[:id])
-		@favorite = @user.favorite_images.build()
+		@image_count = @favorite_image.image.favorite_images_count
+
 	end
 
 	def destroy

@@ -30,7 +30,9 @@ class FavoriteVideosController < ApplicationController
 	def show
 		@user = current_user
 		@favorite_video = FavoriteVideo.find_by(user_id: params[:user_id], video_id: params[:id])
-		@favorite = @user.favorite_videos.build()
+		@favorite_video_title = VideoInfo.new("https://www.youtube.com/watch?v=#{@favorite_video.url}")
+		@video_count = @favorite_video.video.favorite_videos_count
+		@unmotivational_count = UnmotivationalVideo.where(video_id: @favorite_video.video_id).count
 	end
 
 	def destroy

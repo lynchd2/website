@@ -19,7 +19,7 @@ class VideosController < ApplicationController
 		end
 		if @video
 			@video_info = VideoInfo.new("https://www.youtube.com/watch?v=#{@video.url}") 
-			@video_count = @video.users.count
+			@video_count = @video.favorite_videos_count
 			@unmotivational_count = UnmotivationalVideo.where(video_id: @video.id).count
 		end
 		@type = params[:type]
@@ -41,7 +41,7 @@ class VideosController < ApplicationController
 		end
 		if @random_video
 			@video_info = VideoInfo.new("https://www.youtube.com/watch?v=#{@random_video.url}")
-			@video_count = @random_video.users.count
+			@video_count = @random_video.favorite_videos_count
 			@unmotivational_count = UnmotivationalVideo.where(video_id: @random_video.id).count
 		end
 		random_image_or_video()
