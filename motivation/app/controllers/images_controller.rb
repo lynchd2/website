@@ -15,14 +15,18 @@ class ImagesController < ApplicationController
 			@favorite = @user.favorite_images.build()
 			@unmotivational_image = @user.unmotivational_images.build()
 		else
-			@image = Image.find_random_image_with_type(params[:type])
+			@image = Image.find_random_image_with_type(params[:type]) if params[:type]
 		end
-		if @image
-			@image_count = @image.favorite_images_count
-			@unmotivational_count = UnmotivationalImage.where(image_id: @image.id).count
+
+		if params[:format]
+			@image = Image.find(params[:format])
+			@best_image = true if params[:format]
 		end
+		
+		@image_count = @image.favorite_images_count
+		@unmotivational_count = UnmotivationalImage.where(image_id: @image.id).count
 		@type = params[:type]
-		@error_type = params[:type].split("I")[0].downcase
+		@error_type = params[:type].split("I")[0].downcase  if params[:type]
 	end
 
 	def categories

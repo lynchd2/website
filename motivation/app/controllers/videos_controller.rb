@@ -17,13 +17,17 @@ class VideosController < ApplicationController
 		else
 			@video = Video.find_random_video_with_type(params[:type])
 		end
-		if @video
-			@video_info = VideoInfo.new("https://www.youtube.com/watch?v=#{@video.url}") 
-			@video_count = @video.favorite_videos_count
-			@unmotivational_count = UnmotivationalVideo.where(video_id: @video.id).count
+		
+		if params[:format]
+			@video = Video.find(params[:format])
+			@best_video = true if params[:format]
 		end
+
+		@video_info = VideoInfo.new("https://www.youtube.com/watch?v=#{@video.url}") 
 		@type = params[:type]
 		@error_type = params[:type].split("V")[0].downcase
+		@video_count = @video.favorite_videos_count
+		@unmotivational_count = UnmotivationalVideo.where(video_id: @video.id).count
 	end
 
 	def categories

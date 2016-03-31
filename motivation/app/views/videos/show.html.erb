@@ -40,15 +40,21 @@
 		</div>
 	</aside>
 		<div class= "video-show-navigation-buttons">
-		<%= button_to video_categories_path, method: :get, class: "general-button before-navigation" do %>
-				<span class="glyphicon glyphicon-arrow-left"></span> Back to Videos 
-			<% end %>
+		<% if !@best_video %>
+			<%= button_to video_categories_path, method: :get, class: "general-button before-navigation" do %>
+					<span class="glyphicon glyphicon-arrow-left"></span> Back to Videos 
+				<% end %>
 	</div>
 	<div class= "video-show-navigation-buttons">
 		<%= button_to video_path, method: :get, class: "general-button before-navigation video-width-increase", params: {type: @type} do %>
 				Give Me More Motivation <span class="glyphicon glyphicon-arrow-right"></span> 
 			<% end %>
 	</div>
+	<% elsif @best_video %>
+		<%= button_to top_videos_path, method: :get, class: "general-button before-navigation left" do %>
+				<span class="glyphicon glyphicon-arrow-left"></span> Back to Top Videos 
+			<% end %>
+	<% end %>
 <% else %>
 	<%= render partial: "shared/video_error" %>
 <% end %>
