@@ -8,7 +8,7 @@
 	<div class="header-text-right">
 		<div class="navbar-text">
 			<% if current_user %>
-				<%= link_to current_user.email.length > 25 ? "Welcome," + current_user.email[0..25] + "..." : "Welcome, " + current_user.email, user_path(current_user) %>
+				<%= link_to current_user.email.length > 11 ? "Welcome, " + current_user.email[0..12] + "..." : "Welcome, " + current_user.email, user_path(current_user) %>
 			<% else %>
 				<%= link_to "Sign up", new_user_path  %>
 			<% end %> </div>

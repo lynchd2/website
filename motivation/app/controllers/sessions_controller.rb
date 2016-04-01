@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
   private
 
     def check_current_user
-      @user = User.find(params[:user_id])
+      @user = User.find(current_user.id)
       unless current_user?(@user)
         redirect_to(root_url)
         flash[:notice] = "You need to be signed in as that user to perform that action." 
