@@ -1,5 +1,6 @@
 class UnmotivationalImagesController < ApplicationController
-  
+  before_action  :check_current_user, only: [:create, :destroy]
+
   def show
   	@image = UnmotivationalImage.find_by(image_id: params[:id])
     @image_count = @image.image.favorite_images_count
@@ -39,6 +40,14 @@ class UnmotivationalImagesController < ApplicationController
 
   def unmotivational_images_params
   	params.require(:unmotivational_image).permit(:image_id, :user_id, :url)
+  end
+
+  def check_current_user
+    @user = User.find(params[:user_id])
+    unless current_user?(@user)
+      redirect_to(root_url)
+      flash[:notice] = "You need to be signed in as that user to perform that action." 
+    end
   end
 
 end

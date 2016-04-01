@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :check_current_user, only: [:destroy]
+
   def new
   end
 
@@ -20,4 +22,14 @@ class SessionsController < ApplicationController
     flash[:notice] = "You have succesfully logged out. Stay motivated!"
     redirect_to "/"
   end
+
+  private
+
+    def check_current_user
+      @user = User.find(params[:user_id])
+      unless current_user?(@user)
+        redirect_to(root_url)
+        flash[:notice] = "You need to be signed in as that user to perform that action." 
+      end
+    end
 end

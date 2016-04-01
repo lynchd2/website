@@ -56,7 +56,7 @@ class ImagesController < ApplicationController
 	  		flash[:notice] = "Image successfully added"
 	  		redirect_to user_submitted_motivations_url
 	  	else
-	  		flash[:notice] = "Failed to add image"
+	  		flash[:notice] = "Failed to add image. It may have already be added."
 	      	redirect_to user_submitted_motivations_url
 	  	end
 	end

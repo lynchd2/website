@@ -58,7 +58,7 @@ class VideosController < ApplicationController
 	  		flash[:notice] = "Video successfully added"
 	  		redirect_to user_submitted_motivations_url
 	  	else
-	  		flash[:notice] = "Failed to add video"
+	  		flash[:notice] = "Failed to add video. It may have already been added."
 	      	redirect_to user_submitted_motivations_url
 	  	end
 	end
@@ -67,6 +67,7 @@ class VideosController < ApplicationController
 	def destroy
 	end
 
+	private
 
 	def videos_params
 		params.require(:video).permit(:url, :type)

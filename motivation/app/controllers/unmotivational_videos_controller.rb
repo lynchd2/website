@@ -1,4 +1,5 @@
 class UnmotivationalVideosController < ApplicationController
+  before_action :check_current_user, only: [:create, :destroy]
 
   def show
   	@video = UnmotivationalVideo.find_by(video_id: params[:id])
@@ -41,5 +42,13 @@ class UnmotivationalVideosController < ApplicationController
 
   def unmotivational_videos_params
   	params.require(:unmotivational_video).permit(:video_id, :user_id, :url)
+  end
+
+  def check_current_user
+    @user = User.find(params[:user_id])
+    unless current_user?(@user)
+      redirect_to(root_url)
+      flash[:notice] = "You need to be signed in as that user to perform that action." 
+    end
   end
 end

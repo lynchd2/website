@@ -1,4 +1,6 @@
 class FavoriteImagesController < ApplicationController
+	before_action :check_current_user, only:[:create, :destroy]
+
 	def new
 		@favorite = FavoriteImage.new
 	end
@@ -42,6 +44,14 @@ class FavoriteImagesController < ApplicationController
 
 	def favorite_images_params
 		params.require(:favorite_image).permit(:url, :image_id, :user_id)
+	end
+
+	def check_current_user
+		@user = User.find(params[:user_id])
+		unless current_user?(@user)
+			redirect_to(root_url)
+			flash[:notice] = "You need to be signed in as that user to perform that action." 
+		end
 	end
 
 end

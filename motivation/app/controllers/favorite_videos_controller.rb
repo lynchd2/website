@@ -1,4 +1,6 @@
 class FavoriteVideosController < ApplicationController
+	before_action :check_current_user, only:[:create, :destroy]
+
 	def new
 		@favorite = FavoriteVideo.new
 	end
@@ -45,6 +47,14 @@ class FavoriteVideosController < ApplicationController
 
 	def favorite_videos_params
 		params.require(:favorite_video).permit(:url, :video_id, :user_id)
+	end
+
+	def check_current_user
+		@user = User.find(params[:user_id])
+		unless current_user?(@user)
+			redirect_to(root_url)
+			flash[:notice] = "You need to be signed in as that user to perform that action." 
+		end
 	end
 
 end
