@@ -1,7 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
 /*****************************
  Aside information next to motivator
  ****************************/
@@ -515,37 +514,17 @@ h1.sign-up {
   }
 }
 
-
-.container-sign-in {
+.container-log-in-sign-in {
 	background-color:#097054;
 	text-align:center;
 	margin:auto;
-	margin-top:70px;
-	width:500px;
-	height:450px;
-	border-radius:20%;
+	height:100%;
 	color:white;
 	.sign-up {
 		font-family:"Josefin Slab";
 		font-size:50px;
 	}
 }
-
-.container-log-in {
-	background-color:#097054;
-	text-align:center;
-	margin:auto;
-	margin-top:50px;
-	width:500px;
-	height:350px;
-	border-radius:20%;
-	color:white;
-	.sign-up {
-		font-family:"Josefin Slab";
-		font-size:50px;
-	}
-}
-
 .home-button {
 	right:65%;
 	font-size:20px;

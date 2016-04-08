@@ -24,7 +24,14 @@ images = [["WeightliftingImage", "https://s-media-cache-ak0.pinimg.com/564x/6a/f
 			["GeneralImage", "http://i.imgur.com/NGI5sCx.jpg"], ["GeneralImage", "http://i.imgur.com/PMuUcJn.jpg"],
 			["GeneralImage", "http://imgur.com/nBnkz06"], ["GeneralImage", "http://i.imgur.com/tF7ei6P.jpg"],
 			["GeneralImage", "https://s-media-cache-ak0.pinimg.com/736x/65/f3/4c/65f34c9b5695d6b47858b7a9797a3f3b.jpg"], ["GeneralImage", "http://i.imgur.com/eRCYyWI.jpg"],
-			["GeneralImage", "http://i.imgur.com/gwdxFyW.jpg"], ["GeneralImage", "http://i.imgur.com/RpPw4ZR.jpg"]]
+			["GeneralImage", "http://i.imgur.com/gwdxFyW.jpg"], ["GeneralImage", "http://i.imgur.com/RpPw4ZR.jpg"],
+			["GeneralImage", "http://i.imgur.com/iarU4ig.jpg"], ["GeneralImage", "http://i.imgur.com/snGSWxo.jpg"],
+			["GeneralImage", "http://imgur.com/iarU4ig.jpg"], ["GeneralImage", "http://i.imgur.com/hDy4kDL.jpg"],
+			["GeneralImage", "http://i.imgur.com/Svt52mm.jpg"],["GeneralImage", "https://www.youtube.com/watch?v=mm79Q76GKUE"],
+			["GeneralImage", "http://i.imgur.com/9j5WM9v.jpg"],["GeneralImage", "http://imgur.com/ps18RqZ.jpg"],
+			["GeneralImage", "http://imgur.com/s6Wt7Cm.jpg"], ["GeneralImage", "http://i.imgur.com/hz0eFXo.jpg"],
+			["GeneralImage", "http://imgur.com/bBE2Z8w.jpg"], ["GeneralImage", "http://i.imgur.com/2oVe3X2.png"], ["GeneralImage", "http://i.imgur.com/RpPw4ZR.jpg"]]
+
 
 videos = [["RunningVideo", "5CQbTBwLU3U"], ["RunningVideo", "gF0rrpMH-Jo"], 
 		 ["RunningVideo", "yLGfPNhtS2U"], ["WeightliftingVideo", "dImoa__F4Bc"], 
@@ -47,7 +54,7 @@ videos = [["RunningVideo", "5CQbTBwLU3U"], ["RunningVideo", "gF0rrpMH-Jo"],
 		["SportsVideo", "ezaAMcCy3u4"], ["WeightliftingVideo", "7kf6r0D3SEA"], ["GeneralVideo", "MNL_DAI19_I"], ["SportsVideo", "_T1KyRtOWOc"],
 		["SportsVideo","_2TpAlCpWN8"], ["RunningVideo","wwHfcqkm5TE"], ["GeneralVideo","RYlCVwxoL_g"], ["SportsVideo","cw0swisPh-M"],
 		["RunningVideo", "05sUhlxFBk0"], ["SportsVideo", "4zdIpXJlM8A"], ["SportsVideo", "G5o4KxEhVmE"], ["SportsVideo", "o2P5E7cFt9s"],
-		["SportsVideo", "6kUNQlbdKwY"]]
+		["SportsVideo", "6kUNQlbdKwY"], ["SportsVideo", "H-V7cOestUs"], ["SportsVideo", "cM1z4e8GD74"]]
 videos.each do |video|
 	Video.find_or_create_by(type: video[0], url: video[1])
 end
