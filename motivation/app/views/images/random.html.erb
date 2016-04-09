@@ -3,7 +3,7 @@
 		<%= image_tag(@random_image.url, class: "image-display random-image") %>
 		
 		<aside class="image-motivate-information-container">
-			<h3 class="text-center">Image Information</h3>
+			<h2 class="text-center">Category: <%= @random_image.type.split("I")[0] %></h2>
 				<% if @user %>
 					<%= form_for([@user, @favorite]) do |f| %>
 						<%= f.hidden_field :image_id, value: @random_image.id %>

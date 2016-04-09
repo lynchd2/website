@@ -11,8 +11,7 @@
  	background-color:#F0F0F0;
  	&.favorite-information-alter {
  		margin-top: -65px;
- 		margin-right: 200px;
- 		width:230px;
+ 		width:300px;
  	}
  }
  	.favorites-alter {
@@ -59,8 +58,6 @@
 	}
 	
 }
-
-
 
  .videos-button {
 	&.blue-text {
@@ -208,20 +205,25 @@
 .navbar-text {
 	padding:17px;
 	margin:0 auto;
-	font-family: "Comic Sans MS", cursive, sans-serif;
-	font-weight:bold;
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight:300;
 	font-size:18px;
-	a:link {
-		color:#777;
-		text-decoration:none;
-		}
-	a {
-		color:#505050
-	}
-	a:hover {
+	color:#777;
+	&.left:hover{
+		background-color:#0052cc;
+		transition:all 1000ms ease;
 		color:white;
+		text-decoration:none;
 	}
-	
+	&.right {
+		float:right;
+	}
+	&.right:hover {
+		background-color:#009900;
+		transition:all 1000ms ease;
+		color:white;
+		text-decoration:none;
+	}
 }
 
 .navbar-default {
@@ -231,29 +233,8 @@
 .give-me-motivation-logo {
 	height:60px;
 	width:125px;
-
-}
-
-.header-text-right {
-	float:right;
-	div:hover {
-		background-color:#009900;
-		transition:all 1000ms ease;
-		color:white;
-		padding:17px;
-		margin:0 auto;
-	}
-}
-
-.header-text-left {
 	float:left;
-	div:hover {
-		background-color:#0052cc;
-		transition:all 1000ms ease;
-		color:white;
-		padding:17px;
-		margin:0 auto;
-	}
+
 }
 
 /*********************
@@ -390,7 +371,7 @@ iframe {
 }
 
 .delete-image-alter {
-	margin-left:50px;
+	margin-left:90px;
 }
 
 /***********************
@@ -429,7 +410,7 @@ iframe {
 }
 
 .total-favorites-text {
-	margin-right:165px;
+	margin-right:260px;
 	font-family:"Comic Sans MS", cursive, sans-serif;
 }
 
@@ -438,7 +419,7 @@ iframe {
 }
 
 .total-unmotivational-text {
-	margin-right:170px;
+	margin-right:260px;
 	font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
@@ -447,16 +428,8 @@ iframe {
 	Favorite Image
 **********************/
 
-.favorite-image-information-adjustment {
-	margin-right:200px;
-}
-
 .favorite-image {
 	margin-left:200px;
-}
-
-.favorite-image-text-adjustment {
-	margin-left:20px;
 }
 
 /***********************
@@ -697,4 +670,19 @@ span.glyphicon.glyphicon-heart {
 
 .clear {
 	clear:both;
+}
+
+/***********************
+	   About Page
+
+***********************/
+
+.about-padding {
+	padding:50px 200px 50px 200px;
+	margin:50px;
+	border-radius:50px;
+}
+
+.about-text {
+	padding:20px;
 }

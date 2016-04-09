@@ -2,8 +2,8 @@
 <div class="container-image">
 	<%= image_tag(@favorite_image.url, class: "image-display favorite-image") %>
 
-	<aside class="image-motivate-information-container favorite-image-information-adjustment">
-		<h3 class="text-center">Image Information</h3>
+	<aside class="image-motivate-information-container favorite-information-alter">
+		<h2 class="text-center">Category: <%= @favorite_image.image.type.split("I")[0] %></h2>
 		<h4 class="total-favorites-text favorite-image-text-adjustment"><span class= "glyphicon glyphicon-heart total-favorites"></span>: <%= @image_count %></h4>
 		</br>
 		<h4 class="total-unmotivational-text favorite-image-text-adjustment"><span class="glyphicon glyphicon-thumbs-down"></span>: <%= @unmotivational_count %> </h4>

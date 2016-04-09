@@ -3,7 +3,7 @@
 		<%= image_tag(@image.url, class: "image-display") %>
 	
 	<aside class="image-motivate-information-container">
-		<h3 class="text-center">Image Information</h3>
+		<h2 class="text-center">Category: <%= @image.type.split("I")[0] %></h2>
 			<% if @user %>
 				<%= form_for([@user, @favorite]) do |f| %>
 					<%= f.hidden_field :image_id, value: @image.id %>

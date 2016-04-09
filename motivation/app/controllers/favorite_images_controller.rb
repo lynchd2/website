@@ -31,6 +31,7 @@ class FavoriteImagesController < ApplicationController
 		@user = current_user
 		@favorite_image = FavoriteImage.find_by(user_id: params[:user_id], image_id: params[:id])
 		@image_count = @favorite_image.image.favorite_images_count
+		@unmotivational_count = UnmotivationalImage.where(image_id: @favorite_image.image_id).count
 
 	end
 

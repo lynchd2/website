@@ -4,7 +4,7 @@
 
 	<aside>
 	<div class="video-motivate-information-container">
-		<h3 class="text-center">Video Information</h3>
+		<h2 class="text-center">Category: <%= @random_video.type.split("V")[0] %></h2>
 		<% if @user %>
 			<%= form_for([@user, @favorite]) do |f| %>
 				<%= f.hidden_field :video_id, value: @random_video.id %>

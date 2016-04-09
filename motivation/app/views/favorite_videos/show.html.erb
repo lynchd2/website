@@ -2,7 +2,7 @@
 <div class="iframe"><iframe width="800" height="500" src="https://www.youtube.com/embed/<%= @favorite_video.url%>" frameborder="0" allowfullscreen></iframe></div>
 
 <aside class="video-motivate-information-container favorite-information-alter">
-	<h3 class="text-center">Video Information</h3>
+	<h2 class="text-center">Category: <%= @favorite_video.video.type.split("V")[0] %></h2>
 	<h4 class="favorite-video-text-adjustment"><span class= "glyphicon glyphicon-heart total-favorites"></span>: <%= @video_count %></h4>
 	</br>
 	<h4 class="favorite-video-text-adjustment"><span class="glyphicon glyphicon-thumbs-down"></span>: <%= @unmotivational_count %> </h4>
