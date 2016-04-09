@@ -1,6 +1,7 @@
 <h2 class="text-center"> All Images are ordered form oldest to newest</h2>
 <% num = 1 %>
 <% @unmotivational_images.each do |image| %>
+<div class="row">
   	<div class="col-xs-3 col-md-3">
   		<div class="thumbnail">
 			<%= num %>. <%= link_to "Show Image", user_unmotivational_image_path(image.user_id, image.image_id)%>
@@ -8,6 +9,11 @@
 				<% num += 1 %>
 			</div>
 		</div>
-<% end %>
+	<% end %>
+</div>
+
+<%= link_to user_path(current_user), class: "general-button before-navigation left" do %>
+	<span class="glyphicon glyphicon-arrow-left"></span> Back to User Page 
+	<% end %>
 
 <%= will_paginate @unmotivational_images %>

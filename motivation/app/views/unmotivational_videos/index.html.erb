@@ -1,6 +1,7 @@
 <h2 class="text-center"> All videos are ordered form oldest to newest</h2>
 <% num = 1 %>
 <% @unmotivational_videos.each do |video| %>
+<div class="row">
   	<div class="col-xs-3 col-md-3">
   		<div class="thumbnail">
 			<%= num %>. <%= link_to "Show Video", user_unmotivational_video_path(video.user_id, video.video_id)%>
@@ -8,6 +9,8 @@
 			<% num +=1 %>
 		</div>
 	</div>
+</div>
 <% end %>
+
 
 <%= will_paginate @unmotivational_videos %>

@@ -54,7 +54,7 @@ videos = [["RunningVideo", "5CQbTBwLU3U"], ["RunningVideo", "gF0rrpMH-Jo"],
 		["SportsVideo", "ezaAMcCy3u4"], ["WeightliftingVideo", "7kf6r0D3SEA"], ["GeneralVideo", "MNL_DAI19_I"], ["SportsVideo", "_T1KyRtOWOc"],
 		["SportsVideo","_2TpAlCpWN8"], ["RunningVideo","wwHfcqkm5TE"], ["GeneralVideo","RYlCVwxoL_g"], ["SportsVideo","cw0swisPh-M"],
 		["RunningVideo", "05sUhlxFBk0"], ["SportsVideo", "4zdIpXJlM8A"], ["SportsVideo", "G5o4KxEhVmE"], ["SportsVideo", "o2P5E7cFt9s"],
-		["SportsVideo", "6kUNQlbdKwY"], ["SportsVideo", "H-V7cOestUs"], ["SportsVideo", "cM1z4e8GD74"]]
+		["SportsVideo", "6kUNQlbdKwY"], ["SportsVideo", "H-V7cOestUs"], ["SportsVideo", "cM1z4e8GD74"], ["GeneralVideo", "arj7oStGLkU"]]
 videos.each do |video|
 	Video.find_or_create_by(type: video[0], url: video[1])
 end
