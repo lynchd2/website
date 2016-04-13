@@ -2,11 +2,11 @@
 <% if current_user.admin %>
 	<%= link_to "Submitted videos/images", user_submitted_motivations_path(:user_submitted_motivations), class: "text-center" %>
 <% end %>
-<h3 class="text-info thumbnail-title left">Your Favorite Videos</h3>
-<h3 class="text-info thumbnail-title right">Your Favorite Images</h3>
-
 <div class="row container-fluid">
   <div class="col-xs-6 col-md-6">
+    <div class="page-header">
+  <h3 class="text-info thumbnail-title left">Your Favorite Videos</h3>
+</div>
     <%= link_to image_tag(@favorite_video), user_favorite_videos_path(:favorite_videos),  class: "thumbnail user-video-resize center" if @favorite_video %>
     <% if !@favorite_video %>
     	<h1 class= "thumbnail user-video-resize center text-primary text-center">You have no favorite videos yet!</h1> 
@@ -15,6 +15,9 @@
     <%= link_to "Your unmotivational videos", user_unmotivational_videos_path(:unmotivational_videos), class: "text-center" %>
    </div>
   <div class="col-xs-6 col-md-6  ">
+    <div class="page-header">
+  <h3 class="text-info thumbnail-title right">Your Favorite Images</h3>
+</div>
   	<%= link_to image_tag(@favorite_image, class: "user-image-resize center"), user_favorite_images_path(:favorite_images), class: "thumbnail" if @favorite_image %>
   	<% if !@favorite_image %>
   		<h1 class= "thumbnail user-video-resize center text-primary text-center">You have no favorite images yet!</h1>

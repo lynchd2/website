@@ -533,13 +533,11 @@ h3.text-info.thumbnail-title {
 	text-decoration:none;
 	font-family: 'Helvetica', 'Arial', sans-serif;
 	&.left {
-		float:left;
-		margin-left:200px;
+		text-align:center;
 
 	}
 	&.right {
-		float:right;
-		margin-right:200px;
+		text-align:center;
 	}
 }
 
@@ -678,11 +676,11 @@ span.glyphicon.glyphicon-heart {
 ***********************/
 
 .about-padding {
-	padding:50px 200px 50px 200px;
+	padding:50px;
 	margin:50px;
 	border-radius:50px;
 }
 
 .about-text {
-	padding:20px;
+	padding:10px;
 }
