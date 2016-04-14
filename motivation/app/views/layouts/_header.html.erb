@@ -1,27 +1,36 @@
-<header class="navbar navbar-default">
-
-	<div class="header-text-left">
-		<%= link_to image_tag("give_me_motivation_logo.png", class:"give-me-motivation-logo"), root_path %>
-		<%= link_to "Top Videos", top_videos_path, class: "navbar-text left" %>
-		<%= link_to "Top Images", top_images_path, class: "navbar-text left" %>
-		<%= link_to "Submit a video/image", submit_path, class: "navbar-text left" %>
-
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+		<div class="navbar-header">
+		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		    <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <%= link_to image_tag("give_me_motivation_logo.png", class:"give-me-motivation-logo"), root_path %>
+  	</div>
+  	<div class="collapse navbar-collapse">
+  		<ul class="nav navbar-nav">
+  			<li class="navbar-text-custom left"><%= link_to "Top Videos", top_videos_path %></li>
+				<li class="navbar-text-custom left"><%= link_to "Top Images", top_images_path%></li>
+				<li class="navbar-text-custom left"><%= link_to "Submit video/image", submit_path%></li>	
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="navbar-text-custom right"><%= link_to "About", about_path %></li>
+				<% if current_user %>
+					<li class="navbar-text-custom right"><%= link_to "Log out", logout_path, method: :delete %></li>				<% else %>
+					<li class="navbar-text-custom right"><%= link_to "Log in", login_path%></li>
+				<% end %>
+				<% if current_user %>
+					<li class="navbar-text-custom right"><%= link_to current_user.email.length > 11 ? "Welcome, " + current_user.email[0..12] + "..." : "Welcome, " + current_user.email, user_path(current_user) %></li>
+				<% else %>
+					<li class="navbar-text-custom right"><%= link_to "Sign up", new_user_path %></li>
+				<% end %>
+			</ul>
+		</div>
 	</div>
-	<div class="header-text-right">		
-			<%= link_to "About", about_path, class: "navbar-text right"%>
-			<% if current_user %>
-				<%= link_to "Log out", logout_path, method: :delete, class: "navbar-text right" %>
-			<% else %>
-				<%= link_to "Log in", login_path, class: "navbar-text right"%>
-			<% end %>
-			<% if current_user %>
-				<%= link_to current_user.email.length > 11 ? "Welcome, " + current_user.email[0..12] + "..." : "Welcome, " + current_user.email, user_path(current_user), class: "navbar-text right" %>
-			<% else %>
-				<%= link_to "Sign up", new_user_path, class: "navbar-text right"  %>
-			<% end %>
+</nav>
 
-	</div>
-</header>
 <% flash.each do |name, msg| %>
    <%= content_tag :div, msg, class: "alert alert-info" %>
 <% end %>

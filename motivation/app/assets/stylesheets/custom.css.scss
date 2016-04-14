@@ -202,7 +202,7 @@
 	text-align:center;
 }
 
-.navbar-text {
+.navbar-text-custom {
 	padding:17px;
 	margin:0 auto;
 	font-family: 'Helvetica', 'Arial', sans-serif;
@@ -215,15 +215,16 @@
 		color:white;
 		text-decoration:none;
 	}
-	&.right {
-		float:right;
-	}
 	&.right:hover {
 		background-color:#009900;
 		transition:all 1000ms ease;
 		color:white;
 		text-decoration:none;
 	}
+}
+
+.float-right {
+	float:right;
 }
 
 .navbar-default {
