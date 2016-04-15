@@ -1,6 +1,6 @@
 
 <div class="container-image">
-	<%= image_tag(@favorite_image.url, class: "image-display favorite-image") %>
+	<%= image_tag(@favorite_image.url, class: "image-display favorite-image", alt: "Favorite Image") %>
 
 	<aside class="image-motivate-information-container favorite-information-alter">
 		<h2 class="text-center">Category: <%= @favorite_image.image.type.split("I")[0] %></h2>

@@ -1,17 +1,14 @@
 <h2 class="text-center"> Images </h2>	
-<div class="row">
 	<% @favorite_images.each do |favorite| %>
   		<div class="col-xs-6 col-md-3">
   			 <div class="thumbnail alter-image">
-    		  <%= link_to image_tag(favorite.url, class: "images-index-resize"), user_favorite_image_path(favorite.user_id, favorite.image_id) %>
-          <div class="danger-favorites">
-          <%= link_to raw("<span class= 'glyphicon glyphicon-trash'></span>"), {action: "destroy", controller: "favorite_images", id: favorite.id, user_id: favorite.user_id}, method: :delete, data:{confirm: "Are you sure you want to delete that image off of your favorites list?"}, class: "general-button btn-danger" %>
+    		  <%= link_to image_tag(favorite.url, class: "images-index-resize", alt: "Favorite Image"), user_favorite_image_path(favorite.user_id, favorite.image_id) %>
+          <%= link_to raw("<span class= 'glyphicon glyphicon-trash'></span>"), {action: "destroy", controller: "favorite_images", id: favorite.id, user_id: favorite.user_id}, method: :delete, data:{confirm: "Are you sure you want to delete that image off of your favorites list?"}, class: "general-button btn-danger alter-video center" %>
           </div>
     		</div>
   		</div>
 	<% end %>
 </div>
-
 <%= button_to user_path(current_user), method: :get, class: "general-button before-navigation" do %>
     <span class="glyphicon glyphicon-arrow-left"></span> Back to Profile Page 
 <% end %>

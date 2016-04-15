@@ -46,6 +46,8 @@
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
 }
 
 .unmotivational {
@@ -95,6 +97,8 @@
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
 }
 
 .favorite:hover,
@@ -145,6 +149,8 @@
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
 }
 
 .before-navigation:active:before {
@@ -203,7 +209,7 @@
 }
 
 .navbar-text-custom {
-	padding:15px;
+	padding:5px 4px 5px 4px;
 	margin:0 auto;
 	font-family: 'Helvetica', 'Arial', sans-serif;
 	font-weight:300;
@@ -212,12 +218,20 @@
 	&.left:hover{
 		background-color:#0052cc;
 		transition:all 1000ms ease;
+		-webkit-transition: all 1000ms ease;
+		-moz-transition: all 1000ms ease;
+		-ms-transition: all 1000ms ease;
+		-o-transition: all 1000ms ease;
 		color:white;
 		text-decoration:none;
 	}
 	&.right:hover {
 		background-color:#009900;
 		transition:all 1000ms ease;
+		-webkit-transition: all 1000ms ease;
+		-moz-transition: all 1000ms ease;
+		-ms-transition: all 1000ms ease;
+		-o-transition: all 1000ms ease;
 		color:white;
 		text-decoration:none;
 	}
@@ -235,8 +249,8 @@
 	height:60px;
 	width:125px;
 	float:left;
-
 }
+
 
 /*********************
 	 Homepage
@@ -249,20 +263,10 @@
 
 }
 
-.button-navigation-homepage {
-	position:absolute;
-	text-align:center;
-	top:37%;
-	left:25%;
-	:hover{ 
-		transition:all 500ms ease;
-		color:green;
-	}
-}
-
 .homepage-buttons {
 	display:inline-block;
-	margin-left:40px;	
+	margin-left:220px;
+
 }
 
 .btn-lg {
@@ -275,19 +279,24 @@
 	font-size:20px;
 	:hover{ 
 		transition:all 500ms ease;
+		-webkit-transition: all 500ms eas;
+		-moz-transition: all 500ms eas;
+		-ms-transition: all 500ms ease;
+		-o-transition: all 500ms ease;
 		color:green;
 	}
 }
 
 .home-button {
+	margin-top:100px;
+	margin-bottom:20px;
 	right:65%;
 	font-size:20px;
 	border:none;
 	background: none;
 	cursor: pointer;
-	padding: 25px 80px;
-	display: inline-block;
-	margin: 10px 10px;
+	padding: 25px 65px 25px 65px;
+	display: inline-block;;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-weight: 700;
@@ -296,6 +305,8 @@
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
 }
 .home-button {
 	border:solid;
@@ -309,6 +320,8 @@
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
 }
 
 .home-button:hover,
@@ -338,6 +351,10 @@
 .btn.btn-default.btn-lg.videos:hover {
 	color:green;
 	transition: 500ms ease;
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
 }
 
 .videos {
@@ -357,7 +374,8 @@ iframe {
 .big-video-title {
 	margin-left:30px;
 	font-family:'Helvetica', 'Arial', sans-serif;
-	}
+}
+
 /*********************
  Favorite Videos page
 *********************/
@@ -515,6 +533,8 @@ h1.sign-up {
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
 }
 
 .home-button:hover,
@@ -575,7 +595,7 @@ h3.text-info.thumbnail-title {
 }
 
 .alter-video {
-	margin-left:80px;;
+	width:110px;
 }
 
 .video-title {
@@ -599,16 +619,21 @@ h3.text-info.thumbnail-title {
 	border: 1px solid #44B3C2;
 	background-color:#F2EDD8;
 	transition: all 1500ms;
+	-webkit-transition: all 1500ms ease;
+	moz-transition: all 1500ms ease;
+	-ms-transition: all 1500ms ease;
+	-o-transition: all 1500ms ease;
 }
 
 .thumbnail.alter-image {
 	max-height:350px;
-	max-width:350px;
+	max-width:320px;
 }
 
 .alter-thumbnail {
-	max-height:375px;
-	max-width:300px;
+	max-height:300px;
+	max-width:320px;
+	padding-bottom:320px;
 }
 
 /***********************
