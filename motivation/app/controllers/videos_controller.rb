@@ -10,7 +10,7 @@ class VideosController < ApplicationController
 	def show
 		if current_user
 			@user = current_user
-			@unmotivational_videos = UnmotivationalVideo.find_unmotivational_video_ids(@user.id)
+			@unmotivational_videos = @user.find_unmotivational_video_ids
 			@video = Video.find_random_video_with_type_and_unmotivational(params[:type], @unmotivational_videos)
 			@favorite = @user.favorite_videos.build()
 			@unmotivational_video = @user.unmotivational_videos.build()
@@ -38,7 +38,7 @@ class VideosController < ApplicationController
 		@random_video = Video.find_random_video
 		if current_user
 			@user = current_user 		
-			@unmotivational_videos = UnmotivationalVideo.find_unmotivational_video_ids(@user.id)
+			@unmotivational_videos = @user.find_unmotivational_video_ids
 			@random_video = Video.find_random_video_with_unmotivational(@unmotivational_videos)		
 			@favorite = @user.favorite_videos.build()
 			@unmotivational_video = @user.unmotivational_videos.build()

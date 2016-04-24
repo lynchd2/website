@@ -14,4 +14,42 @@ class User < ActiveRecord::Base
 
 	validates :email, presence: true, uniqueness: {case_sensitive: false}
 	has_secure_password
+
+	def display_random_favorite_video
+		video = FavoriteVideo.where(user_id: self.id).order("RANDOM()").first(1)[0]
+			if video
+				video_thumbnail = VideoInfo.new("https://www.youtube.com/watch?v=#{video.url}").thumbnail_large
+			else
+				nil
+			end
+	end
+
+	def display_random_favorite_image
+		image = FavoriteImage.where(user_id: self.id).order("RANDOM()").first(1)[0]
+		image ? image.url : nil
+	end
+
+		def display_random_favorite_video
+		video = FavoriteVideo.where(user_id: self.id).order("RANDOM()").first(1)[0]
+			if video
+				video_thumbnail = VideoInfo.new("https://www.youtube.com/watch?v=#{video.url}").thumbnail_large
+			else
+				nil
+			end
+	end
+
+	def display_all_favorite_videos
+		videos = FavoriteVideo.where(user_id: self.id)
+		videos.map do |video|
+			[video, VideoInfo.new("https://www.youtube.com/watch?v=#{video.url}").thumbnail_large]
+		end
+	end
+
+	def find_unmotivational_image_ids
+		UnmotivationalImage.where(user_id: self.id).pluck(:image_id)
+	end
+
+	def find_unmotivational_video_ids
+		UnmotivationalVideo.where(user_id: self.id).pluck(:video_id)
+	end
 end

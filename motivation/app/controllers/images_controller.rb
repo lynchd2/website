@@ -9,9 +9,9 @@ class ImagesController < ApplicationController
 
 	def show
 		if current_user
-			@unmotivational_images = UnmotivationalImage.find_unmotivational_image_ids(current_user.id)
-			@image = Image.find_random_image_with_type_and_unmotivational(params[:type], @unmotivational_images)
 			@user = current_user
+			@unmotivational_images = @user.find_unmotivational_image_ids
+			@image = Image.find_random_image_with_type_and_unmotivational(params[:type], @unmotivational_images)
 			@favorite = @user.favorite_images.build()
 			@unmotivational_image = @user.unmotivational_images.build()
 		else
@@ -37,7 +37,7 @@ class ImagesController < ApplicationController
 		@random_image =  Image.find_random_image
 		if current_user
 			@user = current_user 
-			@unmotivational_images = UnmotivationalImage.find_unmotivational_image_ids(@user.id)
+			@unmotivational_images = @user.find_unmotivational_image_ids
 			@random_image = Image.find_random_image_with_unmotivational(@unmotivational_images)
 			@favorite = @user.favorite_images.build()
 			@unmotivational_image = @user.unmotivational_images.build()
