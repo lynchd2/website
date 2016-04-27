@@ -1,45 +1,52 @@
 <% if @random_video %>
+<div class="container-fluid">
+<div class="row">
+  <div class="col-xs-8 col-sm-8 col-md-8">
 	<h3 class="big-video-title"><%= @video_info.title%></h3>
-	<div class="iframe"><iframe width="800" height="500" src="https://www.youtube.com/embed/<%= @random_video.url%>" frameborder="0" allowfullscreen></iframe></div>
-
-	<aside>
-	<div class="video-motivate-information-container">
-		<h2 class="text-center">Category: <%= @random_video.type.split("V")[0] %></h2>
-		<% if @user %>
-			<%= form_for([@user, @favorite]) do |f| %>
-				<%= f.hidden_field :video_id, value: @random_video.id %>
-				<%= f.hidden_field :url, value: @random_video.url %>
-				<%= f.hidden_field :user_id, value: @user.id %>
-				<%= f.button "Make Favorite", class: "general-button favorite" do %>
-			 		<span class= "glyphicon glyphicon-heart"></span> Make Favorite
-			 	<% end %>
-			<% end %>
-			<h4 class="total-favorites-text-videos"><span class= "glyphicon glyphicon-heart total-favorites"></span>: <%= @video_count %></h4>
-			<div class="make-unmotivational-button">
-				<%= form_for([@user, @unmotivational_video]) do |f| %>
+	<div class="embed-responsive embed-responsive-16by9">
+		<div class="iframe"><iframe class="embed-responsive-item" width="800" height="500" src="https://www.youtube.com/embed/<%= @random_video.url%>" frameborder="0" allowfullscreen></iframe></div>
+		</div>
+  </div>
+  <div class="col-xs-4 col-md-4">
+		<aside>
+		<div class="video-motivate-information-container">
+			<h2 class="text-center">Category: <%= @random_video.type.split("V")[0] %></h2>
+			<% if @user %>
+				<%= form_for([@user, @favorite]) do |f| %>
 					<%= f.hidden_field :video_id, value: @random_video.id %>
-					<%= f.hidden_field :user_id, value: @user.id %>
 					<%= f.hidden_field :url, value: @random_video.url %>
-				<%= f.button "Unmotivational", class: "general-button unmotivational" do %>
-						<span class="glyphicon glyphicon-thumbs-down"> Unmotivational</span>
-					<% end %>
+					<%= f.hidden_field :user_id, value: @user.id %>
+					<%= f.button "Make Favorite", class: "general-button favorite" do %>
+				 		<span class= "glyphicon glyphicon-heart"></span> Make Favorite
+				 	<% end %>
 				<% end %>
-			</div>
-		<h4 class="total-favorites-text-videos"><span class="glyphicon glyphicon-thumbs-down"></span>: <%= @unmotivational_count %> </h4>
-		<% else %>
-			<%= button_to new_user_path, method: :get, class: "general-button favorite", params: {favorite_sign_in: true} do %>
-			 		<span class= "glyphicon glyphicon-heart"></span> Make Favorite
-			 	<% end %>
-			<h4 class="total-favorites-text-videos"><span class= "glyphicon glyphicon-heart total-favorites"></span>: <%= @video_count %></h4>
-			<div class="make-unmotivational-button">
-				<%= button_to new_user_path, method: :get, class: "general-button unmotivational", params: {unmotivational_sign_in: true} do %>
-						<span class="glyphicon glyphicon-thumbs-down"> Unmotivational</span>
+				<h4 class="total-favorites-text-videos"><span class= "glyphicon glyphicon-heart total-favorites"></span>: <%= @video_count %></h4>
+				<div class="make-unmotivational-button">
+					<%= form_for([@user, @unmotivational_video]) do |f| %>
+						<%= f.hidden_field :video_id, value: @random_video.id %>
+						<%= f.hidden_field :user_id, value: @user.id %>
+						<%= f.hidden_field :url, value: @random_video.url %>
+					<%= f.button "Unmotivational", class: "general-button unmotivational" do %>
+							<span class="glyphicon glyphicon-thumbs-down"> Unmotivational</span>
+						<% end %>
 					<% end %>
-				<h4 class="total-favorites-text-videos"><span class="glyphicon glyphicon-thumbs-down"></span>: <%= @unmotivational_count %> </h4>
-			</div>
-		<% end %>
-	</div>
-</aside>
+				</div>
+			<h4 class="total-favorites-text-videos"><span class="glyphicon glyphicon-thumbs-down"></span>: <%= @unmotivational_count %> </h4>
+			<% else %>
+				<%= button_to new_user_path, method: :get, class: "general-button favorite", params: {favorite_sign_in: true} do %>
+				 		<span class= "glyphicon glyphicon-heart"></span> Make Favorite
+				 	<% end %>
+				<h4 class="total-favorites-text-videos"><span class= "glyphicon glyphicon-heart total-favorites"></span>: <%= @video_count %></h4>
+				<div class="make-unmotivational-button">
+					<%= button_to new_user_path, method: :get, class: "general-button unmotivational", params: {unmotivational_sign_in: true} do %>
+							<span class="glyphicon glyphicon-thumbs-down"> Unmotivational</span>
+						<% end %>
+					<h4 class="total-favorites-text-videos"><span class="glyphicon glyphicon-thumbs-down"></span>: <%= @unmotivational_count %> </h4>
+				</div>
+			<% end %>
+		</div>
+	</aside>
+</div>
 	<%= render partial: "shared/random_video_button" if params[:video] %>
 	<%= render partial: "shared/random_button" if params[:random] %>
 <% else %>

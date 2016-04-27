@@ -1,13 +1,24 @@
-<h2 class= "big-video-title"><%= @video_title.title%></h2>
-<div class="iframe"><iframe width="800" height="500" src="https://www.youtube.com/embed/<%= @video.url%>" frameborder="0" allowfullscreen></iframe></div>
+<div class="container-fluid">
+	<div class="row">
+  	<div class="col-xs-8 col-sm-8 col-md-8">
+			<h2 class= "big-video-title"><%= @video_title.title%></h2>
+			<div class="embed-responsive embed-responsive-16by9">
+				<div class="iframe"><iframe class="embed-responsive-item" width="800" height="500" src="https://www.youtube.com/embed/<%= @video.url%>" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
 
-<aside class="video-motivate-information-container favorite-information-alter">
-	<h3 class="text-center">Video Information</h3>
-	<h4 class="favorite-video-text-adjustment"><span class= "glyphicon glyphicon-heart total-favorites"></span>: <%= @video_count %></h4>
-	</br>
-	<h4 class="favorite-video-text-adjustment"><span class="glyphicon glyphicon-thumbs-down"></span>: <%= @unmotivational_count %> </h4>
-	<%= link_to raw("<span class= 'glyphicon glyphicon-trash'></span>"), {action: "destroy", controller: "unmotivational_videos", id: @video.id, user_id: @video.user_id}, method: :delete, data:{confirm: "Are you sure you want to delete that image off of your unmotivational list?"}, class: "general-button btn-danger delete-image-alter" %>
-</aside>
+	<div class="col-xs-4 col-md-4">
+		<aside class="video-motivate-information-container favorite-information-alter">
+			<h3 class="text-center">Video Information</h3>
+			<h4 class="favorite-video-text-adjustment"><span class= "glyphicon glyphicon-heart total-favorites"></span>: <%= @video_count %></h4>
+			</br>
+			<h4 class="favorite-video-text-adjustment"><span class="glyphicon glyphicon-thumbs-down"></span>: <%= @unmotivational_count %> </h4>
+			<%= link_to raw("<span class= 'glyphicon glyphicon-trash'></span>"), {action: "destroy", controller: "unmotivational_videos", id: @video.id, user_id: @video.user_id}, method: :delete, data:{confirm: "Are you sure you want to delete that image off of your unmotivational list?"}, class: "general-button btn-danger delete-image-alter" %>
+		</aside>
+	</div>
+</div>
+
 <div class="clear">
 	<div class= "video-show-navigation-buttons unmotivational-alter">
 		<%= button_to user_unmotivational_videos_path, method: :get, class: "general-button before-navigation" do %>

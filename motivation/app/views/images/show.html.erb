@@ -1,58 +1,70 @@
-<% if @image %>
-	<div class="container-image">
-		<%= image_tag(@image.url, class: "image-display", alt:"Random Image") %>
-	
-	<aside class="image-motivate-information-container">
-		<h2 class="text-center">Category: <%= @image.type.split("I")[0] %></h2>
-			<% if @user %>
-				<%= form_for([@user, @favorite]) do |f| %>
-					<%= f.hidden_field :image_id, value: @image.id %>
-					<%= f.hidden_field :url, value: @image.url %>
-					<%= f.hidden_field :user_id, value: @user.id %>
-					<%= f.button"Make Favorite", class: "general-button favorite" do %>
-			 		<span class= "glyphicon glyphicon-heart"></span> Make Favorite
-			 		<% end %>
-				<% end %>
-				<h4 class="total-favorites-text"><span class= "glyphicon glyphicon-heart total-favorites"></span>: <%= @image_count %></h4>
-			<div class="make-unmotivational-button">	
-				<%= form_for([@user, @unmotivational_image]) do |f| %>
-					<%= f.hidden_field :image_id, value: @image.id %>
-					<%= f.hidden_field :user_id, value: @user.id %>
-					<%= f.hidden_field :url, value: @image.url %>
-				<%= f.button "Unmotivational", class: "general-button unmotivational" do %>
-					<span class="glyphicon glyphicon-thumbs-down"> Unmotivational</span>
-					<% end %>
-				<% end %>
+<div class="container-fluid">
+	<% if @image %>
+	<div class="row">
+  	<div class="col-xs-8 col-sm-8 col-md-8">
+			<div class="container-image">
+				<%= image_tag(@image.url, class: "image-display img-responsive", alt:"Random Image") %>
 			</div>
-			<h4 class="total-unmotivational-text"><span class="glyphicon glyphicon-thumbs-down"></span>: <%= @unmotivational_count %> </h4>
-			<% else %>
-				<%= button_to new_user_path, method: :get, class: "general-button favorite", params: {favorite_sign_in: true} do %>
-			 		<span class= "glyphicon glyphicon-heart"></span> Make Favorite
-			 	<% end %>
-				<h4 class="total-favorites-text"><span class= "glyphicon glyphicon-heart total-favorites"></span>: <%= @image_count %></h4>
-				<div class="make-unmotivational-button">
-					<%= button_to new_user_path, method: :get, class: "general-button unmotivational", params: {unmotivational_sign_in: true} do %>
-						<span class="glyphicon glyphicon-thumbs-down"> Unmotivational</span>
-					<% end %>
+		</div>
+	
+		<div class="col-xs-4 col-md-4">
+			<aside class="image-motivate-information-container img-responsive">
+				<h2 class="text-center">Category: <%= @image.type.split("I")[0] %></h2>
+					<% if @user %>
+						<%= form_for([@user, @favorite]) do |f| %>
+							<%= f.hidden_field :image_id, value: @image.id %>
+							<%= f.hidden_field :url, value: @image.url %>
+							<%= f.hidden_field :user_id, value: @user.id %>
+							<%= f.button"Make Favorite", class: "general-button favorite" do %>
+					 		<span class= "glyphicon glyphicon-heart"></span> Make Favorite
+					 		<% end %>
+						<% end %>
+						<h4 class="total-favorites-text"><span class= "glyphicon glyphicon-heart total-favorites"></span>: <%= @image_count %></h4>
+					<div class="make-unmotivational-button">	
+						<%= form_for([@user, @unmotivational_image]) do |f| %>
+							<%= f.hidden_field :image_id, value: @image.id %>
+							<%= f.hidden_field :user_id, value: @user.id %>
+							<%= f.hidden_field :url, value: @image.url %>
+						<%= f.button "Unmotivational", class: "general-button unmotivational" do %>
+							<span class="glyphicon glyphicon-thumbs-down"> Unmotivational</span>
+							<% end %>
+						<% end %>
+					</div>
 					<h4 class="total-unmotivational-text"><span class="glyphicon glyphicon-thumbs-down"></span>: <%= @unmotivational_count %> </h4>
+					<% else %>
+						<%= button_to new_user_path, method: :get, class: "general-button favorite", params: {favorite_sign_in: true} do %>
+					 		<span class= "glyphicon glyphicon-heart"></span> Make Favorite
+					 	<% end %>
+						<h4 class="total-favorites-text"><span class= "glyphicon glyphicon-heart total-favorites"></span>: <%= @image_count %></h4>
+						<div class="make-unmotivational-button">
+							<%= button_to new_user_path, method: :get, class: "general-button unmotivational", params: {unmotivational_sign_in: true} do %>
+								<span class="glyphicon glyphicon-thumbs-down"> Unmotivational</span>
+							<% end %>
+							<h4 class="total-unmotivational-text"><span class="glyphicon glyphicon-thumbs-down"></span>: <%= @unmotivational_count %> </h4>
+						</div>
+					<% end %>
+				</aside>
+			</div>
+		</div>
+<div class="row">
+	<div class="col-xs-4 col-sm-4 col-md-4">
+		<div class= "container-image-show-buttons">
+			<% if !@best_image %>
+				<%= button_to image_categories_path, method: :get, class: "general-button before-navigation left" do %>
+						<span class="glyphicon glyphicon-arrow-left"></span> Back to Images 
+					<% end %>
+				<%= button_to image_path, method: :get, class: "general-button before-navigation right", params: {type: @type}  do %>
+						Give Me More Motivation <span class="glyphicon glyphicon-arrow-right"></span> 
+					<% end %>
+			<% elsif @best_image %>
+				<%= button_to top_images_path, method: :get, class: "general-button before-navigation left" do %>
+						<span class="glyphicon glyphicon-arrow-left"></span> Back to Top Images 
+					<% end %>
 				</div>
-			<% end %>
-		</aside>
-	</div>
-<div class= "container-image-show-buttons">
-	<% if !@best_image %>
-		<%= button_to image_categories_path, method: :get, class: "general-button before-navigation left" do %>
-				<span class="glyphicon glyphicon-arrow-left"></span> Back to Images 
-			<% end %>
-		<%= button_to image_path, method: :get, class: "general-button before-navigation right", params: {type: @type}  do %>
-				Give Me More Motivation <span class="glyphicon glyphicon-arrow-right"></span> 
-			<% end %>
-	<% elsif @best_image %>
-		<%= button_to top_images_path, method: :get, class: "general-button before-navigation left" do %>
-				<span class="glyphicon glyphicon-arrow-left"></span> Back to Top Images 
-			<% end %>
+	 		</div>
+  	</div>
 	<% end %>
-	</div>
+</div>
 <% else %>
 	<%= render partial: "shared/image_error" %>
 <% end %>

@@ -5,12 +5,10 @@
  Aside information next to motivator
  ****************************/
  .video-motivate-information-container {
- 	float:right;
- 	margin-right:20px;
-  	margin-top:-60px;
+  	margin-top:-40px;
+  	margin-left:40px;
  	background-color:#F0F0F0;
  	&.favorite-information-alter {
- 		margin-top: -65px;
  		width:300px;
  	}
  }
@@ -180,7 +178,7 @@
 }
 
 .container-image-show-buttons {
-	width:950px;
+	width:750px;
 	float:left;
 	clear:both;
 	display : block;
@@ -403,9 +401,9 @@ iframe {
 	Image page
 ***********************/
 
-.image-display {
-    max-width:600px;
-    max-height:600px;
+.image-responsive {
+    max-width:500px;
+    max-height:500px;
     &.random-image {
     	margin-left:-60px;
     }
@@ -420,7 +418,7 @@ iframe {
  .image-motivate-information-container {
  	float:right;
  	margin-right:20px;
- 	margin-top:-30px;
+ 	margin-top:-20px;
  	background-color:#F0F0F0;
  }
 
