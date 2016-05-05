@@ -1,0 +1,51 @@
+body {
+  background: url("https://upload.wikimedia.org/wikipedia/commons/5/53/Calapooya_Mountains,_Umpqua_National_Forest,_Oregon.jpg") no-repeat center center fixed;
+  position: relative;
+  width: 100%;
+  background-size:cover;
+}
+
+.jumbotron {
+  font-family:"Nunito";
+  text-align:center;
+  background:transparent;
+  color:white;
+ }
+
+.brackets-name {
+  font-size:100px;
+}
+
+.dylan-lynch {
+  font-size:100px;
+  letter-spacing:-5px;
+}
+
+.occupation-container {
+  letter-spacing:5px;
+}
+
+.brackets-occupation {
+  letter-spacing:-15px;
+}
+
+.web-dev {
+  margin-right:-5px;
+}
+
+
+.github-black {
+ content:url(https://raw.githubusercontent.com/donaldali/donaldali.github.io/master/assets/images/icons/GitHub/black-64.png);
+  width:80px;
+  height:80px;
+  margin:0 auto;
+  border-radius:40px;
+}
+
+.github-white {
+ content:url(https://raw.githubusercontent.com/donaldali/donaldali.github.io/master/assets/images/icons/GitHub/white-64.png);
+ width:80px;
+  height:80px;
+  margin:0 auto;
+  border-radius:40px;
+}
