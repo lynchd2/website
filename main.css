@@ -1,10 +1,41 @@
+/**
+Homepage Page
+**/
+
 body {
-  background: url("../assets/images/11113347_10153648341028223_3991650530351665363_o.jpg") no-repeat center center fixed;
+  background:url("assets/images/background-scenery.jpg") no-repeat center center fixed;
   position: relative;
   width: 100%;
   background-size:cover;
+  padding-top:70px;
+
 }
 
+.navbar {
+  background: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom:none;
+  margin-bottom: 0;
+  box-shadow:none;
+  font-family:"Nunito";
+}
+
+a {
+
+
+}
+.navbar-projects {
+  color: blue;
+  font-size:20px;
+  text-decoration: none;
+
+}
+
+.navbar-about {
+  color: blue;
+  font-size:20px;
+  text-decoration: none;
+}
 .jumbotron {
   font-family:"Nunito";
   text-align:center;
@@ -35,7 +66,7 @@ body {
 
 
 .github-black {
- content:url(https://raw.githubusercontent.com/donaldali/donaldali.github.io/master/assets/images/icons/GitHub/black-64.png);
+  content:url(https://raw.githubusercontent.com/donaldali/donaldali.github.io/master/assets/images/icons/GitHub/black-64.png);
   width:80px;
   height:80px;
   margin:0 auto;
@@ -43,9 +74,32 @@ body {
 }
 
 .github-white {
- content:url(https://raw.githubusercontent.com/donaldali/donaldali.github.io/master/assets/images/icons/GitHub/white-64.png);
- width:80px;
+  content:url(https://raw.githubusercontent.com/donaldali/donaldali.github.io/master/assets/images/icons/GitHub/white-64.png);
+  width:80px;
   height:80px;
   margin:0 auto;
   border-radius:40px;
 }
+
+.profile-head {
+  content:url("assets/images/profile-head.jpg");
+  border-radius:50px;
+  height:110px;
+  width:100px;
+  margin:0 auto;
+  margin-top:-50px;
+
+}
+
+.profile-head:hover {
+
+}
+
+/**
+Projects Page
+**/
+
+
+/**
+About Page
+**/
