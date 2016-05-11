@@ -24,5 +24,20 @@ $(document).ready(function(){
     $(this).addClass("github-black")
     $(this).removeClass("github-white")
   });
+
+$('.arrowBottom').click(function () {
+    $('html, body').animate({scrollTop:$(document).height()}, 'slow');
+    return false;
+});
+
+$('.arrowTop').click(function () {
+    $('html, body').animate({scrollTop:0}, 'slow');
+    return false;
+});
+
+$(window).scroll(function(){
+    $(".arrowBottom").css("opacity", 1 - $(window).scrollTop() / 250); 
+  });
+
 });
    
