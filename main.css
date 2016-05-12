@@ -106,8 +106,7 @@ Homepage Page
   border-radius:50px;
   height:110px;
   width:100px;
-  margin:0 auto;
-  margin-top:-50px;
+  float:left;
 
 }
 
@@ -129,7 +128,8 @@ About Page
   font-family:"Nunito";
   text-align:center;
   color:black;
-  height:47em;
+  height:42em;
+  background-color:#337ab7;
  }
 
  .jumbotron.about-skills {
@@ -142,6 +142,10 @@ About Page
   margin-top:7em;
  }
 
+.about-header {
+  font-size:50px;
+  color:white;
+}
 /**.arrowBottom {
   height:50px;
   width:50px;
@@ -161,9 +165,8 @@ About Page
 .arrowBottom {
   height:60px;
   width:60px;
-  border:4px solid blue;
+  border:4px solid white;
   border-radius:100%;
-  margin-top:240px;
 }
 
 .arrowTop {
@@ -179,7 +182,7 @@ About Page
   position:absolute;
   top:26px;
   width:18px;
-  border:2px solid blue;
+  border:2px solid white;
   transition:all 0.3s;
   -webkit-transition:all 0.3s;
 }
