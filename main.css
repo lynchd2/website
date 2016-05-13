@@ -19,6 +19,14 @@ Homepage Page
   font-family:"Nunito";
 }
 
+body div div ul li {
+  float:right;
+
+}
+.navbar-right {
+  color:red;
+}
+
 .home-text {
   color:white;
 }
@@ -64,24 +72,23 @@ Homepage Page
  }
 
 .brackets-name {
-  font-size:100px;
+  font-size:8em;
 }
 
 .dylan-lynch {
-  font-size:100px;
-  letter-spacing:-5px;
-}
-
-.occupation-container {
-  letter-spacing:5px;
+  font-size:8em;
+  letter-spacing:-7px;
 }
 
 .brackets-occupation {
-  letter-spacing:-15px;
+  letter-spacing:-2px;
+  font-size:1.5em;
 }
 
 .web-dev {
   margin-right:-5px;
+  letter-spacing:5px;
+  font-size:1.5em;
 }
 
 
@@ -91,6 +98,7 @@ Homepage Page
   height:80px;
   margin:0 auto;
   border-radius:40px;
+  margin-top:10px;
 }
 
 .github-white {
@@ -101,6 +109,12 @@ Homepage Page
   border-radius:40px;
 }
 
+
+/**
+About Page
+**/
+
+
 .profile-head {
   content:url("assets/images/profile-head.jpg");
   border-radius:50px;
@@ -109,58 +123,79 @@ Homepage Page
   float:left;
 
 }
-
-.profile-head:hover {
-
+.thumbnail {
+  background-color:#337ab7;
 }
 
-/**
-Projects Page
-**/
+.thumbnail-tech {
+  height:270px;
+}
 
 
+.thumbnail:hover > .technology-header {
+  color:black;
+  font-size:28px;
+}
 
-/**
-About Page
-**/
+.thumbnail:hover > .greetings-header {
+  color:black;
+}
 
+.caption:hover {
+  color:white;
+}
 .jumbotron.about {
   font-family:"Nunito";
   text-align:center;
-  color:black;
-  height:42em;
+  height:42.1em;
+  background-color:#337ab7;
+
+ }
+
+.about-paragraph {
+  font-size:10px;
+  color:white;
+}
+
+.about-header {
+  font-size:60px;
+  color:white;
+}
+
+.greetings-header {
+  color:white;
+}
+
+.jumbotron.about-skills {
+  font-family:"Nunito";
+  text-align:center;
+  color:white;
+  height:42.1em;
+  margin-bottom:0;
+  margin-top:14.2em;
   background-color:#337ab7;
  }
 
- .jumbotron.about-skills {
 
-  font-family:"Nunito";
-  text-align:center;
-  color:black;
-  height:42.1em;
-  margin-bottom:0;
-  margin-top:7em;
- }
-
-.about-header {
-  font-size:50px;
+.skills-header {
+  font-size:60px;
   color:white;
 }
-/**.arrowBottom {
-  height:50px;
-  width:50px;
-  background-color:blue;
-  margin:0 auto;
-  position:relative;
-  
+.back-tech {
+  font-size:20px;
 }
-**/
+
+.front-tech {
+  font-size:20px;
+}
+
 * {box-sizing:border-box;transition:all 0.3s;-webkit-transition:all 0.3s;}
 
 
 .pos {
-  position:relative;margin:0 auto;
-  }
+  position:relative;
+  margin:0 auto;
+}
 
 .arrowBottom {
   height:60px;
@@ -172,9 +207,9 @@ About Page
 .arrowTop {
   height:60px;
   width:60px;
-  border:4px solid blue;
+  border:4px solid white;
   border-radius:100%;
-  margin-top:240px;
+  margin:0 auto;
 }
 
 .arrowBottom:before,.arrowBottom:after {
@@ -191,7 +226,8 @@ About Page
   transform:rotateZ(45deg);
   -webkit-transform:rotateZ(45deg);
   left:12px;
-  }
+}
+
 .arrowBottom:after {
   transform:rotateZ(-45deg);
   -webkit-transform:rotateZ(-45deg);
@@ -211,20 +247,12 @@ About Page
   left:26px;
 }
 
-.arrowTop {
-  height:60px;
-  width:60px;
-  border:4px solid blue;
-  border-radius:100%;
-  margin-top:240px;
-}
-
 .arrowTop:before,.arrowTop:after {
   content:'';
   position:absolute;
   top:26px;
   width:18px;
-  border:2px solid blue;
+  border:2px solid white;
   transition:all 0.3s;
   -webkit-transition:all 0.3s;
 }
@@ -252,3 +280,7 @@ About Page
 .arrowTop:hover:after {
   left:27px;
 }
+
+/**
+Projects Page
+**/

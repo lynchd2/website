@@ -1,6 +1,5 @@
 $(document).ready(function(){
   $(".brackets-name").hide();
-  $(".brackets").hide();
   $(".brackets-occupation").hide();
   $(".dylan-lynch")
     .mouseover(function() {
@@ -9,7 +8,7 @@ $(document).ready(function(){
     .mouseleave(function() {
       $(".brackets-name").fadeOut("fast")
   });
-    $(".occupation")
+    $(".web-dev")
     .mouseover(function() {
     $(".brackets-occupation").fadeIn("slow")
   })
@@ -26,7 +25,7 @@ $(document).ready(function(){
   });
 
 $('.arrowBottom').click(function () {
-    $('html, body').animate({scrollTop:$(document).height()}, 'slow');
+    $('html, body').animate({scrollTop:$(document).height() - 655}, 'slow');
     return false;
 });
 
