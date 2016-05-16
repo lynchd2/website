@@ -3,11 +3,15 @@ Homepage Page
 **/
 
 .full-background {
-  background:url("assets/images/background-scenery.jpg") no-repeat center center fixed;
-  position: relative;
-  width: 100%;
-  background-size:cover;
-  padding-top:70px;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("assets/images/background-scenery.jpg");
+    background-attachment: fixed;
+    padding-top:70px;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size:cover;
+
 }
 
 .navbar {
@@ -57,7 +61,7 @@ body div div ul li {
 .slider {
     position: absolute;
     height: 2px;
-    background-color: #669966;
+    background-color: rgb(116, 255, 81);
     width: 0%;
     -webkit-transition: width 1s ease;
     transition: width 1s ease;
@@ -144,12 +148,10 @@ About Page
   float:left;
 
 }
-.thumbnail {
-  background-color:#337ab7;
-}
 
 .thumbnail-tech {
   height:230px;
+  background-color:#337ab7;
 }
 
 
@@ -168,6 +170,7 @@ About Page
 
 .thumbnail-intro {
   margin-top:50px;
+  background-color:#337ab7;
 }
 
 .jumbotron.about {
@@ -215,6 +218,10 @@ About Page
 
 .front-tech {
   font-size:18px;
+}
+
+.other-technology {
+  background-color:#337ab7;
 }
 
 * {box-sizing:border-box;transition:all 0.3s;-webkit-transition:all 0.3s;}
