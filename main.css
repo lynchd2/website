@@ -59,12 +59,12 @@ body div div ul li {
 }
 
 .slider {
-    position: absolute;
-    height: 2px;
-    background-color: rgb(116, 255, 81);
-    width: 0%;
-    -webkit-transition: width 1s ease;
-    transition: width 1s ease;
+  position: absolute;
+  height: 2px;
+  background-color: rgb(116, 255, 81);
+  width: 0%;
+  -webkit-transition: width 1s ease;
+  transition: width 1s ease;
 }
 
 
@@ -175,8 +175,9 @@ About Page
 .jumbotron.about {
   font-family:"Nunito";
   text-align:center;
-  height:42.1em;
+  height:100%;
   background-color:#337ab7;
+  padding-bottom:15%;
 
  }
 
@@ -199,9 +200,9 @@ About Page
   font-family:"Nunito";
   text-align:center;
   color:white;
-  height:42.5em;
+  height:100%;
   margin-bottom:0;
-  margin-top:18.0em;
+  margin-top:12%;
   background-color:#337ab7;
  }
 
@@ -327,6 +328,7 @@ Projects Page
 .btn-hide {
   color:#eee;
   background-color:#eee;
+  margin-top:5px;
 }
 
 .project-description {
@@ -370,6 +372,10 @@ Projects Page
   text-decoration:none;
 }
 
+.firstProject {
+  margin-top:3%;
+}
+
 .second-project {
   margin-top:100px;
 }
@@ -402,6 +408,10 @@ Projects Page
   background-color:red;
 }
 
+.secondProject {
+  margin-top:3%;
+}
+
 .third-project {
   margin-top:100px;
 }
@@ -410,6 +420,10 @@ Projects Page
   background-color:#749C75;
   transition:all 0.3s;
   -webkit-transition:all 0.3s;
+}
+
+.thirdProject {
+  margin-top:3%;
 }
 
 .fourth-project {

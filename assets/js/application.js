@@ -38,18 +38,33 @@ $(".occupation-container").hover(function(){
     $(this).removeClass("github-white", "slow")
   });
 
-$('.arrowBottom').click(function () {
+$('.arrowBottomAbout').click(function () {
     $('html, body').animate({scrollTop:$(document).height() - 630}, 'slow');
     return false;
 });
 
-$('.arrowTop').click(function () {
+$('.arrowTopAbout').click(function () {
     $('html, body').animate({scrollTop:0}, 'slow');
     return false;
 });
 
+$(".firstProject").click(function() {
+  $("html, body").animate({scrollTop:$(document).height() - 1850}, 'slow');
+  return false;
+});
+
+$(".secondProject").click(function() {
+  $("html, body").animate({scrollTop:$(document).height() - 1050}, 'slow');
+  return false;
+});
+
+$(".thirdProject").click(function() {
+  $("html, body").animate({scrollTop:$(document).height() - 1000}, 'slow');
+  return false;
+});
+
 $(window).scroll(function(){
-    $(".arrowBottom").css("opacity", 1 - $(window).scrollTop() / 250); 
+    $(".arrowBottomAbout").css("opacity", 1 - $(window).scrollTop() / 250); 
   });
 
 });
