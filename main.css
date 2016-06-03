@@ -329,6 +329,7 @@ Projects Page
   color:#eee;
   background-color:#eee;
   margin-top:5px;
+
 }
 
 .project-description {
@@ -416,6 +417,11 @@ Projects Page
   margin-top:100px;
 }
 
+.third-project-link {
+  color:#eee;
+  text-decoration:none;
+}
+
 .third-project:hover {
   background-color:#749C75;
   transition:all 0.3s;
@@ -426,9 +432,23 @@ Projects Page
   margin-top:3%;
 }
 
+.third-project:hover .third-project-description {
+  color:#FF6534;
+}
+
+.third-project:hover .third-project-link {
+  color:#FF6534;
+  text-decoration:none;
+}
+
+.third-project:hover .btn-hide {
+  background-color:red;
+}
+
 .fourth-project {
   margin-top:100px;
   margin-bottom:0;
+  color:#eee;
 }
 
 .fourth-project:hover {
@@ -437,3 +457,13 @@ Projects Page
   -webkit-transition:all 0.3s;
 }
 
+.other-project-link {
+  color:#79BEDB;
+}
+.other-project-link:hover {
+  text-decoration:none;
+}
+
+.other-programs-built {
+  font-size:20px;
+}

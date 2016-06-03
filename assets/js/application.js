@@ -1,22 +1,4 @@
 $(document).ready(function(){
-  /*
-  $(".brackets-name").hide();
-  $(".brackets-occupation").hide();
-  $(".dylan-lynch")
-    .mouseover(function() {
-    $(".brackets-name").fadeIn("slow")
-  })
-    .mouseleave(function() {
-      $(".brackets-name").fadeOut("fast")
-  });
-    $(".web-dev")
-    .mouseover(function() {
-    $(".brackets-occupation").fadeIn("slow")
-  })
-    .mouseleave(function() {
-      $(".brackets-occupation").fadeOut("fast")
-  });
-*/
 
 $(".dylan-lynch").hover(function(){
   $('.brackets-name').addClass("name-occupation-hovered")
@@ -49,17 +31,17 @@ $('.arrowTopAbout').click(function () {
 });
 
 $(".firstProject").click(function() {
-  $("html, body").animate({scrollTop:$(document).height() - 1850}, 'slow');
+  $("html, body").animate({scrollTop:$(document).height() - 2090}, 'slow');
   return false;
 });
 
 $(".secondProject").click(function() {
-  $("html, body").animate({scrollTop:$(document).height() - 1050}, 'slow');
+  $("html, body").animate({scrollTop:$(document).height() - 1290}, 'slow');
   return false;
 });
 
 $(".thirdProject").click(function() {
-  $("html, body").animate({scrollTop:$(document).height() - 1000}, 'slow');
+  $("html, body").animate({scrollTop:$(document).height() - 400}, 'slow');
   return false;
 });
 
