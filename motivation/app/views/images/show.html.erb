@@ -1,14 +1,14 @@
-<div class="container-fluid">
-	<% if @image %>
-	<div class="row">
-  	<div class="col-xs-8 col-sm-8 col-md-8">
-			<div class="container-image">
-				<%= image_tag(@image.url, class: "image-display img-responsive", alt:"Random Image") %>
+<% if @image %>
+	<div class="container-image">
+		<div class="row">
+  			<div class="col-xs-8 col-sm-8 col-md-8">
+				<div class="container-image">
+				<%= image_tag(@image.url, class: "img-responsive image-responsive", alt:"Random Image") %>
 			</div>
 		</div>
 	
 		<div class="col-xs-4 col-md-4">
-			<aside class="image-motivate-information-container img-responsive">
+			<aside class="image-motivate-information-container">
 				<h2 class="text-center">Category: <%= @image.type.split("I")[0] %></h2>
 					<% if @user %>
 						<%= form_for([@user, @favorite]) do |f| %>
@@ -46,23 +46,23 @@
 				</aside>
 			</div>
 		</div>
-<div class="row">
-	<div class="col-xs-4 col-sm-4 col-md-4">
-		<div class= "container-image-show-buttons">
-			<% if !@best_image %>
-				<%= button_to image_categories_path, method: :get, class: "general-button before-navigation left" do %>
-						<span class="glyphicon glyphicon-arrow-left"></span> Back to Images 
-					<% end %>
-				<%= button_to image_path, method: :get, class: "general-button before-navigation right", params: {type: @type}  do %>
-						Give Me More Motivation <span class="glyphicon glyphicon-arrow-right"></span> 
-					<% end %>
-			<% elsif @best_image %>
-				<%= button_to top_images_path, method: :get, class: "general-button before-navigation left" do %>
-						<span class="glyphicon glyphicon-arrow-left"></span> Back to Top Images 
-					<% end %>
-				</div>
-	 		</div>
-  	</div>
+	<div class="row">
+		<div class="col-xs-4 col-sm-4 col-md-4">
+			<div class= "container-image-show-buttons">
+				<% if !@best_image %>
+					<%= button_to image_categories_path, method: :get, class: "btn general-button before-navigation left" do %>
+							<span class="glyphicon glyphicon-arrow-left"></span> Back to Images 
+						<% end %>
+					<%= button_to image_path, method: :get, class: "btn general-button before-navigation right", params: {type: @type}  do %>
+							Give Me More Motivation <span class="glyphicon glyphicon-arrow-right"></span> 
+						<% end %>
+				<% elsif @best_image %>
+					<%= button_to top_images_path, method: :get, class: "btn general-button before-navigation left" do %>
+							<span class="glyphicon glyphicon-arrow-left"></span> Back to Top Images 
+				<% end %>
+			</div>
+		 </div>
+	</div>
 	<% end %>
 </div>
 <% else %>

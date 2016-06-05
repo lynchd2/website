@@ -329,6 +329,15 @@
 	border-color:white;
 }
 
+.portfolio {
+	font-size:30px;
+	&:hover {
+	text-decoration:none;
+	transition:1000ms;
+	color:orange;
+	}
+}
+
 /*********************
 	Videos page
 *********************/
@@ -404,6 +413,7 @@ iframe {
 .image-responsive {
     max-width:500px;
     max-height:500px;
+    margin:0 auto;
     &.random-image {
     	margin-left:-60px;
     }

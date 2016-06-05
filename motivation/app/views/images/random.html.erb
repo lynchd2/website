@@ -1,6 +1,6 @@
 <% if @random_image %>
 	<div class="container-image">
-		<%= image_tag(@random_image.url, class: "image-display random-image", alt:"Random Image") %>
+		<%= image_tag(@random_image.url, class: "image-display image-responsive", alt:"Random Image") %>
 		
 		<aside class="image-motivate-information-container">
 			<h2 class="text-center">Category: <%= @random_image.type.split("I")[0] %></h2>
