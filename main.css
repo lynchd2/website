@@ -76,26 +76,29 @@ body div div ul li {
  }
 
 .brackets-name {
-  font-size:8em;
+  font-size:3.5em;
   opacity: 0;
+  cursor: pointer;
 }
 
 .dylan-lynch {
-  font-size:8em;
-  letter-spacing:-7px;
+  font-size:3.5em;
+  letter-spacing:-3px;
+  cursor: pointer;
 }
 
 
 .brackets-occupation {
-  letter-spacing:-2px;
-  font-size:1.5em;
+  font-size:1.2em;
   opacity: 0;
+  cursor: pointer;
 }
 
 .web-dev {
   margin-right:-5px;
   letter-spacing:5px;
-  font-size:1.5em;
+  font-size:1.2em;
+  cursor: pointer;
 }
 
 .name-occupation-hovered{
@@ -150,7 +153,11 @@ About Page
 }
 
 .thumbnail-tech {
-  background-color:#337ab7;
+  background-color:#8FBAC8;
+}
+
+.fix-height {
+  height:250px;
 }
 
 
@@ -169,14 +176,14 @@ About Page
 
 .thumbnail-intro {
   margin-top:50px;
-  background-color:#337ab7;
+  background-color:#8FBAC8;
 }
 
 .jumbotron.about {
   font-family:"Nunito";
   text-align:center;
   height:100%;
-  background-color:#337ab7;
+  background-color:#8FBAC8;
   padding-bottom:15%;
 
  }
@@ -203,7 +210,8 @@ About Page
   height:100%;
   margin-bottom:0;
   margin-top:12%;
-  background-color:#337ab7;
+  background-color:#8FBAC8;
+  padding-bottom:30px;
  }
 
 
@@ -447,7 +455,8 @@ Projects Page
 
 .fourth-project {
   margin-top:100px;
-  margin-bottom:0;
+  padding-bottom:80px;
+  margin-bottom:0px;
   color:#eee;
 }
 
@@ -466,4 +475,30 @@ Projects Page
 
 .other-programs-built {
   font-size:20px;
+}
+
+
+@media only screen and (max-width: 2000px) {
+    .brackets-name {
+      font-size: 6em; 
+    }
+    .dylan-lynch {
+      font-size:6em;
+    }
+}
+@media only screen and (max-width: 1000px) { 
+    .brackets-name {
+        font-size: 4.5em; 
+    }
+    .dylan-lynch {
+      font-size:4.5em;
+    }
+}
+@media only screen and (max-width: 500px) { 
+    .brackets-name {
+        font-size: 3.2em; 
+    }
+    .dylan-lynch {
+      font-size:3.2em;
+    }
 }

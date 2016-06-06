@@ -47,6 +47,8 @@ $(".thirdProject").click(function() {
 
 $(window).scroll(function(){
     $(".arrowBottomAbout").css("opacity", 1 - $(window).scrollTop() / 250); 
+    $(".navbar").css("opacity", 0.7)
+    $(".navbar").css("background-color", "grey")
   });
 
 });
