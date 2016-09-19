@@ -137,6 +137,18 @@ body div div ul li {
     filter: invert(100%);
 }
 
+.resume-black {
+  content:url("assets/images/resume-icon.png");
+  margin-left:15px;
+  margin-top:20px;
+  height:80px;
+}
+.resume-black:hover {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+
 
 /**
 About Page
